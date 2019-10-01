@@ -2,6 +2,12 @@
 remote-theme: poole/hyde
 title: R's Circus.
 description: Each virtue and each wisdom needs parading in one’s own time, and must not last forever.
+author:
+    name: 'Roland Siegbert'
+    url: https://twitter.com/rscircus
+
+# Site config
+paginate: 5
 
 # TODO: Adapt local Jekyll config:
 # # Dependencies
@@ -12,16 +18,4 @@ description: Each virtue and each wisdom needs parading in one’s own time, and
 # permalink: pretty
 # relative_permalinks: true
 #
-# # Setup
-# title: R's circus
-# tagline: 'Each virtue and each wisdom needs parading in one’s own time, and must not last forever.'
-# description: 'This description does not exist.'
-# url: http://rscircus.github.io
-# baseurl: /
-#
-# author:
-#     name: 'Roland Siegbert'
-#     url: https://twitter.com/rscircus
-#
-# paginate: 5
 
