@@ -2,14 +2,14 @@
 remote-theme: fongandrew/hydeout
 title: Circus
 description: Each virtue and each wisdom needs parading in one’s own time, and must not last forever.
-# baseurl: ''
-# url: ''
-# twitter_username: rscircus
-# github_username: rscircus
-# 
-# author:
-#     name: 'Roland Siegbert'
-#     url: https://twitter.com/rscircus
+baseurl: ''
+url: ''
+twitter_username: rscircus
+github_username: rscircus
+
+author:
+    name: 'Roland Siegbert'
+    url: https://twitter.com/rscircus
 
 # Build settings
 markdown: kramdown
