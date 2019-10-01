@@ -1,6 +1,6 @@
 ## Where am I?
 
-You can find my usual writing [here on rscircus.org](http://rscircus.org). I wrote on a great variety of subjects mainly revolving around Linux, programming and accessibilty.
+You can find my usual writing [here on rscircus.org](http://rscircus.org). I wrote on a great variety of subjects mainly revolving around **Linux**, **programming**, **diy-electronics** and **accessibilty**.
 
 Recently I started to work more in GitHub contributing to various FLOSS projects. You'll find my notes on this here.
 
