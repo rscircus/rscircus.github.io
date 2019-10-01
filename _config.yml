@@ -1,12 +1,15 @@
 # Basic configuration
 remote-theme: fongandrew/hydeout
-title: R's Circus.
+title: Circus.
 description: Each virtue and each wisdom needs parading in one’s own time, and must not last forever.
+baseurl: ''
+url: ''
+twitter_username: rscircus
+github_username: rscircus
+
 author:
     name: 'Roland Siegbert'
     url: https://twitter.com/rscircus
-twitter_username: rscircus
-github_username: rscircus
 
 # Build settings
 markdown: kramdown
