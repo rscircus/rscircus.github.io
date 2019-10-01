@@ -1,3 +1,7 @@
+---
+layout: null
+---
+
 # Random Dos:
 
 - [ ] Get Brutal Type into this page somehow
