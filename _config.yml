@@ -1,5 +1,5 @@
 # Basic configuration
-remote-theme: poole/hyde
+remote-theme: fongandrew/hydeout
 title: R's Circus.
 description: Each virtue and each wisdom needs parading in one’s own time, and must not last forever.
 author:
