@@ -1,27 +1,27 @@
 # Basic configuration
 remote-theme: fongandrew/hydeout
-title: Welcome to R's Circus.
-description: Each virtue and each wisdom needs parading in one’s own time, and must not last forever.TODO
+title: R's Circus.
+description: Each virtue and each wisdom needs parading in one’s own time, and must not last forever.
 
 # TODO: Adapt local Jekyll config:
 # # Dependencies
 # markdown: redcarpet
 # highlighter: pygments
-# 
+#
 # # Permalinks
 # permalink: pretty
 # relative_permalinks: true
-# 
+#
 # # Setup
 # title: R's circus
 # tagline: 'Each virtue and each wisdom needs parading in one’s own time, and must not last forever.'
 # description: 'This description does not exist.'
 # url: http://rscircus.github.io
 # baseurl: /
-# 
+#
 # author:
 #     name: 'Roland Siegbert'
 #     url: https://twitter.com/rscircus
-# 
+#
 # paginate: 5
 
