@@ -5,6 +5,11 @@ description: Each virtue and each wisdom needs parading in one’s own time, and
 author:
     name: 'Roland Siegbert'
     url: https://twitter.com/rscircus
+twitter_username: rscircus
+github_username: rscircus
+
+# Build settings
+markdown: kramdown
 
 # Site config
 paginate: 5
