@@ -1,4 +1,5 @@
 # Basic configuration
+theme: fongandrew/hydeout
 remote-theme: fongandrew/hydeout
 title: Circus
 description: Each virtue and each wisdom needs parading in one’s own time, and must not last forever.
