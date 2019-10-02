@@ -15,7 +15,7 @@ author:
 markdown: kramdown
 
 # Site config
-paginate: 5
+# paginate: 5
 
 # TODO: Adapt local Jekyll config:
 # # Dependencies
