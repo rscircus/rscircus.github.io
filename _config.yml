@@ -1,16 +1,15 @@
 # Basic configuration
-theme: fongandrew/hydeout
+theme: jekyll-theme-hydeout
 remote-theme: fongandrew/hydeout
-title: Circus
-description: Each virtue and each wisdom needs parading in one’s own time, and must not last forever.
-baseurl: ''
-url: ''
-twitter_username: rscircus
-github_username: rscircus
 
-author:
-    name: 'Roland Siegbert'
-    url: https://twitter.com/rscircus
+title: Circus
+tagline: '/dev/null'
+description: 'Each virtue and each wisdom needs parading in one’s own time, and must not last forever.'
+#url: https://rscircus.github.io
+#baseurl: '/'
+
+github:
+  repo: 'https://github.com/rscircus'
 
 # Build settings
 markdown: kramdown
