@@ -13,7 +13,6 @@
  * https://github.com/poole/hyde.
  */
 
-
 /*
  * Contents
  *
@@ -24,7 +23,6 @@
  * Themes
  */
 
-
 /*
  * Global resets
  *
@@ -32,7 +30,7 @@
  */
 
 html {
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: 'PT Sans', Helvetica, Arial, sans-serif;
 }
 @media (min-width: 48em) {
   html {
@@ -45,7 +43,6 @@ html {
   }
 }
 
-
 /*
  * Sidebar
  *
@@ -56,7 +53,7 @@ html {
 .sidebar {
   text-align: center;
   padding: 2rem 1rem;
-  color: rgba(255,255,255,.5);
+  color: rgba(255, 255, 255, 0.5);
   background-color: #202020;
 }
 @media (min-width: 48em) {
@@ -79,7 +76,7 @@ html {
 .sidebar-about h1 {
   color: #fff;
   margin-top: 0;
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: 'PT Sans', Helvetica, Arial, sans-serif;
   font-size: 3.25rem;
 }
 
@@ -108,12 +105,10 @@ a.sidebar-nav-item:focus {
 @media (min-width: 48em) {
   .sidebar-sticky {
     position: absolute;
-    right:  1rem;
-    bottom: 1rem;
-    left:   1rem;
+    right: 1rem;
+    left: 1rem;
   }
 }
-
 
 /* Container
  *
@@ -122,7 +117,7 @@ a.sidebar-nav-item:focus {
  */
 
 .content {
-  padding-top:    3rem;
+  padding-top: 3rem;
   padding-bottom: 3rem;
 }
 
@@ -140,7 +135,6 @@ a.sidebar-nav-item:focus {
     margin-right: 4rem;
   }
 }
-
 
 /*
  * Reverse layout
@@ -165,8 +159,6 @@ a.sidebar-nav-item:focus {
     margin-right: 22rem;
   }
 }
-
-
 
 /*
  * Themes
