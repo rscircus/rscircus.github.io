@@ -16,6 +16,7 @@ Some fun facts about the setup of this github pages page include:
 -   Which was initially created by [Mark](https://twitter.com/mdo)
 -   Built for [Jekyll](http://jekyllrb.com)
 -   Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com)
--   And extended by me, because it didn't have enough [a11y](https://en.wikipedia.org/wiki/a11y) for my taste.
+-   And extended by me, because it didn't have enough [a11y](https://en.wikipedia.org/wiki/a11y) for my taste
+-   And I use both [vim](https://www.vim.org/) and [emacs](https://www.gnu.org/software/emacs/). 😱
 
 Thanks for reading!
