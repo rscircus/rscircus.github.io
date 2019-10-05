@@ -309,13 +309,14 @@ DAT.Globe = function(container, opts) {
     container.addEventListener('mouseup', onMouseUp, false);
     container.addEventListener('mouseout', onMouseOut, false);
 
-    if (event.touches.length === 1) { //one-finger touch
+    if (event.touches && event.touches.length === 1) { //one-finger touch
       mouseOnDown.x = -event.touches[0].pageX;
       mouseOnDown.y = event.touches[0].pageY;
 
       targetOnDown.x = target.x;
       targetOnDown.y = target.y;
-    } else {
+    } 
+    if (event.button === 0) {
       mouseOnDown.x = -event.clientX;
       mouseOnDown.y = event.clientY;
 
@@ -327,10 +328,12 @@ DAT.Globe = function(container, opts) {
   }
 
   function onMouseMove(event) {
-    if (event.touches.length === 1) { //one-finger touch
+    if (event.touches && event.touches.length === 1) { //one-finger touch
       mouse.x = -event.touches[0].pageX;
       mouse.y = event.touches[0].pageY;
-    } else {
+    }
+
+    if (event.button === 0 ) {
       mouse.x = -event.clientX;
       mouse.y = event.clientY;
     }
@@ -343,8 +346,6 @@ DAT.Globe = function(container, opts) {
     target.y = target.y > PI_HALF ? PI_HALF : target.y;
     target.y = target.y < -PI_HALF ? -PI_HALF : target.y;
   }
-
-  function onTouchMove(event) {}
 
   function onMouseUp(event) {
     container.removeEventListener('mousemove', onMouseMove, false);
