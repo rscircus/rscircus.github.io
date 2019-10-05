@@ -10,7 +10,7 @@
       body {
         margin: 0;
         padding: 0;
-        background: #000000 url(/globe/loading.gif) center center no-repeat;
+        background: #000000 url(globe/loading.gif) center center no-repeat;
         color: #ffffff;
         font-family: sans-serif;
         font-size: 13px;
@@ -129,14 +129,14 @@
 
     <script
       type="text/javascript"
-      src="/globe/third-party/Detector.js"
+      src="globe/third-party/Detector.js"
     ></script>
     <script
       type="text/javascript"
-      src="/globe/third-party/three.min.js"
+      src="globe/third-party/three.min.js"
     ></script>
-    <script type="text/javascript" src="/globe/third-party/Tween.js"></script>
-    <script type="text/javascript" src="/globe/globe.js"></script>
+    <script type="text/javascript" src="globe/third-party/Tween.js"></script>
+    <script type="text/javascript" src="globe/globe.js"></script>
     <script type="text/javascript">
       if (!Detector.webgl) {
         Detector.addGetWebGLMessage();
@@ -178,7 +178,7 @@
         xhr = new XMLHttpRequest();
         xhr.open(
           'GET',
-          '/ghcn_nasa_aug/ghcn_aug_2019_anomaly_1951_1980_base.json',
+          'https://rscircus.github.io/pages/climate_anomaly/ghcn_nasa_aug/ghcn_aug_2019_anomaly_1951_1980_base.json',
           true,
         );
         xhr.onreadystatechange = function(e) {
