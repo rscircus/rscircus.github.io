@@ -16,6 +16,8 @@ var DAT = DAT || {};
 DAT.Globe = function(container, opts) {
   opts = opts || {};
 
+  var zooming = false;
+
   var colorFn =
     opts.colorFn ||
     function(x) {
@@ -126,6 +128,7 @@ DAT.Globe = function(container, opts) {
 
     mesh = new THREE.Mesh(geometry, material);
     mesh.rotation.y = Math.PI;
+
     scene.add(mesh);
 
     shader = Shaders['atmosphere'];
@@ -142,6 +145,7 @@ DAT.Globe = function(container, opts) {
 
     mesh = new THREE.Mesh(geometry, material);
     mesh.scale.set(1.1, 1.1, 1.1);
+
     scene.add(mesh);
 
     geometry = new THREE.BoxGeometry(0.75, 0.75, 1);
@@ -153,17 +157,22 @@ DAT.Globe = function(container, opts) {
     renderer.setSize(w, h);
 
     renderer.domElement.style.position = 'absolute';
-
     container.appendChild(renderer.domElement);
 
-    container.addEventListener('mousedown', onMouseDown, false);
-    container.addEventListener('mousewheel', onMouseWheel, false);
+    // keyboard:
+    document.addEventListener('keydown', onDocumentKeyDown, false);
+
+    // window resize:
+    window.addEventListener('resize', onWindowResize, false);
+
     // touch devices:
     container.addEventListener('touchstart', onMouseDown, false);
     container.addEventListener('touchmove', onMouseMove, false);
     container.addEventListener('touchend', onMouseUp, false);
-    document.addEventListener('keydown', onDocumentKeyDown, false);
-    window.addEventListener('resize', onWindowResize, false);
+
+    // mouselike devices:
+    container.addEventListener('mousedown', onMouseDown, false);
+    container.addEventListener('mousewheel', onMouseWheel, false);
     container.addEventListener(
       'mouseover',
       function() {
@@ -180,7 +189,7 @@ DAT.Globe = function(container, opts) {
     );
   }
 
-  function addData(data, opts, scaling) {
+  function addData(data, opts, zooming) {
     var lat, lng, size, color, i, step, colorFnWrapper;
 
     opts.animated = opts.animated || false;
@@ -225,7 +234,7 @@ DAT.Globe = function(container, opts) {
       lng = data[i + 1];
       color = colorFnWrapper(data, i);
       size = data[i + 2];
-      size = size < 0 ? -size * scaling : size * scaling; // flip negative scale
+      size = size < 0 ? -size * zooming : size * zooming; // flip negative scale
       size = size > 100 ? 0 : size; // filter errors
       addPoint(lat, lng, size, color, subgeo);
     }
@@ -309,13 +318,20 @@ DAT.Globe = function(container, opts) {
     container.addEventListener('mouseup', onMouseUp, false);
     container.addEventListener('mouseout', onMouseOut, false);
 
-    if (event.touches && event.touches.length === 1) { //one-finger touch
+    // one-finger touch: navigate
+    if (event.touches && event.touches.length === 1) {
       mouseOnDown.x = -event.touches[0].pageX;
       mouseOnDown.y = event.touches[0].pageY;
 
       targetOnDown.x = target.x;
       targetOnDown.y = target.y;
-    } 
+    }
+
+    // two-finger touch: zoom (pinch)
+    if (event.touches && event.touches.length === 2) {
+      zooming = true;
+    }
+
     if (event.button === 0) {
       mouseOnDown.x = -event.clientX;
       mouseOnDown.y = event.clientY;
@@ -328,15 +344,26 @@ DAT.Globe = function(container, opts) {
   }
 
   function onMouseMove(event) {
-    if (event.touches && event.touches.length === 1) { //one-finger touch
+    if (event.touches && event.touches.length === 1) {
+      //one-finger touch
       mouse.x = -event.touches[0].pageX;
       mouse.y = event.touches[0].pageY;
     }
 
-    if (event.button === 0 ) {
+    if (event.button === 0) {
       mouse.x = -event.clientX;
       mouse.y = event.clientY;
     }
+
+    if (zooming && overRenderer) {
+      //two-finger touch
+      zoom(
+        Math.hypot(
+          e.touches[0].pageX - e.touches[1].pageX,
+          e.touches[0].pageY - e.touches[1].pageY,
+        ),
+      );
+    } else {
 
     var zoomDamp = distance / 1000;
 
@@ -345,9 +372,12 @@ DAT.Globe = function(container, opts) {
 
     target.y = target.y > PI_HALF ? PI_HALF : target.y;
     target.y = target.y < -PI_HALF ? -PI_HALF : target.y;
+    }
   }
 
   function onMouseUp(event) {
+    zooming = false;
+
     container.removeEventListener('mousemove', onMouseMove, false);
     container.removeEventListener('mouseup', onMouseUp, false);
     container.removeEventListener('mouseout', onMouseOut, false);
@@ -355,6 +385,8 @@ DAT.Globe = function(container, opts) {
   }
 
   function onMouseOut(event) {
+    zooming = false; // ToDo?
+
     container.removeEventListener('mousemove', onMouseMove, false);
     container.removeEventListener('mouseup', onMouseUp, false);
     container.removeEventListener('mouseout', onMouseOut, false);
