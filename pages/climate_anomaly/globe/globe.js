@@ -344,25 +344,21 @@ DAT.Globe = function(container, opts) {
   }
 
   function onMouseMove(event) {
+    // one-finger touch
     if (event.touches && event.touches.length === 1) {
-      //one-finger touch
       mouse.x = -event.touches[0].pageX;
       mouse.y = event.touches[0].pageY;
     }
 
+    // mouse is moving
     if (event.button === 0) {
       mouse.x = -event.clientX;
       mouse.y = event.clientY;
     }
 
-    if (zooming && overRenderer) {
-      //two-finger touch
-      zoom(
-        Math.hypot(
-          e.touches[0].pageX - e.touches[1].pageX,
-          e.touches[0].pageY - e.touches[1].pageY,
-        )
-      );
+    //two-finger touch
+    if (zooming) {
+      zoom(Math.hypot( e.touches[0].pageX - e.touches[1].pageX, e.touches[0].pageY - e.touches[1].pageY));
     } else {
       var zoomDamp = distance / 1000;
 
