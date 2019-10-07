@@ -354,6 +354,12 @@ DAT.Globe = function(container, opts) {
     } else {
       zoom(5 * ( e.scale - 1 ) ); // zoom in
     }
+
+    zooming = true;
+  });
+
+  hammertime.on('pinchend', function(e) {
+    zooming = false;
   });
 
   function onMouseMove(event) {
