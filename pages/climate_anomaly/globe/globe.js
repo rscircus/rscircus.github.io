@@ -349,10 +349,12 @@ DAT.Globe = function(container, opts) {
 
   // without having a multi-touch device it's horrible to debug, hence easy solution:
   hammertime.on('pinch', function(e) {
-    zoom(e.scale * 0.3);
+    zoom(e.scale * 3);
   });
 
   function onMouseMove(event) {
+    if (zooming) return false;
+
     // one-finger touch
     if (event.touches && event.touches.length === 1) {
       mouse.x = -event.touches[0].pageX;
