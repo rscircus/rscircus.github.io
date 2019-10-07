@@ -349,7 +349,7 @@ DAT.Globe = function(container, opts) {
 
   // without having a multi-touch device it's horrible to debug, hence easy solution:
   hammertime.on('pinch', function(e) {
-    zoom(e.delta);
+    zoom(e.scale * 0.3);
   });
 
   function onMouseMove(event) {
@@ -366,6 +366,7 @@ DAT.Globe = function(container, opts) {
     }
 
     //two-finger touch
+    /*
     if (zooming) {
       zoom(
         Math.hypot(
@@ -373,7 +374,7 @@ DAT.Globe = function(container, opts) {
           e.touches[0].pageY - e.touches[1].pageY,
         ),
       );
-    } else {
+    } else {*/ 
       var zoomDamp = distance / 1000;
 
       target.x = targetOnDown.x + (mouse.x - mouseOnDown.x) * 0.005 * zoomDamp;
@@ -381,7 +382,6 @@ DAT.Globe = function(container, opts) {
 
       target.y = target.y > PI_HALF ? PI_HALF : target.y;
       target.y = target.y < -PI_HALF ? -PI_HALF : target.y;
-    }
   }
 
   function onMouseUp(event) {
