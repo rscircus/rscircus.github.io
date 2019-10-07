@@ -18,7 +18,7 @@ DAT.Globe = function(container, opts) {
 
   var hammertime = new Hammer(container);
   // enable pinch (blocks the element)
-  hammertime.get('pinch').set({ enable: true });
+  hammertime.get('pinch').set({enable: true});
 
   var zooming = false;
 
@@ -349,7 +349,7 @@ DAT.Globe = function(container, opts) {
 
   // without having a multi-touch device it's horrible to debug, hence easy solution:
   hammertime.on('pinch', function(e) {
-    distanceTarget = distanceTarget*scale;
+    distanceTarget = 0.5 * distanceTarget * scale;
     distanceTarget = distanceTarget > 1500 ? 1500 : distanceTarget;
     distanceTarget = distanceTarget < 350 ? 350 : distanceTarget;
   });
@@ -378,14 +378,15 @@ DAT.Globe = function(container, opts) {
           e.touches[0].pageY - e.touches[1].pageY,
         ),
       );
-    } else {*/ 
-      var zoomDamp = distance / 1000;
+    } else {*/
 
-      target.x = targetOnDown.x + (mouse.x - mouseOnDown.x) * 0.005 * zoomDamp;
-      target.y = targetOnDown.y + (mouse.y - mouseOnDown.y) * 0.005 * zoomDamp;
+    var zoomDamp = distance / 1000;
 
-      target.y = target.y > PI_HALF ? PI_HALF : target.y;
-      target.y = target.y < -PI_HALF ? -PI_HALF : target.y;
+    target.x = targetOnDown.x + (mouse.x - mouseOnDown.x) * 0.005 * zoomDamp;
+    target.y = targetOnDown.y + (mouse.y - mouseOnDown.y) * 0.005 * zoomDamp;
+
+    target.y = target.y > PI_HALF ? PI_HALF : target.y;
+    target.y = target.y < -PI_HALF ? -PI_HALF : target.y;
   }
 
   function onMouseUp(event) {
