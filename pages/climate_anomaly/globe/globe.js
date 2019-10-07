@@ -349,9 +349,11 @@ DAT.Globe = function(container, opts) {
 
   // without having a multi-touch device it's horrible to debug, hence easy solution:
   hammertime.on('pinch', function(e) {
-    distanceTarget = 0.5 * distanceTarget * scale;
-    distanceTarget = distanceTarget > 1500 ? 1500 : distanceTarget;
-    distanceTarget = distanceTarget < 350 ? 350 : distanceTarget;
+    if (e.scale < 1) {
+      zoom(25* ( e.scale - 1 ) ); // zoom out
+    } else {
+      zoom(5 * ( e.scale - 1 ) ); // zoom in
+    }
   });
 
   function onMouseMove(event) {
