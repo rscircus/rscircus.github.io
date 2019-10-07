@@ -17,6 +17,8 @@ DAT.Globe = function(container, opts) {
   opts = opts || {};
 
   var hammertime = new Hammer(container);
+  // enable pinch (blocks the element)
+  hammertime.get('pinch').set({ enable: true });
 
   var zooming = false;
 
