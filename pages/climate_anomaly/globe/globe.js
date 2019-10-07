@@ -189,7 +189,7 @@ DAT.Globe = function(container, opts) {
     );
   }
 
-  function addData(data, opts, zooming) {
+  function addData(data, opts, scaling) {
     var lat, lng, size, color, i, step, colorFnWrapper;
 
     opts.animated = opts.animated || false;
@@ -234,7 +234,7 @@ DAT.Globe = function(container, opts) {
       lng = data[i + 1];
       color = colorFnWrapper(data, i);
       size = data[i + 2];
-      size = size < 0 ? -size * zooming : size * zooming; // flip negative scale
+      size = size < 0 ? -size * scaling : size * scaling; // flip negative scale
       size = size > 100 ? 0 : size; // filter errors
       addPoint(lat, lng, size, color, subgeo);
     }
