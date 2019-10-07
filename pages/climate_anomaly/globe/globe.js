@@ -16,6 +16,8 @@ var DAT = DAT || {};
 DAT.Globe = function(container, opts) {
   opts = opts || {};
 
+  var hammertime = new Hammer(container);
+
   var zooming = false;
 
   var colorFn =
@@ -343,6 +345,11 @@ DAT.Globe = function(container, opts) {
     container.style.cursor = 'move';
   }
 
+  // without having a multi-touch device it's horrible to debug, hence easy solution:
+  hammertime.on('pinch', function(e) {
+    zoom(e.delta);
+  });
+
   function onMouseMove(event) {
     // one-finger touch
     if (event.touches && event.touches.length === 1) {
@@ -358,7 +365,12 @@ DAT.Globe = function(container, opts) {
 
     //two-finger touch
     if (zooming) {
-      zoom(Math.hypot( e.touches[0].pageX - e.touches[1].pageX, e.touches[0].pageY - e.touches[1].pageY));
+      zoom(
+        Math.hypot(
+          e.touches[0].pageX - e.touches[1].pageX,
+          e.touches[0].pageY - e.touches[1].pageY,
+        ),
+      );
     } else {
       var zoomDamp = distance / 1000;
 
