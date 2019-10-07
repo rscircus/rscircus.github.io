@@ -348,7 +348,7 @@ DAT.Globe = function(container, opts) {
   }
 
   // without having a multi-touch device it's horrible to debug, hence easy solution:
-  hammertime.on('pinch pinchend', function(e) {
+  hammertime.on('pinch', function(e) {
     zoom(20 * (e.scale - 1));
   });
 
