@@ -361,17 +361,16 @@ DAT.Globe = function(container, opts) {
         Math.hypot(
           e.touches[0].pageX - e.touches[1].pageX,
           e.touches[0].pageY - e.touches[1].pageY,
-        ),
+        )
       );
     } else {
+      var zoomDamp = distance / 1000;
 
-    var zoomDamp = distance / 1000;
+      target.x = targetOnDown.x + (mouse.x - mouseOnDown.x) * 0.005 * zoomDamp;
+      target.y = targetOnDown.y + (mouse.y - mouseOnDown.y) * 0.005 * zoomDamp;
 
-    target.x = targetOnDown.x + (mouse.x - mouseOnDown.x) * 0.005 * zoomDamp;
-    target.y = targetOnDown.y + (mouse.y - mouseOnDown.y) * 0.005 * zoomDamp;
-
-    target.y = target.y > PI_HALF ? PI_HALF : target.y;
-    target.y = target.y < -PI_HALF ? -PI_HALF : target.y;
+      target.y = target.y > PI_HALF ? PI_HALF : target.y;
+      target.y = target.y < -PI_HALF ? -PI_HALF : target.y;
     }
   }
 
