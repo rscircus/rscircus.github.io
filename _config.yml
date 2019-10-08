@@ -11,14 +11,7 @@ description: 'Each virtue and each wisdom needs parading in one’s own time, an
 github:
   repo: 'https://github.com/rscircus'
 
-# Build settings
 markdown: kramdown
-
-# Readme Plugin - defaults
-readme_index:
-  enabled: true
-  remove_originals: false
-  with_frontmatter: false
 
 # Site config
 # paginate: 5
