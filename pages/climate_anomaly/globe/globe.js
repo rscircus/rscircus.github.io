@@ -88,7 +88,7 @@ DAT.Globe = function(container, opts) {
     },
   };
 
-  var camera, scene, renderer, w, h;
+  var camera, user, scene, renderer, w, h;
   var mesh, atmosphere, point;
 
   var overRenderer;
@@ -120,7 +120,7 @@ DAT.Globe = function(container, opts) {
 
     scene = new THREE.Scene();
 
-    var user = new THREE.Group();
+    user = new THREE.Group();
     user.position.set(0, 0, 1500);
     user.add(camera)
 
@@ -495,7 +495,11 @@ DAT.Globe = function(container, opts) {
     camera.position.y = distance * Math.sin(rotation.y);
     camera.position.z = distance * Math.cos(rotation.x) * Math.cos(rotation.y);
 
+    user.position.copy(camera.position);
+    user.lookAt(mesh.position);
+
     camera.lookAt(mesh.position);
+
 
     renderer.render(scene, camera);
   }
