@@ -474,8 +474,7 @@ DAT.Globe = function(container, opts) {
   }
 
   function animate() {
-    requestAnimationFrame(animate);
-    render();
+    renderer.setAnimationLoop( render );
   }
 
   function render() {
@@ -531,8 +530,6 @@ DAT.Globe = function(container, opts) {
   this.createPoints = createPoints;
   this.renderer = renderer;
   this.scene = scene;
-
-  renderer.setAnimationLoop( render );
 
   return this;
 };
