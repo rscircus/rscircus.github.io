@@ -120,12 +120,6 @@ DAT.Globe = function(container, opts) {
 
     scene = new THREE.Scene();
 
-    user = new THREE.Group();
-    user.position.set(0, 0, 1500);
-    user.add(camera)
-
-    scene.add(user);
-
     var geometry = new THREE.SphereGeometry(200, 40, 30);
 
     shader = Shaders['earth'];
@@ -391,10 +385,6 @@ DAT.Globe = function(container, opts) {
     zooming = true;
   });
 
-  hammertime.on('pinchend', function(e) {
-    zooming = false;
-  });
-
   function onMouseMove(event) {
     if (zooming) return false;
 
@@ -495,11 +485,7 @@ DAT.Globe = function(container, opts) {
     camera.position.y = distance * Math.sin(rotation.y);
     camera.position.z = distance * Math.cos(rotation.x) * Math.cos(rotation.y);
 
-    user.position.copy(camera.position);
-    user.lookAt(mesh.position);
-
     camera.lookAt(mesh.position);
-
 
     renderer.render(scene, camera);
   }
