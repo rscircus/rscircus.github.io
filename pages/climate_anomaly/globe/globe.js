@@ -166,12 +166,11 @@ DAT.Globe = function(container, opts) {
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(w, h);
     renderer.domElement.style.position = 'absolute';
+    renderer.vr.enabled = true;
 
     // WebVR:
     container.appendChild(WEBVR.createButton(renderer));
     container.appendChild(renderer.domElement);
-
-    renderer.vr.enabled = true;
 
     // keyboard:
     document.addEventListener('keydown', onDocumentKeyDown, false);
