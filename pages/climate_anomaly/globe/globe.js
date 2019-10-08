@@ -532,5 +532,7 @@ DAT.Globe = function(container, opts) {
   this.renderer = renderer;
   this.scene = scene;
 
+  renderer.setAnimationLoop( render );
+
   return this;
 };
