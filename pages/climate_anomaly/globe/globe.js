@@ -1,6 +1,12 @@
 /**
+ * dat.vr.globe - https://github.com/rscircus/webgl-globe
+ *
+ * @author rscircus
+ *
+ * based on:
  * dat.globe Javascript WebGL Globe Toolkit
  * https://github.com/dataarts/webgl-globe
+ * 
  *
  * Copyright 2011 Data Arts Team, Google Creative Lab
  *
