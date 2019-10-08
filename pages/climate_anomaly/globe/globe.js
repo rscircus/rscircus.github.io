@@ -484,6 +484,10 @@ DAT.Globe = function(container, opts) {
     rotation.y += (target.y - rotation.y) * 0.1;
     distance += (distanceTarget - distance) * 0.3;
 
+    // Correct distance if jump into center after XR on:
+    distanceTarget = distanceTarget > 1500 ? 1500 : distanceTarget;
+    distanceTarget = distanceTarget < 350 ? 0 : distanceTarget;
+
     camera.position.x = distance * Math.sin(rotation.x) * Math.cos(rotation.y);
     camera.position.y = distance * Math.sin(rotation.y);
     camera.position.z = distance * Math.cos(rotation.x) * Math.cos(rotation.y);
