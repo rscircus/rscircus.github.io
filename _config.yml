@@ -14,6 +14,12 @@ github:
 # Build settings
 markdown: kramdown
 
+# Readme Plugin - defaults
+readme_index:
+  enabled: true
+  remove_originals: false
+  with_frontmatter: false
+
 # Site config
 # paginate: 5
 
