@@ -120,6 +120,12 @@ DAT.Globe = function(container, opts) {
 
     scene = new THREE.Scene();
 
+    var user = new THREE.Group();
+    user.position.set(0, 0, 1500);
+    user.add(camera)
+
+    scene.add(user);
+
     var geometry = new THREE.SphereGeometry(200, 40, 30);
 
     shader = Shaders['earth'];
@@ -481,10 +487,6 @@ DAT.Globe = function(container, opts) {
   function render() {
     zoom(curZoomSpeed);
 
-    // Correct distance if jump into center after XR on:
-    distanceTarget = distanceTarget > 1500 ? 1500 : distanceTarget;
-    distanceTarget = distanceTarget < 350 ? 0 : distanceTarget;
-
     rotation.x += (target.x - rotation.x) * 0.1;
     rotation.y += (target.y - rotation.y) * 0.1;
     distance += (distanceTarget - distance) * 0.3;
@@ -492,11 +494,6 @@ DAT.Globe = function(container, opts) {
     camera.position.x = distance * Math.sin(rotation.x) * Math.cos(rotation.y);
     camera.position.y = distance * Math.sin(rotation.y);
     camera.position.z = distance * Math.cos(rotation.x) * Math.cos(rotation.y);
-
-    // Debug:
-    if ( camera.position.z == 0 ) {
-      camera.position.z = 1500;
-    }
 
     camera.lookAt(mesh.position);
 
