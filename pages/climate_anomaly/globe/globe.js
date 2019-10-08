@@ -19,7 +19,6 @@
 var DAT = DAT || {};
 
 DAT.Globe = function(container, opts) {
-
   opts = opts || {};
 
   var hammertime = new Hammer(container);
@@ -164,12 +163,12 @@ DAT.Globe = function(container, opts) {
     point = new THREE.Mesh(geometry);
 
     renderer = new THREE.WebGLRenderer({antialias: true});
-    renderer.setPixelRatio( window.devicePixelRatio );
+    renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(w, h);
     renderer.domElement.style.position = 'absolute';
 
     // WebVR:
-    container.appendChild( WEBVR.createButton( renderer ));
+    container.appendChild(WEBVR.createButton(renderer));
     container.appendChild(renderer.domElement);
 
     renderer.vr.enabled = true;
@@ -307,15 +306,15 @@ DAT.Globe = function(container, opts) {
       scene.add(this.points);
     }
     */
-        this.points = new THREE.Mesh(
-          this._baseGeometry,
-          new THREE.MeshBasicMaterial({
-            color: 0xffffff,
-            vertexColors: THREE.FaceColors,
-            morphTargets: false,
-          }),
-        );
-      scene.add(this.points);
+    this.points = new THREE.Mesh(
+      this._baseGeometry,
+      new THREE.MeshBasicMaterial({
+        color: 0xffffff,
+        vertexColors: THREE.FaceColors,
+        morphTargets: false,
+      }),
+    );
+    scene.add(this.points);
   }
 
   function addPoint(lat, lng, size, color, subgeo) {
@@ -379,9 +378,9 @@ DAT.Globe = function(container, opts) {
   // without having a multi-touch device it's horrible to debug, hence easy solution:
   hammertime.on('pinch', function(e) {
     if (e.scale < 1) {
-      zoom(25* ( e.scale - 1 ) ); // zoom out
+      zoom(25 * (e.scale - 1)); // zoom out
     } else {
-      zoom(5 * ( e.scale - 1 ) ); // zoom in
+      zoom(5 * (e.scale - 1)); // zoom in
     }
 
     zooming = true;
