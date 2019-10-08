@@ -163,6 +163,7 @@ DAT.Globe = function(container, opts) {
     point = new THREE.Mesh(geometry);
 
     renderer = new THREE.WebGLRenderer({antialias: true});
+    renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(w, h);
     renderer.domElement.style.position = 'absolute';
     renderer.vr.enabled = true;
@@ -474,7 +475,7 @@ DAT.Globe = function(container, opts) {
   }
 
   function animate() {
-    renderer.setAnimationLoop( render );
+    renderer.setAnimationLoop(render);
   }
 
   function render() {
