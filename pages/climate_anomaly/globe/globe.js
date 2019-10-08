@@ -164,13 +164,13 @@ DAT.Globe = function(container, opts) {
     point = new THREE.Mesh(geometry);
 
     renderer = new THREE.WebGLRenderer({antialias: true});
+    renderer.setPixelRatio( window.devicePixelRatio );
     renderer.setSize(w, h);
-
     renderer.domElement.style.position = 'absolute';
-    container.appendChild(renderer.domElement);
 
     // WebVR:
-    container.appendChild( THREE.WEBVR.createButton( renderer ));
+    container.appendChild( WEBVR.createButton( renderer ));
+    container.appendChild(renderer.domElement);
 
     renderer.vr.enabled = true;
 
