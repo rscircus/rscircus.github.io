@@ -6,7 +6,7 @@
  * based on:
  * dat.globe Javascript WebGL Globe Toolkit
  * https://github.com/dataarts/webgl-globe
- * 
+ *
  *
  * Copyright 2011 Data Arts Team, Google Creative Lab
  *
@@ -16,10 +16,10 @@
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  */
-
 var DAT = DAT || {};
 
 DAT.Globe = function(container, opts) {
+
   opts = opts || {};
 
   var hammertime = new Hammer(container);
@@ -169,6 +169,11 @@ DAT.Globe = function(container, opts) {
     renderer.domElement.style.position = 'absolute';
     container.appendChild(renderer.domElement);
 
+    // WebVR:
+    container.appendChild( THREE.WEBVR.createButton( renderer ));
+
+    renderer.vr.enabled = true;
+
     // keyboard:
     document.addEventListener('keydown', onDocumentKeyDown, false);
 
@@ -219,6 +224,7 @@ DAT.Globe = function(container, opts) {
       throw 'error: format not supported: ' + opts.format;
     }
 
+    /* TODO: Reintegrate the animated version
     if (opts.animated) {
       if (this._baseGeometry === undefined) {
         this._baseGeometry = new THREE.Geometry();
@@ -238,6 +244,7 @@ DAT.Globe = function(container, opts) {
       }
       opts.name = opts.name || 'morphTarget' + this._morphTargetId;
     }
+    */
     var subgeo = new THREE.Geometry();
     for (i = 0; i < data.length; i += step) {
       lat = data[i];
@@ -248,6 +255,8 @@ DAT.Globe = function(container, opts) {
       size = size > 100 ? 0 : size; // filter errors
       addPoint(lat, lng, size, color, subgeo);
     }
+
+    /* TODO: Reintegrate the animated version
     if (opts.animated) {
       this._baseGeometry.morphTargets.push({
         name: opts.name,
@@ -256,9 +265,13 @@ DAT.Globe = function(container, opts) {
     } else {
       this._baseGeometry = subgeo;
     }
+    */
+
+    this._baseGeometry = subgeo;
   }
 
   function createPoints() {
+    /* TODO: Reintegrate the animated version
     if (this._baseGeometry !== undefined) {
       if (this.is_animated === false) {
         this.points = new THREE.Mesh(
@@ -293,6 +306,16 @@ DAT.Globe = function(container, opts) {
       }
       scene.add(this.points);
     }
+    */
+        this.points = new THREE.Mesh(
+          this._baseGeometry,
+          new THREE.MeshBasicMaterial({
+            color: 0xffffff,
+            vertexColors: THREE.FaceColors,
+            morphTargets: false,
+          }),
+        );
+      scene.add(this.points);
   }
 
   function addPoint(lat, lng, size, color, subgeo) {
@@ -477,6 +500,7 @@ DAT.Globe = function(container, opts) {
   init();
   this.animate = animate;
 
+  /* TODO: Reintroduce
   this.__defineGetter__('time', function() {
     return this._time || 0;
   });
@@ -504,6 +528,7 @@ DAT.Globe = function(container, opts) {
     this.points.morphTargetInfluences[index] = leftover;
     this._time = t;
   });
+  */
 
   this.addData = addData;
   this.createPoints = createPoints;
