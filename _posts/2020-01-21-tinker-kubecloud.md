@@ -175,7 +175,7 @@ We set up a cluster using HypriotOS and configured DHCP and NAT. Further we have
 
 ## k3sup
 
-[k3sup](https://github.com/alexellis/k3sup) makes bootstrapping kubernetes very easy. It is a static Go binary, hence installing is basically copying it.
+[k3sup](https://github.com/alexellis/k3sup) makes bootstrapping kubernetes very easy. It is a static Go binary. Hence, installing is basically copying it.
 
 The following chapter will be a bit more detailed as this is not standard admin stuff.
 
@@ -242,10 +242,9 @@ In the end the cat prints out how `k3s` is configured on the master Pi. We can a
 ```
 sudo kubectl get node -o wide
 ```
+or executing it locally on our laptop, if we have `kubectl` installed. Sans `sudo` in the latter case.
 
-which should show you some Docker-ish summary of k8s.
-
-To summarize what just happened: `k3sup` installed Rancher's k3s + a bunch of scripts on the master Pi. If you mess things up, going back to normal is basically `sudo k3-uninstall.sh`. As we witnessed, `k3sup` somehow determined what variant of `k3s` had to be installed with the given hardware (`armhf`), which is a nice thing. Further we received a kubeconfig which was also stored locally. I trimmed this away above. The kubeconfig also sits in `/etc/rancher/k3s/k3s.yaml` on the master Pi.
+This should show us some Docker-ish summary of k8s. To summarize what just happened: `k3sup` installed Rancher's k3s + a bunch of scripts on the master Pi. If you mess things up, going back to normal is basically `sudo k3-uninstall.sh`. As we witnessed, `k3sup` somehow determined what variant of `k3s` had to be installed with the given hardware (`armhf`), which is a nice thing. Further we received a kubeconfig which was also stored locally. I trimmed this away above. The kubeconfig also sits in `/etc/rancher/k3s/k3s.yaml` on the master Pi.
 
 Now, back on our laptop, we join the other agents/nodes to our cluster:
 
@@ -322,7 +321,9 @@ for me.
 
 At this point it looks like something is broken here. As there are two lines containing: `error: must specify one of -f and -k`, which means: Have a look at the code, what the heck is going on here. For now I simply ignore it and note down to maybe help out at the repo (TODO).
 
-Trying the recommendations to `kubectl proxy` the dashboard to our localhost (laptop), however, results in a functioning Kubernetes Dashboard
+Trying the recommendations to `kubectl proxy` the dashboard to our localhost (laptop), however, results in a seemingly functioning Kubernetes Dashboard:
+
+![](https://rscircus.github.io/assets/img/20200121_KubernetesDashboard.png)
 
 
 To get the token we can:
@@ -340,6 +341,27 @@ The connection to the server localhost:8080 was refused - did you specify the ri
 ```.
 
 At this point it is pretty likely that `k3sup` is clashing with `HypriotOS` considering the `kubernetes-dashboard` installation.
+
+![](https://rscircus.github.io/assets/img/20200121_KubernetesFail.png)
+
+
+### Cleaning up
+
+At this point in time, it's time to see if we can clean up. (TODO: Diff the whole image maybe?)
+
+On the master Pi we proceed by:
+
+```
+k3s-killall.sh && k3s-uninstall.sh
+```
+
+And the agents/nodes:
+
+```
+k3s-killall.sh && k3s-agent-uninstall.sh
+```
+
+which looks rather robust.
 
 ## Conclusion
 
