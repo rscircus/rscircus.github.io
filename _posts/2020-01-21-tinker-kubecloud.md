@@ -163,7 +163,7 @@ sudo service isc-dhcp-server restart
 
 ## Conclusion
 
-We set up a cluster using HypriotOs and configured DHCP and NAT. Further we have a static topology now with an up to date state of everything. In the next update of this blog post we use Alex Ellis' [k3sup](https://github.com/alexellis/k3sup) to get Rancher's minimal [k3s](https://k3s.io/) working by following with an [OpenFaas](https://www.openfaas.com/) setup.
+We set up a cluster using HypriotOs and configured DHCP and NAT. Further we have a static topology now with an up to date state of everything. In the next update of this blog post we use Alex Ellis' [k3sup](https://github.com/alexellis/k3sup) to get Rancher's minimal [k3s](https://k3s.io/) working by following with an [OpenFaas](https://www.openfaas.com/) setup. Potentially we also intro how to administer this cluster using [Ansible](https://www.ansible.com/).
 
 ## Sources
 
