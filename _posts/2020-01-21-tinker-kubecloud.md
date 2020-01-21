@@ -260,6 +260,8 @@ Error: unable to connect to 192.168.2.101:22 over ssh: ssh: handshake failed: ss
 
 which means that we didn't copy our ssh key over with `ssh-copy-id` (see above). If everything went fine we see four entries in the return from `sudo kubectl get node -o wide`.
 
+At this point we can deploy stuff on Kubernetes if we want to. 😊
+
 ### Kubernetes Dashboard
 
 To get an overview of the state of our kubernetes cluster, we install the dashboard.
