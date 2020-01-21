@@ -23,7 +23,7 @@
 */
 
 body {
-  color: rgba(255,255,255,.75);
+  color: $sidebar-text-color;
   background-color: $sidebar-bg-color;
   display: flex;
   flex-direction: column;
@@ -39,14 +39,8 @@ body {
     font-family: $root-font-family;
     font-weight: bold;
     font-size: $large-font-size;
-    color: rgba(255,255,255,.75);
     margin-top: 0;
     margin-bottom: $heading-spacing;
-
-    a {
-      color: inherit;
-      &:hover { color: $sidebar-title-color; }
-    }
 
     .back-arrow { margin-right: 0.5rem; }
   }
