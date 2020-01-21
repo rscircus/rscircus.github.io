@@ -470,7 +470,7 @@ faas-cli store deploy figlet \
 Thanks for using k3sup!
 ```
 
-Also giving us some hints for the next steps. Following Alex' manual: [Will it cluster?](https://blog.alexellis.io/test-drive-k3s-on-raspberry-pi/) we move on. We install `faas-cli` as described above. Following that we forward the gateway to the laptop we're sitting at. Also we pass on the password to `faas-cli` using the two following commands and also login with the `admin:$PASSWORD` pair into the frontend, which looks like this (after figlet was deployed without taking care of the platform 🤦‍♀):
+Also giving us some hints for the next steps. Using Alex' manual: [Will it cluster?](https://blog.alexellis.io/test-drive-k3s-on-raspberry-pi/) and the console output as rough guidance we move on. We install `faas-cli` as described above. Following that we forward the gateway to the laptop we're sitting at. Also we pass on the password to `faas-cli` using the two following commands and also login with the `admin:$PASSWORD` pair into the frontend, which looks like this (after figlet was deployed without taking care of the platform 🤦‍♀):
 
 ![](https://rscircus.github.io/assets/img/20200121_openfaas.png)
 
