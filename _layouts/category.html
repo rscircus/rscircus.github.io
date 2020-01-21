@@ -3,19 +3,37 @@ layout: page
 ---
 
 {% unless page.content == '' %}
-  {{ content }}
+{{ content }}
 {% endunless %}
 
-<ul class="posts-list">
-  {% assign category = page.category | default: page.title %}
-  {% for post in site.categories[category] %}
-    <li>
-      <h3>
+{% assign category = page.category | default: page.title %}
+{% for post in site.categories[category] %}
+<article class="post-body">
+    <h2 class="post-title">
         <a href="{{ post.url | relative_url }}">
-          {{ post.title }}
-          <small>{{ post.date | date_to_string }}</small>
+            {{ post.title }}
         </a>
-      </h3>
-    </li>
-  {% endfor %}
-</ul>
+    </h2>
+    {% include post-meta.html post=post %}
+
+    {% if post.excerpt %}
+    {{ post.excerpt }}
+    {% else %}
+    {{ post.content }}
+    {% endif %}
+
+    {% if post.excerpt %}
+    {% comment %}Excerpt may be equal to content. Check.{% endcomment %}
+    {% capture content_words %}
+    {{ post.content | number_of_words }}
+    {% endcapture %}
+    {% capture excerpt_words %}
+    {{ post.excerpt | number_of_words }}
+    {% endcapture %}
+
+    {% if content_words != excerpt_words %}
+    <a href="{{ post.url | relative_url }}">More &hellip;</a>
+    {% endif %}
+    {% endif %}
+</article>
+{% endfor %}
