@@ -68,7 +68,16 @@ sudo nmap -sn 192.168.1.0/24
 
 This should give us the correct ip/name.
 
-After selecting one of the nodes as master node, we log into it and clean up.
+After selecting one of the nodes as master node, we log into it 
+
+The default login data are:
+
+```
+user: pirate
+pass: hypriot
+```
+
+clean up:
 
 ``` 
 sudo apt remove --purge cloud-init
