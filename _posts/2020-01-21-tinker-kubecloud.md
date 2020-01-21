@@ -276,6 +276,8 @@ sudo apt-get update
 sudo apt-get install -y kubectl
 ```
 
+Then let's see if we can have it with one go.
+
 ```
 k3sup app install kubernetes-dashboard
 ```
