@@ -169,7 +169,7 @@ ssh-copy-id pirate@192.168.2.1 # and so on...
 
 It will come in handy later with k3sup and while maintaining the thing.
 
-## Intermission (previous Conclusion)
+## Intermission (former Conclusion)
 
 We set up a cluster using HypriotOS and configured DHCP and NAT. Further we have a static topology now with an up to date state of everything. In the next update of this blog post we use Alex Ellis' [k3sup](https://github.com/alexellis/k3sup) to get Rancher's minimal [k3s](https://k3s.io/) working by following with an [OpenFaas](https://www.openfaas.com/) setup. Potentially we also intro how to administer this cluster using [Ansible](https://www.ansible.com/).
 
@@ -367,9 +367,207 @@ k3s-killall.sh && k3s-agent-uninstall.sh
 
 which looks rather robust.
 
-## Conclusion
+## Intermission (former Conclusion)
 
-We used `k3sup` to set up a Kubernetes cluster which worked out nicely. Unfortunately we failed to install the `kubernetes-dashboard` using `k3sup` and have to debug what is going on there. Most likely a simple authorization problem. Further, it has to be mentioned that `k3sup` is a one-way route, as there is no direct way to uninstall things using `k3sup` as far as I see.
+We used `k3sup` to set up a Kubernetes cluster which worked out nicely. Unfortunately we failed to install the `kubernetes-dashboard` using `k3sup` and have to debug what is going on there. Most likely a simple authorization problem. Further, it has to be mentioned that `k3sup` is a one-way route, as there is no direct way to uninstall things using `k3sup` as far as I see. However, as things are really lightweight it seems to be OK enough to use the uninstall scripts.
+
+## OpenFaaS
+
+After setting up k3sup again, which is rather easy, described above or using a shell script we attempt to install OpenFaaS now and deploy a figlet. If you are wondering what a figlet is, I do, too. [This probably has a few hints.](https://www.openfaas.com/blog/kubernetes-operator-crd/).
+
+Nevertheless, we have k3s everywhere and kubectl get nodes shows a reasonable cluster again.
+
+We start with
+
+```
+k3sup app install openfaas
+```
+
+And party on! 😊 Everything works out of the box:
+
+```
+Using kubeconfig: /home/rawland/kubeconfig
+armNode architecture: "arm"
+x86_64
+Linux
+Client: "x86_64", "Linux"
+2020/01/21 18:22:32 User dir established as: /home/rawland/.k3sup/
+"openfaas" has been added to your repositories
+Hang tight while we grab the latest from your chart repositories...
+...Skip local chart repository
+...Successfully got an update from the "openfaas" chart repository
+...Successfully got an update from the "stable" chart repository
+Update Complete.
+namespace/openfaas created
+namespace/openfaas-fn created
+secret/basic-auth created
+wrote /tmp/charts/openfaas/rendered/openfaas/templates/alertmanager-cfg.yaml
+wrote /tmp/charts/openfaas/rendered/openfaas/templates/prometheus-cfg.yaml
+wrote /tmp/charts/openfaas/rendered/openfaas/templates/controller-rbac.yaml
+wrote /tmp/charts/openfaas/rendered/openfaas/templates/prometheus-rbac.yaml
+wrote /tmp/charts/openfaas/rendered/openfaas/templates/alertmanager-svc.yaml
+wrote /tmp/charts/openfaas/rendered/openfaas/templates/basic-auth-plugin-svc.yaml
+wrote /tmp/charts/openfaas/rendered/openfaas/templates/gateway-external-svc.yaml
+wrote /tmp/charts/openfaas/rendered/openfaas/templates/gateway-svc.yaml
+wrote /tmp/charts/openfaas/rendered/openfaas/templates/nats-svc.yaml
+wrote /tmp/charts/openfaas/rendered/openfaas/templates/prometheus-svc.yaml
+wrote /tmp/charts/openfaas/rendered/openfaas/templates/alertmanager-dep.yaml
+wrote /tmp/charts/openfaas/rendered/openfaas/templates/basic-auth-plugin-dep.yaml
+wrote /tmp/charts/openfaas/rendered/openfaas/templates/faas-idler-dep.yaml
+wrote /tmp/charts/openfaas/rendered/openfaas/templates/gateway-dep.yaml
+wrote /tmp/charts/openfaas/rendered/openfaas/templates/nats-dep.yaml
+wrote /tmp/charts/openfaas/rendered/openfaas/templates/prometheus-dep.yaml
+wrote /tmp/charts/openfaas/rendered/openfaas/templates/queueworker-dep.yaml
+configmap/alertmanager-config created
+deployment.apps/alertmanager created
+service/alertmanager created
+deployment.apps/basic-auth-plugin created
+service/basic-auth-plugin created
+serviceaccount/openfaas-controller created
+role.rbac.authorization.k8s.io/openfaas-controller created
+rolebinding.rbac.authorization.k8s.io/openfaas-controller created
+deployment.apps/faas-idler created
+deployment.apps/gateway created
+service/gateway-external created
+service/gateway created
+deployment.apps/nats created
+service/nats created
+configmap/prometheus-config created
+deployment.apps/prometheus created
+serviceaccount/openfaas-prometheus created
+role.rbac.authorization.k8s.io/openfaas-prometheus created
+rolebinding.rbac.authorization.k8s.io/openfaas-prometheus created
+service/prometheus created
+deployment.apps/queue-worker created
+=======================================================================
+= OpenFaaS has been installed.                                        =
+=======================================================================
+
+# Get the faas-cli
+curl -SLsf https://cli.openfaas.com | sudo sh
+
+# Forward the gateway to your machine
+kubectl rollout status -n openfaas deploy/gateway
+kubectl port-forward -n openfaas svc/gateway 8080:8080 &
+
+# If basic auth is enabled, you can now log into your gateway:
+PASSWORD=$(kubectl get secret -n openfaas basic-auth -o jsonpath="{.data.basic-auth-password}" | base64 --decode; echo)
+echo -n $PASSWORD | faas-cli login --username admin --password-stdin
+
+faas-cli store deploy figlet
+faas-cli list
+
+# For Raspberry Pi
+faas-cli store list \
+ --platform armhf
+
+faas-cli store deploy figlet \
+ --platform armhf
+
+# Find out more at:
+# https://github.com/openfaas/faas
+
+Thanks for using k3sup!
+```
+
+Also giving us some hints for the next steps. Following Alex' manual: [Will it cluster?](https://blog.alexellis.io/test-drive-k3s-on-raspberry-pi/) we move on. We install `faas-cli` as described above. Following that we forward the gateway to the laptop we're sitting at. Also we pass on the password to `faas-cli` using the two following commands and also login with the `admin:$PASSWORD` pair into the frontend, which looks like this (after figlet was deployed):
+
+TBD
+
+Now, let's look what is in store for the `armhf` platform:
+
+```
+faas-cli store list --platform armhf
+```
+
+Here we finally find the answer, what a 'figlet' is:
+
+```
+FUNCTION                    DESCRIPTION
+NodeInfo                    Get info about the machine that you'r...
+Figlet                      Generate ASCII logos with the figlet CLI
+SSL/TLS cert info           Returns SSL/TLS certificate informati...
+YouTube Video Downloader    Download YouTube videos as a function
+OpenFaaS Text-to-Speech     Generate an MP3 of text using Google'...
+nslookup                    Uses nslookup to return any IP addres...
+Docker Image Manifest Query Query an image on the Docker Hub for ...
+Left-Pad                    left-pad on OpenFaaS
+Identicon Generator         Create an identicon from a provided s...
+```
+
+Let's deploy it:
+
+```
+1> faas-cli store deploy figlet --platform=armhf
+WARNING! Communication is not secure, please consider using HTTPS. Letsencrypt.org offers free SSL/TLS certificates.
+Handling connection for 8080
+Handling connection for 8080
+
+Deployed. 202 Accepted.
+URL: http://127.0.0.1:8080/function/figlet
+```
+
+Note, that we attached a `--platform=armhf` to the deployment compared to the help after `k3sup`s hints! Now, let's see if we are there:
+
+```
+1> faas-cli list
+Handling connection for 8080
+Function                        Invocations     Replicas
+figlet                          0               1
+```
+
+Here we are. Let's test it. We can go two routes now. First we can invoke the function directly:
+
+```
+1> faas invoke figlet
+Reading from STDIN - hit (Control + D) to stop.
+I love ARM!
+Handling connection for 8080
+ ___   _                     _    ____  __  __ _ 
+|_ _| | | _____   _____     / \  |  _ \|  \/  | |
+ | |  | |/ _ \ \ / / _ \   / _ \ | |_) | |\/| | |
+ | |  | | (_) \ V /  __/  / ___ \|  _ <| |  | |_|
+|___| |_|\___/ \_/ \___| /_/   \_\_| \_\_|  |_(_)
+```
+
+That looks good. 😊
+
+Or let's pass input directly:
+
+```
+1> echo -n "I like $(uname -m)" | faas invoke figlet -g localhost:8080/function/figlet                                                                                           ↻  ⎇  ~/src/openfaas@elephantsdream
+Handling connection for 8080
+ ___   _ _ _               ___   __      __   _  _   
+|_ _| | (_) | _____  __  _( _ ) / /_    / /_ | || |  
+ | |  | | | |/ / _ \ \ \/ / _ \| '_ \  | '_ \| || |_ 
+ | |  | | |   <  __/  >  < (_) | (_) | | (_) |__   _|
+|___| |_|_|_|\_\___| /_/\_\___/ \___/___\___/   |_|  
+                                   |_____|     
+```
+
+And finally, let's curl it:
+
+```
+1> echo -n "I'm OK with armv8" | curl --data-binary @- http://localhost:8080/function/figlet
+Handling connection for 8080
+ ___ _              ___  _  __           _ _   _     
+|_ _( )_ __ ___    / _ \| |/ / __      _(_) |_| |__  
+ | ||/| '_ ` _ \  | | | | ' /  \ \ /\ / / | __| '_ \ 
+ | |  | | | | | | | |_| | . \   \ V  V /| | |_| | | |
+|___| |_| |_| |_|  \___/|_|\_\   \_/\_/ |_|\__|_| |_|
+                                                     
+                           ___  
+  __ _ _ __ _ __ _____   _( _ ) 
+ / _` | '__| '_ ` _ \ \ / / _ \ 
+| (_| | |  | | | | | \ V / (_) |
+ \__,_|_|  |_| |_| |_|\_/ \___/ 
+                                
+```
+
+Great success!
+
+
+
 
 ## Sources
 
