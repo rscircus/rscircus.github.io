@@ -470,9 +470,9 @@ faas-cli store deploy figlet \
 Thanks for using k3sup!
 ```
 
-Also giving us some hints for the next steps. Following Alex' manual: [Will it cluster?](https://blog.alexellis.io/test-drive-k3s-on-raspberry-pi/) we move on. We install `faas-cli` as described above. Following that we forward the gateway to the laptop we're sitting at. Also we pass on the password to `faas-cli` using the two following commands and also login with the `admin:$PASSWORD` pair into the frontend, which looks like this (after figlet was deployed):
+Also giving us some hints for the next steps. Following Alex' manual: [Will it cluster?](https://blog.alexellis.io/test-drive-k3s-on-raspberry-pi/) we move on. We install `faas-cli` as described above. Following that we forward the gateway to the laptop we're sitting at. Also we pass on the password to `faas-cli` using the two following commands and also login with the `admin:$PASSWORD` pair into the frontend, which looks like this (after figlet was deployed without taking care of the platform 🤦‍♀):
 
-TBD
+![](../assets/img/20200121_openfaas.png)
 
 Now, let's look what is in store for the `armhf` platform:
 
@@ -565,6 +565,14 @@ Handling connection for 8080
 ```
 
 Great success!
+
+## Conclusion
+
+We deployed openfaas and installed the `faas-cli` CLI program on our laptop. Then we rolled out the gateway and proxied it to our laptop such that we could access it locally.
+
+Armed with this we deployed one function from the store and tested it by various means. Finally for the next time, let's see if we can expand our setup and diagnose the system in depth.
+
+
 
 
 
