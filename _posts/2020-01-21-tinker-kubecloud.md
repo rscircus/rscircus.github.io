@@ -338,7 +338,7 @@ on the master Pi, as the defaults following the manual on the laptop fail with:
 0> kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep default-token | awk '{print $1}')
 The connection to the server localhost:8080 was refused - did you specify the right host or port?
 The connection to the server localhost:8080 was refused - did you specify the right host or port?
-```.
+```
 
 At this point it is pretty likely that `k3sup` is clashing with `HypriotOS` considering the `kubernetes-dashboard` installation.
 
