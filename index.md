@@ -17,7 +17,7 @@ Musings on a great variety of subjects mainly revolving around **Linux**, **prog
 
 **My own projects**
 
-- [kubernetes on RaspberryPi 3B+](https://rscircus.github.io/2020/01/21/tinker-kubecloud.html) - Kubernetes on a RaspberryPi cluster.
+- [Kubernetes on RaspberryPi 3B+](https://rscircus.github.io/2020/01/21/tinker-kubecloud.html) - k3s on a RaspberryPi cluster.
 - [Open Source hearing aid](https://rscircus.github.io) - To be published
 
 <p style="text-align: right">🖤</p>
