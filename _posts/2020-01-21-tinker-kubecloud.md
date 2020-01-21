@@ -33,7 +33,7 @@ Power comes over PoE which the router can provide. Chose whatever you like. I've
 
 and it looks like this:
 
-TBD
+![](https://rscircus.github.io/assets/img/MVIMG_20200121_122335.jpg)
 
 ## Software
 
