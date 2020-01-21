@@ -114,7 +114,7 @@ This will show us `routes` , `dns` , `domain` and `gateway` infos. Besides other
 
 Having our flash tool and config files prepared in the step above, things will get easier. I promise.
 
-Next we flash our next SD card without WLAN. After putting it back into the slave Pi we connect the slave Pi to the router with the cable and log into the master pi from our laptop. The master pi should have assigned an IP to the new slave Pi and we should be able to find it now (with nmap).
+Next we flash our next sd-card without WLAN. After putting it back into the slave Pi we connect the slave Pi to the router with the cable and log into the master pi from our laptop. The master pi should have assigned an IP to the new slave Pi and we should be able to find it now (with nmap).
 
 Jumphosting from the masternode into the slave now we clean up the installation again:
 
@@ -139,7 +139,7 @@ sudo hostnamectl set-hostname kubemaster-pi
 I've chosen the characters from [Pirates of the Caribean](https://en.wikipedia.org/wiki/List_of_Pirates_of_the_Caribbean_characters). Here a selection: 'beckett', 'dalma', 'norrington'.
 
 And now we update the dhcp conf file on the master node to assign a static IP to the slave node such that every time the cluster reboots we have the same network topology.
-Considering that we might have to move around in the cluster this makes stuff easier. Actually I even noted the IP on the sd card of each and every node with a permanent pen.
+Considering that we might have to move around in the cluster this will ease the hassle. Actually I even noted the IP on the sd-card of each and every node with a permanent pen.
 
 Keeping in mind that we have to restart the dhcp server every time after modifications:
 
