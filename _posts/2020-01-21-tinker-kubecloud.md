@@ -147,7 +147,7 @@ sudo apt-get upgrade
 Following that we assign a new hostname:
 
 ``` 
-sudo hostnamectl set-hostname kubemaster-pi
+sudo hostnamectl set-hostname blackbeard
 ```
 
 I've chosen the characters from [Pirates of the Caribean](https://en.wikipedia.org/wiki/List_of_Pirates_of_the_Caribbean_characters). Here a selection: 'beckett', 'dalma', 'norrington'.
