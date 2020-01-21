@@ -1,6 +1,7 @@
 ---
 title: Home
 layout: page
+sidebar_link: true
 ---
 
 Musings on a great variety of subjects mainly revolving around **Linux**, **programming**, **diy-electronics** and **accessibilty**.
