@@ -41,7 +41,7 @@ and it looks like this:
 
 As HypriotOS has docker already included, I was rooting for HypriotOs at the time of creation.
 
-There is one pretty nice tutorial by them https://blog.hypriot.com/post/setup-kubernetes-raspberry-pi-cluster/ which assumes you are already connected to the tiny black-pearl.
+There is one pretty nice tutorial by them [https://blog.hypriot.com/post/setup-kubernetes-raspberry-pi-cluster/](https://blog.hypriot.com/post/setup-kubernetes-raspberry-pi-cluster/) which assumes you are already connected to the tiny black-pearl.
 Following that tutorial one sets up kubernetes in all its glory and resource hunger. It sucks. Don't do this. The note in my research journal from the time I did this reads: "Kubernetes seems to be rather hungry. Maybe I'll add a new masternode in the near future."
 
 We start from first principles today.
