@@ -1,6 +1,9 @@
 ---
 layout: post
 title:  "k3sup on HypriotOS / RaspberryPi 3B+"
+sub_title: "Setting up a kubernetes cluster at home"
+categories:
+  - Tinker
 ---
 
 # Motivation
