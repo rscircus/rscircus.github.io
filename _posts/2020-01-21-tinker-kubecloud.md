@@ -175,9 +175,9 @@ We set up a cluster using HypriotOS and configured DHCP and NAT. Further we have
 
 ## k3sup
 
-[k3sup](https://github.com/alexellis/k3sup) makes bootstrapping kubernetes very easy. It is a static Go binary. Hence, installing is basically copying it.
+The following chapter will be a bit more detailed as this is not standard admin stuff. Even though I know people who claim this is the case, but then there is [memenetes](https://twitter.com/memenetes). To me it still feels pretty new. 🤷‍♀️
 
-The following chapter will be a bit more detailed as this is not standard admin stuff.
+[k3sup](https://github.com/alexellis/k3sup) makes bootstrapping kubernetes very easy. It is a static Go binary. Hence, installing is basically copying it.
 
 First we install k3sup on our laptop which is connected to the master Pi.
 
@@ -186,7 +186,7 @@ curl -sLS https://get.k3sup.dev | sh
 sudo install k3sup /usr/local/bin/
 ```
 
-Our master Pi from above will be the Kubernetes Agent and the nodes will be the agents to our Kubernetes server.
+Our master Pi from above will be the Kubernetes master and the nodes will be the agents to our Kubernetes.
 
 First the master:
 
