@@ -15,7 +15,7 @@ tags:
 
 > I hear and I forget. I see and I remember. I do and I understand.
 
-Disclaimer: This is a work in progress!
+_Disclaimer: This is a work in progress!_
 
 
 ## Hardware
@@ -167,7 +167,7 @@ We set up a cluster using HypriotOs and configured DHCP and NAT. Further we have
 
 ## Sources
 
-* https://blog.hypriot.com/
-* https://kubedge.cloud/
-* https://blog.alexellis.io/
+* [https://blog.hypriot.com/](https://blog.hypriot.com)
+* [https://kubedge.cloud](https://kubedge.cloud)
+* [https://blog.alexellis.io](https://blog.alexellis.io)
 
