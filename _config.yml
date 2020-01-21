@@ -30,8 +30,7 @@ defaults:
       excerpt_separator: <!-- more -->
       layout: post
 
-# Site config
-# paginate: 5
+paginate: 5
 
 # TODO: Adapt local Jekyll config:
 # # Dependencies
