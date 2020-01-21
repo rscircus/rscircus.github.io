@@ -11,11 +11,12 @@ tags:
   - RaspberryPi
 ---
 
-# Motivation
+## Motivation
 
 > I hear and I forget. I see and I remember. I do and I understand.
 
 Disclaimer: This is a work in progress!
+
 
 ## Hardware
 
@@ -35,6 +36,7 @@ and it looks like this:
 
 ![](https://rscircus.github.io/assets/img/MVIMG_20200121_122335.jpg)
 
+
 ## Software
 
 As HypriotOS has docker already included, I was rooting for HypriotOs at the time of creation.
@@ -44,7 +46,9 @@ Following that tutorial one sets up kubernetes in all its glory and resource hun
 
 We start from first principles today.
 
+
 ### Preparing the Pis in a headless way.
+
 
 #### Master node
 
@@ -109,6 +113,7 @@ nmcli dev show eth0
 ```
 
 This will show us `routes` , `dns` , `domain` and `gateway` infos. Besides other things.
+
 
 #### Slave nodes
 
