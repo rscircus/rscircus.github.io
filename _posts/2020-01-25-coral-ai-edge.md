@@ -88,7 +88,7 @@ First we create it using poetry:
 ```
 pyenv install 3.7.0  # Everything works with Python <=3.7.0
 mkdir coral.ai && cd coral.ai
-pyenv local 3.7.0    # Tells poetry to use 3.7.0 locally
+pyenv local 3.7.0    # Tells the shell to use 3.7.0 in this directory (and subdirs)
 poetry init          # Follow the guide which starts with this command
 poetry shell         # We shell into the virtualenv
 ```
