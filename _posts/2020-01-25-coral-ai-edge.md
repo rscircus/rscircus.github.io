@@ -215,7 +215,7 @@ In the next step we want to create and train a model which will be deployed to t
 
 ![](https://www.coral.ai/static/docs/images/edgetpu/compile-workflow.png)
 
-Ad astra!
+and look at some per characteristics.
 
 
 ## Sources
