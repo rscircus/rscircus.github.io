@@ -22,7 +22,7 @@ Here you can see his data on how Coral leaves NVIDIA's GTX1080 in the dust:
 
 while graphing the fps these setups can do using the [MobileNetV2](https://arxiv.org/abs/1801.04381) classifier pre-trained on the ImageNet dataset. Yup, this is all about inference. And at this the Coral Edge TPU (let's call it CET) is really really good.
 
-In this article we look at how to do inference with the Edge TPU, look at some perf characteristics and further explore, how the feel from a hobbyist perspective is.
+In this article we look at how to do inference with the CET, look at some perf characteristics and further explore, how the feel from a hobbyist perspective is.
 
 > I hear and I forget. I see and I remember. I do and I understand.
 
