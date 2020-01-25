@@ -59,7 +59,7 @@ First, we need a rough plan:
 
 ### Setup
 
-According to [https://www.coral.ai/docs/accelerator/get-started/](https://www.tensorflow.org/lite) we need to install a binary blob (on Debian):
+According to [https://www.coral.ai/docs/accelerator/get-started/](https://www.coral.ai/docs/accelerator/get-started) we need to install a binary blob (on Debian):
 
 ```
 echo "deb https://packages.cloud.google.com/apt coral-edgetpu-stable main" | sudo tee /etc/apt/sources.list.d/coral-edgetpu.list
