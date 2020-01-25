@@ -68,7 +68,7 @@ sudo apt-get update
 sudo apt-get install libedgetpu1-std
 ```
 
-and trust Google that everything is OK with that one. 
+and trust Google that everything is OK with that one.
 
 It is recommended ot use a _USB 3.0 port_ for best perf and further there is another runtime which runs at 2x the clock frequency of `libedgetpu1-std` and can be installed like so:
 
@@ -78,7 +78,45 @@ sudo apt-get install libedgetpu1-max
 
 ### TensorFlow Lite
 
-Now we install TensorFlow's API. I created a repo for this here [https://github.com/rscircus/coral.ai](https://github.com/rscircus/coral.ai).
+Now we install TensorFlow's API. I created a repo for this here [https://github.com/rscircus/coral.ai](https://github.com/rscircus/coral.ai) and we'll be having a look at the [TensorFlow Lite Python quickstart](https://www.tensorflow.org/lite/guide/python) as a guide but set things up in a slightly less messy manner using [poetry](https://python-poetry.org/).
+
+First we create it it using poetry:
+
+```
+poetry new coral.ai
+```
+
+Then we add the most recent version of `tflite`:
+
+```
+0> poetry add tflite
+Creating virtualenv coral.ai-KP9wyUS_-py3.8 in /home/rawland/.cache/pypoetry/virtualenvs
+Using version ^2.1.0 for tflite
+
+Updating dependencies
+Resolving dependencies... (3.0s)
+
+Writing lock file
+
+
+Package operations: 11 installs, 0 updates, 0 removals
+
+  - Installing pyparsing (2.4.6)
+  - Installing six (1.14.0)
+  - Installing attrs (19.3.0)
+  - Installing flatbuffers (1.11)
+  - Installing more-itertools (8.1.0)
+  - Installing packaging (20.1)
+  - Installing pluggy (0.13.1)
+  - Installing py (1.8.1)
+  - Installing wcwidth (0.1.8)
+  - Installing pytest (5.3.4)
+  - Installing tflite (2.1.0)
+```
+
+OK, we have `tflite (2.1.0)` and all its deps contained in a nice virtualenv with `py3.8`.
+
+
 
 ### Example
 
