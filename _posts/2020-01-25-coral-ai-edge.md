@@ -76,20 +76,20 @@ It is recommended to use an _USB 3.0 port_ for best perf and further there is an
 sudo apt-get install libedgetpu1-max
 ```
 
-During the installation of the `max`-version we are asked if we understand physics. We agree and move on. If you plugged the USB Accelerator into your machine ahead of installing the `libedge`. Plug it out and in again, else you might get a `ValueError: Failed to load delegate from libedgetpu.so.1` error.
+During the installation of the `max`-version we are asked if we understand physics. We confirm with yes and move on. If you plugged the USB Accelerator into your machine ahead of installing the `libedge`. Plug it out and in again, else you might get a `ValueError: Failed to load delegate from libedgetpu.so.1` error during runtime later on.
 
 
 ### TensorFlow Lite
 
-Now we install TensorFlow's API. I created a repo for this here [https://github.com/rscircus/coral.ai](https://github.com/rscircus/coral.ai) and we'll be having a look at the [TensorFlow Lite Python quickstart](https://www.tensorflow.org/lite/guide/python) as a guide but set things up in a slightly less messy manner using [poetry](https://python-poetry.org/).
+Now we install the TensorFlow's API. I created a repo for this here [https://github.com/rscircus/coral.ai](https://github.com/rscircus/coral.ai) and we'll be having a look at the [TensorFlow Lite Python quickstart](https://www.tensorflow.org/lite/guide/python) as a guide but set things up in a potentially less messy manner using [poetry](https://python-poetry.org/).
 
 First we create it using poetry:
 
 ```
 pyenv install 3.7.0  # Everything works with Python <=3.7.0
-poetry new coral.ai
-cd coral.ai
+mkdir coral.ai && cd coral.ai
 pyenv local 3.7.0    # Tells poetry to use 3.7.0 locally
+poetry init          # Follow the guide which starts with this command
 poetry shell         # We shell into the virtualenv
 ```
 
