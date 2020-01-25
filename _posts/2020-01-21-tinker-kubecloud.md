@@ -526,7 +526,7 @@ Here we are. Let's test it. We can go two routes now. First we can invoke the fu
 Reading from STDIN - hit (Control + D) to stop.
 I love ARM!
 Handling connection for 8080
- ___   _                     _    ____  __  __ _ 
+ ___   _                     _    ____  __  __ _
 |_ _| | | _____   _____     / \  |  _ \|  \/  | |
  | |  | |/ _ \ \ / / _ \   / _ \ | |_) | |\/| | |
  | |  | | (_) \ V /  __/  / ___ \|  _ <| |  | |_|
@@ -540,12 +540,12 @@ Or let's pass input directly:
 ```
 1> echo -n "I like $(uname -m)" | faas invoke figlet -g localhost:8080/function/figlet                                                                                           ↻  ⎇  ~/src/openfaas@elephantsdream
 Handling connection for 8080
- ___   _ _ _               ___   __      __   _  _   
-|_ _| | (_) | _____  __  _( _ ) / /_    / /_ | || |  
- | |  | | | |/ / _ \ \ \/ / _ \| '_ \  | '_ \| || |_ 
+ ___   _ _ _               ___   __      __   _  _
+|_ _| | (_) | _____  __  _( _ ) / /_    / /_ | || |
+ | |  | | | |/ / _ \ \ \/ / _ \| '_ \  | '_ \| || |_
  | |  | | |   <  __/  >  < (_) | (_) | | (_) |__   _|
-|___| |_|_|_|\_\___| /_/\_\___/ \___/___\___/   |_|  
-                                   |_____|     
+|___| |_|_|_|\_\___| /_/\_\___/ \___/___\___/   |_|
+                                   |_____|
 ```
 
 And finally, let's curl it:
@@ -553,18 +553,18 @@ And finally, let's curl it:
 ```
 1> echo -n "I'm OK with armv8" | curl --data-binary @- http://localhost:8080/function/figlet
 Handling connection for 8080
- ___ _              ___  _  __           _ _   _     
-|_ _( )_ __ ___    / _ \| |/ / __      _(_) |_| |__  
- | ||/| '_ ` _ \  | | | | ' /  \ \ /\ / / | __| '_ \ 
+ ___ _              ___  _  __           _ _   _
+|_ _( )_ __ ___    / _ \| |/ / __      _(_) |_| |__
+ | ||/| '_ ` _ \  | | | | ' /  \ \ /\ / / | __| '_ \
  | |  | | | | | | | |_| | . \   \ V  V /| | |_| | | |
 |___| |_| |_| |_|  \___/|_|\_\   \_/\_/ |_|\__|_| |_|
-                                                     
-                           ___  
-  __ _ _ __ _ __ _____   _( _ ) 
- / _` | '__| '_ ` _ \ \ / / _ \ 
+
+                           ___
+  __ _ _ __ _ __ _____   _( _ )
+ / _` | '__| '_ ` _ \ \ / / _ \
 | (_| | |  | | | | | \ V / (_) |
- \__,_|_|  |_| |_| |_|\_/ \___/ 
-                                
+ \__,_|_|  |_| |_| |_|\_/ \___/
+
 ```
 
 Great success!
@@ -582,7 +582,7 @@ Armed with this we deployed one function from the store and tested it by various
 
 ## Sources
 
-* [https://blog.hypriot.com/](https://blog.hypriot.com)
-* [https://kubedge.cloud](https://kubedge.cloud)
-* [https://blog.alexellis.io](https://blog.alexellis.io)
+* https://blog.hypriot.com
+* https://kubedge.cloud
+* https://blog.alexellis.io
 
