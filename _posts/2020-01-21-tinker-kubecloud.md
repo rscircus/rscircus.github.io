@@ -2,6 +2,7 @@
 layout: post
 title:  "k3sup on HypriotOS / RaspberryPi 3B+"
 sub_title: "Setting up a kubernetes cluster at home"
+excerpt_separator:  <!--more-->
 categories:
   - Tinker
 tags:
@@ -12,6 +13,10 @@ tags:
 ---
 
 ## Motivation
+
+We have a look at **k3s** and how to get it running on a funch of **RPis** using **k3sup**.
+
+<!-- more -->
 
 > I hear and I forget. I see and I remember. I do and I understand.
 
