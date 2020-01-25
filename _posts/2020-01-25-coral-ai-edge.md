@@ -83,38 +83,25 @@ Now we install TensorFlow's API. I created a repo for this here [https://github.
 First we create it using poetry:
 
 ```
+pyenv install 3.7.0 # Everything works with Python <=3.7.0
+pyenv use 3.7.0
 poetry new coral.ai
 ```
 
-Then we add the most recent version of `tflite`:
+Then we add the most recent version of `tflite_runtime`, which we can find [here](https://www.tensorflow.org/lite/guide/python):
+
+For instance
 
 ```
-0> poetry add tflite
-Creating virtualenv coral.ai-KP9wyUS_-py3.8 in /home/rawland/.cache/pypoetry/virtualenvs
-Using version ^2.1.0 for tflite
-
-Updating dependencies
-Resolving dependencies... (3.0s)
-
-Writing lock file
-
-
-Package operations: 11 installs, 0 updates, 0 removals
-
-  - Installing pyparsing (2.4.6)
-  - Installing six (1.14.0)
-  - Installing attrs (19.3.0)
-  - Installing flatbuffers (1.11)
-  - Installing more-itertools (8.1.0)
-  - Installing packaging (20.1)
-  - Installing pluggy (0.13.1)
-  - Installing py (1.8.1)
-  - Installing wcwidth (0.1.8)
-  - Installing pytest (5.3.4)
-  - Installing tflite (2.1.0)
+wget https://dl.google.com/coral/python/tflite_runtime-1.14.0-cp37-cp37m-linux_x86_64.whl
 ```
 
-OK, we have `tflite (2.1.0)` and all its deps contained in a nice virtualenv with `py3.8` and `poetry shell` into it.
+Then we install it
+
+```
+```
+
+OK, we have `tflite_runtime (1.14.0)` and all its deps contained in a nice virtualenv with `py3.7` and `poetry shell` into it.
 
 
 ### Example
@@ -182,6 +169,8 @@ mkdir -p "${IMAGE_DIR}"
 (cd "${IMAGE_DIR}" && \
 curl -OL "${TEST_DATA_URL}/parrot.jpg")
 ```
+
+
 
 ## Sources
 
