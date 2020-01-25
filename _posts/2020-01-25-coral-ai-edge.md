@@ -83,7 +83,7 @@ During the installation of the `max`-version we are asked if we understand physi
 
 ### TensorFlow Lite
 
-Now we install the TensorFlow's API. I created a repo for this here [https://github.com/rscircus/coral.ai](https://github.com/rscircus/coral.ai) and we'll be having a look at the [TensorFlow Lite Python quickstart](https://www.tensorflow.org/lite/guide/python) as a guide but set things up in a potentially less messy manner using [poetry](https://python-poetry.org/).
+Now we install the TensorFlow Runtime. I created a repo for this here [https://github.com/rscircus/coral.ai](https://github.com/rscircus/coral.ai) and we'll be having a look at the [TensorFlow Lite Python quickstart](https://www.tensorflow.org/lite/guide/python) as a guide but set things up in a potentially less messy manner using [poetry](https://python-poetry.org/).
 
 First we create it using poetry:
 
@@ -121,11 +121,12 @@ mkdir example && cd example
 git clone https://github.com/google-coral/tflite.git
 ```
 
-now we `cd` into the parrot example
+followed by `cd`-ing into the parrot example
 
 ```
 cd example/tflite/python/examples/classification
 ```
+
 and have a look at what this installs:
 
 ```
