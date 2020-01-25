@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Coral AI Edge TPUs"
-sub_title: "First steps with Coral USB Accelerator"
+sub_title: "First steps with the Coral USB Accelerator"
 excerpt_separator:  <!-- more -->
 categories:
   - Tinker

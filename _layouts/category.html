@@ -14,7 +14,9 @@ layout: page
             {{ post.title }}
         </a>
     </h2>
-    <i>{{ post.sub_title }}</i>
+    <p>
+        <i>{{ post.sub_title }}</i>
+    </p>
     {% include post-meta.html post=post %}
 
     {% if post.excerpt %}
