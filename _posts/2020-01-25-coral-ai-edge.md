@@ -70,7 +70,7 @@ sudo apt-get install libedgetpu1-std
 
 and trust Google that everything is OK with that one.
 
-It is recommended ot use a _USB 3.0 port_ for best perf and further there is another runtime which runs at 2x the clock frequency of `libedgetpu1-std` and can be installed like so:
+It is recommended to use an _USB 3.0 port_ for best perf and further there is another runtime which runs at 2x the clock frequency of `libedgetpu1-std` and can be installed like so:
 
 ```
 sudo apt-get install libedgetpu1-max
