@@ -76,6 +76,9 @@ It is recommended ot use a _USB 3.0 port_ for best perf and further there is ano
 sudo apt-get install libedgetpu1-max
 ```
 
+During the installation of the `max`-version we are asked if we understand physics. We agree and move on. If you plugged the USB Accelerator into your machine ahead of installing the `libedge`. Plug it out and in again, else you might get a `ValueError: Failed to load delegate from libedgetpu.so.1` error.
+
+
 ### TensorFlow Lite
 
 Now we install TensorFlow's API. I created a repo for this here [https://github.com/rscircus/coral.ai](https://github.com/rscircus/coral.ai) and we'll be having a look at the [TensorFlow Lite Python quickstart](https://www.tensorflow.org/lite/guide/python) as a guide but set things up in a slightly less messy manner using [poetry](https://python-poetry.org/).
@@ -173,6 +176,33 @@ mkdir -p "${IMAGE_DIR}"
 curl -OL "${TEST_DATA_URL}/parrot.jpg")
 ```
 
+with this modified `install_requirements.sh` we execute it:
+
+```
+./install_requirements.sh
+```
+
+Then we do our first parrot identification with
+
+```
+(coral.ai-KP9wyUS_-py3.7) 0> python classify_image.py --model models/mobilenet_v2_1.0_224_inat_bird_quant_edgetpu.tflite --labels models/inat_bird_labels.txt --input images/parrot.jpg 
+INFO: Initialized TensorFlow Lite runtime.
+----INFERENCE TIME----
+Note: The first inference on Edge TPU is slow because it includes loading the model into Edge TPU memory.
+11.1ms
+2.6ms
+2.5ms
+2.6ms
+2.6ms
+-------RESULTS--------
+Ara macao (Scarlet Macaw): 0.76172
+```
+
+which is this beauty:
+
+![](https://www.coral.ai/static/docs/images/parrot.jpg)
+
+Ha! Great success!
 
 
 ## Sources
