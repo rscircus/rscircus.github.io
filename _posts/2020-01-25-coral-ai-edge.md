@@ -46,7 +46,7 @@ Bus 003 Device 003: ID 1a6e:089a Global Unichip Corp.
 [...]
 ```
 
-Global Unichip Corp? That's [interesting](https://en.wikipedia.org/wiki/Global_Unichip_Corporation). GUC seems to be a knwo ASIC/SoC design foundry based in Taiwan. OK.
+Global Unichip Corp? That's [interesting](https://en.wikipedia.org/wiki/Global_Unichip_Corporation). The Global Unichip Corporation seems to be a known ASIC/SoC design foundry based in Taiwan.
 
 
 ## Software
