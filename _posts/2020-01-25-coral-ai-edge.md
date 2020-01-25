@@ -35,7 +35,9 @@ My CET in shape of the USB Accelerator looks like this:
 
 ![](https://rscircus.github.io/assets/img/20200125_CoralPicture.jpg)
 
-from the interesting side. And boring from the other, but you can look this up on the internets. Everything is soldered, nothing has to be screwed together. Feels like a day of vacation. 🏝️ The easiest step: just plug it in.
+from the interesting side. 
+
+And boring from the other, but you can look this up on the internets. Everything is soldered, nothing has to be screwed together. Feels like a day of vacation. 🏝️ The easiest step: just plug it in.
 
 Let's `lsusb` it:
 
