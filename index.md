@@ -8,7 +8,6 @@ sidebar_link: true
 
 **Projects I contribute(d) to**
 
--   [climate anomaly](https://rscircus.github.io/pages/climate_anomaly) - Climate Anomaly August 2019 visualization
 -   [learn-go-with-tests](https://github.com/quii/learn-go-with-tests) - Learn Go with Test!
 -   [LayerParallelProgramming](https://github.com/steffi7574/LayerParallelLearning) - Layer-parallel training of deep residual neural networks
 -   [sdkman](https://sdkman.io) - The Software Development Kit Manager
@@ -18,7 +17,9 @@ sidebar_link: true
 
 **My own projects**
 
-- [Kubernetes on RaspberryPi 3B+](https://rscircus.github.io/2020/01/21/tinker-kubecloud.html) - k3s on a RaspberryPi cluster.
+- [Edge TPUs and inference](https://rscircus.github.io/2020/01/25/coral-ai-edge.html) - inference at low watts
+- [Kubernetes on RaspberryPi 3B+](https://rscircus.github.io/2020/01/21/tinker-kubecloud.html) - k3s on a RaspberryPi cluster
+- [Climate Anomaly](https://rscircus.github.io/pages/climate_anomaly) - climate anomaly August 2019 visualization
 - [Open Source hearing aid](https://rscircus.github.io) - To be published
 
 <p style="text-align: right">🖤</p>
