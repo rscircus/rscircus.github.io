@@ -12,7 +12,7 @@ tags:
   - Edge
 ---
 
-After reading up some [nice stats](https://blog.raccoons.be/coral-tpu-jetson-nano-performance) on Google **Coral Edge TPUs** by Sam Sterckval at @RacoonsGroup, I got curious. Let's see how this works.
+After reading up some [nice stats](https://blog.raccoons.be/coral-tpu-jetson-nano-performance) on Google's **Coral Edge TPUs** by Sam Sterckval at @RacoonsGroup, I got curious. Let's see how this works.
 
 <!-- more -->
 
@@ -20,7 +20,7 @@ Here you can see his data on how Coral leaves NVIDIA's GTX1080 in the dust:
 
 ![](https://rscircus.github.io/assets/img/20200125_CoralBeatsGTX1080.png)
 
-while graphing the fps these setups can do using the [MobileNetV2](https://arxiv.org/abs/1801.04381) classifier pre-trained on the ImageNet dataset. Yup, this is all about inference. And at this the Coral Edge TPU (let's call it CET) is really really good.
+while graphing the FPS these setups can do using the [MobileNetV2](https://arxiv.org/abs/1801.04381) classifier pre-trained on the ImageNet dataset. Yup, this is all about inference. And at this the Coral Edge TPU (let's call it CET) is really really good.
 
 In this article we look at how to do inference with the CET, look at some perf characteristics and further explore, how the feel from a hobbyist perspective is.
 
