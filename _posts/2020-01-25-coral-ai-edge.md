@@ -2,6 +2,7 @@
 layout: post
 title:  "Coral AI Edge"
 sub_title: "First steps with Coral USB Accelerator"
+excerpt_separator:  <!-- more -->
 categories:
   - Tinker
 tags:
@@ -11,11 +12,11 @@ tags:
   - Edge
 ---
 
-## Motivation
+After reading up some [nice stats](https://blog.raccoons.be/coral-tpu-jetson-nano-performance) Google **Coral Edge TPUs** by Sam Sterckval at @RacoonsGroup, I got curious. Let's see how this works.
+
+<!-- more -->
 
 > I hear and I forget. I see and I remember. I do and I understand.
-
-After reading up some [nice stats](https://blog.raccoons.be/coral-tpu-jetson-nano-performance) Google Coral Edge TPUs by Sam Sterckval at @RacoonsGroup, I got curious.
 
 _Disclaimer: This is a work in progress!_
 
