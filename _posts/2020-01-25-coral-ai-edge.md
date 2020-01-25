@@ -35,7 +35,7 @@ My CET in shape of the USB Accelerator looks like this:
 
 ![](https://rscircus.github.io/assets/img/20200125_CoralPicture.jpg)
 
-from the interesting side. 
+from the interesting side.
 
 And boring from the other, but you can look this up on the internets. Everything is soldered, nothing has to be screwed together. Feels like a day of vacation. 🏝️ The easiest step: just plug it in.
 
@@ -188,7 +188,7 @@ with this modified `install_requirements.sh` we execute it:
 Then we do our first parrot identification with
 
 ```
-(coral.ai-KP9wyUS_-py3.7) 0> python classify_image.py --model models/mobilenet_v2_1.0_224_inat_bird_quant_edgetpu.tflite --labels models/inat_bird_labels.txt --input images/parrot.jpg 
+(coral.ai-KP9wyUS_-py3.7) 0> python classify_image.py --model models/mobilenet_v2_1.0_224_inat_bird_quant_edgetpu.tflite --labels models/inat_bird_labels.txt --input images/parrot.jpg
 INFO: Initialized TensorFlow Lite runtime.
 ----INFERENCE TIME----
 Note: The first inference on Edge TPU is slow because it includes loading the model into Edge TPU memory.
@@ -206,6 +206,14 @@ which is this beauty:
 ![](https://www.coral.ai/static/docs/images/parrot.jpg)
 
 Ha! Great success! And the true fun begins. 😊
+
+## Conclusion
+
+We set up the CET and created a Python based virtualenv which hosts the `tflite_runtime`. Using this setup we classified the *ara macao* in a picture at `0.76172` confidence. In the next step we want to create and train a model which will be deployed to the Coral hardware like so:
+
+![](https://www.coral.ai/static/docs/images/edgetpu/compile-workflow.png)
+
+Ad astra!
 
 
 ## Sources
