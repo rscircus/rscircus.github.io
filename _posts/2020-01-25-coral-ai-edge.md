@@ -23,7 +23,10 @@ Here you can see his data on how Coral leaves NVIDIA's GTX1080 in the dust:
 
 ![](https://rscircus.github.io/assets/img/20200125_CoralBeatsGTX1080.png)
 
-while graphing the fps these setups can to using the [MobileNetV2](https://arxiv.org/abs/1801.04381) classifier pre-trained on the ImageNet dataset. Yup, this is all about inference. No training data.
+while graphing the fps these setups can to using the [MobileNetV2](https://arxiv.org/abs/1801.04381) classifier pre-trained on the ImageNet dataset. Yup, this is all about inference. And at this, the Coral is really really good.
+
+In this article we look at how to do inference with the Edge TPU, look at some perf characteristics and further explore, how the feel from a hobbyist perspective is.
+
 
 ## Hardware
 
@@ -33,7 +36,10 @@ It looks like this:
 
 from the interesting side. And boring from the other, but you can look this up on the internets.
 
+
 ## Software
+
+We need TensorFlow Lite to get started.
 
 
 ## Sources
