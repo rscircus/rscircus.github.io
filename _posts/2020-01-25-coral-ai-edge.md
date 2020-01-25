@@ -114,12 +114,74 @@ Package operations: 11 installs, 0 updates, 0 removals
   - Installing tflite (2.1.0)
 ```
 
-OK, we have `tflite (2.1.0)` and all its deps contained in a nice virtualenv with `py3.8`.
-
+OK, we have `tflite (2.1.0)` and all its deps contained in a nice virtualenv with `py3.8` and `poetry shell` into it.
 
 
 ### Example
 
+Now we clone the example:
+
+```
+mkdir example && cd example
+git clone https://github.com/google-coral/tflite.git
+```
+
+now we `cd` into the parrot example
+
+```
+cd example/tflite/python/examples/classification
+```
+and have a look at what this installs:
+
+```
+cat install_requirements.sh
+```
+
+![](https://rscircus.github.io/assets/img/20200125_CoralInstallReqs.png)
+
+OK, this pulls various stuff and also modifies the Python installation we have. Let's delete the two `pip` lines and let poetry manage everything:
+
+```
+#!/bin/bash
+#
+# Copyright 2019 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+readonly TEST_DATA_URL=https://github.com/google-coral/edgetpu/raw/master/test_data
+
+# Install required Python packages,
+# but not on Mendel (Dev Board)—it has these already and shouldn't use pip
+if [[ ! -f /etc/mendel_version ]]; then
+  poetry add numpy Pillow
+fi
+
+# Get TF Lite model and labels
+MODEL_DIR="${SCRIPT_DIR}/models"
+mkdir -p "${MODEL_DIR}"
+
+(cd "${MODEL_DIR}" && \
+curl -OL "${TEST_DATA_URL}/mobilenet_v2_1.0_224_inat_bird_quant_edgetpu.tflite" \
+     -OL "${TEST_DATA_URL}/mobilenet_v2_1.0_224_inat_bird_quant.tflite" \
+     -OL "${TEST_DATA_URL}/inat_bird_labels.txt")
+
+# Get example image
+IMAGE_DIR="${SCRIPT_DIR}/images"
+mkdir -p "${IMAGE_DIR}"
+
+(cd "${IMAGE_DIR}" && \
+curl -OL "${TEST_DATA_URL}/parrot.jpg")
+```
 
 ## Sources
 
