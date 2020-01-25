@@ -12,7 +12,7 @@ tags:
   - RaspberryPi
 ---
 
-We have a look at **k3s** and how to get it running on a funch of **RPis** using **k3sup**.
+In this article we have a look at **k3s** and how to get it running on a funch of **RPis** using **k3sup**. Further we setup **OpenFaaS** and deploy one function (figlet).
 
 <!-- more -->
 
