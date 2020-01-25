@@ -124,7 +124,7 @@ git clone https://github.com/google-coral/tflite.git
 followed by `cd`-ing into the parrot example
 
 ```
-cd example/tflite/python/examples/classification
+cd tflite/python/examples/classification
 ```
 
 and have a look at what this installs:
