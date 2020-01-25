@@ -33,7 +33,7 @@ In this article we look at how to do inference with the Edge TPU, look at some p
 
 It looks like this:
 
-![] (https://rscircus.github.io/assets/img/20200125_CoralPicture.jpg)
+![](https://rscircus.github.io/assets/img/20200125_CoralPicture.jpg)
 
 from the interesting side. And boring from the other, but you can look this up on the internets.
 
