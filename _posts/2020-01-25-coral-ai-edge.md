@@ -202,7 +202,7 @@ which is this beauty:
 
 ![](https://www.coral.ai/static/docs/images/parrot.jpg)
 
-Ha! Great success!
+Ha! Great success! And the true fun begins. 😊
 
 
 ## Sources
