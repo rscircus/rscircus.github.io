@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Getting started with Coral AI Edge TPUs"
+title:  "Getting started with Coral Edge TPUs"
 sub_title: "First steps with the Coral USB Accelerator"
 excerpt_separator:  <!-- more -->
 categories:
