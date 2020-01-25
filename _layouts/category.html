@@ -7,6 +7,7 @@ layout: page
 {% endunless %}
 
 {% assign category = page.category | default: page.title %}
+<hr>
 {% for post in site.categories[category] %}
 <article class="post-body">
     <h2 class="post-title">
