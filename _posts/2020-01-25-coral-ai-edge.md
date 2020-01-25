@@ -83,9 +83,11 @@ Now we install TensorFlow's API. I created a repo for this here [https://github.
 First we create it using poetry:
 
 ```
-pyenv install 3.7.0 # Everything works with Python <=3.7.0
-pyenv use 3.7.0
+pyenv install 3.7.0  # Everything works with Python <=3.7.0
 poetry new coral.ai
+cd coral.ai
+pyenv local 3.7.0    # Tells poetry to use 3.7.0 locally
+poetry shell         # We shell into the virtualenv
 ```
 
 Then we add the most recent version of `tflite_runtime`, which we can find [here](https://www.tensorflow.org/lite/guide/python):
@@ -96,12 +98,13 @@ For instance
 wget https://dl.google.com/coral/python/tflite_runtime-1.14.0-cp37-cp37m-linux_x86_64.whl
 ```
 
-Then we install it
+Then we install it using
 
 ```
+pip install https://dl.google.com/coral/python/tflite_runtime-1.14.0-cp37-cp37m-linux_x86_64.whl
 ```
 
-OK, we have `tflite_runtime (1.14.0)` and all its deps contained in a nice virtualenv with `py3.7` and `poetry shell` into it.
+OK, we have `tflite_runtime (1.14.0)` and everything contained in a nice virtualenv with `py3.7`.
 
 
 ### Example
