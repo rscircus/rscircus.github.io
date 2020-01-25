@@ -209,7 +209,9 @@ Ha! Great success! And the true fun begins. 😊
 
 ## Conclusion
 
-We set up the CET and created a Python based virtualenv which hosts the `tflite_runtime`. Using this setup we classified the *ara macao* in a picture at `0.76172` confidence. In the next step we want to create and train a model which will be deployed to the Coral hardware like so:
+We set up the CET and created a Python based virtualenv which hosts the `tflite_runtime`. Using this setup we classified the *ara macao* in a picture at `0.76172` confidence.
+
+In the next step we want to create and train a model which will be deployed to the Coral hardware like so:
 
 ![](https://www.coral.ai/static/docs/images/edgetpu/compile-workflow.png)
 
