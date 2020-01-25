@@ -132,7 +132,7 @@ cat install_requirements.sh
 
 ![](https://rscircus.github.io/assets/img/20200125_CoralInstallReqs.png)
 
-OK, this pulls various stuff and also modifies the Python installation we have. Let's delete the two `pip` lines and let poetry manage everything:
+OK, this pulls various stuff and also modifies the Python installation we have. Let's delete the `pip` line and let poetry manage everything:
 
 ```
 #!/bin/bash
