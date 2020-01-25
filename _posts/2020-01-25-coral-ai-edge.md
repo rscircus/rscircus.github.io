@@ -59,7 +59,7 @@ First, we need a rough plan:
 
 ### Setup
 
-Beginning with https://www.coral.ai/docs/accelerator/get-started/ we need to install a binary blob (on Debian):
+According to [https://www.coral.ai/docs/accelerator/get-started/](https://www.tensorflow.org/lite) we need to install a binary blob (on Debian):
 
 ```
 echo "deb https://packages.cloud.google.com/apt coral-edgetpu-stable main" | sudo tee /etc/apt/sources.list.d/coral-edgetpu.list
@@ -80,7 +80,7 @@ sudo apt-get install libedgetpu1-max
 
 Now we install TensorFlow's API. I created a repo for this here [https://github.com/rscircus/coral.ai](https://github.com/rscircus/coral.ai) and we'll be having a look at the [TensorFlow Lite Python quickstart](https://www.tensorflow.org/lite/guide/python) as a guide but set things up in a slightly less messy manner using [poetry](https://python-poetry.org/).
 
-First we create it it using poetry:
+First we create it using poetry:
 
 ```
 poetry new coral.ai
@@ -122,4 +122,8 @@ OK, we have `tflite (2.1.0)` and all its deps contained in a nice virtualenv wit
 
 
 ## Sources
+
+- https://www.coral.ai/docs
+- https://blog.raccoons.be/coral-tpu-jetson-nano-performance
+- https://www.tensorflow.org/lite
 
