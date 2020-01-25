@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Coral AI Edge"
+title:  "Coral AI Edge TPUs"
 sub_title: "First steps with Coral USB Accelerator"
 excerpt_separator:  <!-- more -->
 categories:
@@ -12,7 +12,7 @@ tags:
   - Edge
 ---
 
-After reading up some [nice stats](https://blog.raccoons.be/coral-tpu-jetson-nano-performance) Google **Coral Edge TPUs** by Sam Sterckval at @RacoonsGroup, I got curious. Let's see how this works.
+After reading up some [nice stats](https://blog.raccoons.be/coral-tpu-jetson-nano-performance) on Google **Coral Edge TPUs** by Sam Sterckval at @RacoonsGroup, I got curious. Let's see how this works.
 
 <!-- more -->
 
