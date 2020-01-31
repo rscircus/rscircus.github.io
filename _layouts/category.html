@@ -7,8 +7,9 @@ layout: page
 {% endunless %}
 
 {% assign category = page.category | default: page.title %}
+{% assign sorted = (site.categories[category] | sort: 'date') | reverse %}
 <hr>
-{% for post in site.categories[category] %}
+{% for post in sorted %}
 <article class="post-body">
     <h2 class="post-title">
         <a href="{{ post.url | relative_url }}">
