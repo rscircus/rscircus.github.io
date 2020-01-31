@@ -82,13 +82,13 @@ After this you can do various things. For instance: Wrap the above code in a fun
 
 where you can see the reaction of the sensor to a simple match being lit in a tiny room ca. 30cm away from the sensor.
 
-Here used this [gist](https://gist.github.com/marw/9bdd78b430c8ece8662ec403e04c75fe) and ran the program with
+We can use this [gist](https://gist.github.com/marw/9bdd78b430c8ece8662ec403e04c75fe) and run the program with
 
 ```bash
 watch python ./read_nova_pm_sensor.py --csv match_experiment.csv
 ```
 
-and used the `csv` to generate the plot using LibreOffice Calc.
+to use the 'recorded' `csv` to generate the plot using LibreOffice Calc.
 
 ## Conclusion
 
