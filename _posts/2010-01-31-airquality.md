@@ -25,7 +25,7 @@ In this article we investigate the [nova PM sensor of type SDS011](http://aqicn.
 As the lung connects our surrounding air with our blood it is easy to transport all kinds of things in a quick way into the body and into the brain. Smokers enjoy the immediate drug delivery, for instance.
 Recently it has been shown that the air we breath [gets dirtier](https://www.nytimes.com/interactive/2019/10/24/climate/air-pollution-increase.html) and the impacts on [learning humans](https://www.edworkingpapers.com/ai20-188) are investigated. By reasoning or extrapolating by having a deep look at the [Air Quality Index](https://en.wikipedia.org/wiki/Air_quality_index) it is clear that it is not healthy to breath dirty air. And dirty air is even [linked with depression](https://www.theguardian.com/environment/2019/dec/18/depression-and-suicide-linked-to-air-pollution-in-new-global-study) and [Alzheimers](https://www.theguardian.com/environment/2016/sep/05/toxic-air-pollution-particles-found-in-human-brains-links-alzheimers).
 
-![](../assets/img/20200131_AirQualityLevels.png)
+![](https://rscircus.github.io/assets/img/20200131_AirQualityLevels.png)
 
 _via: http://aqicn.org/sensor/sds011/_
 
