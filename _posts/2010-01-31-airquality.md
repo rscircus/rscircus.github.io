@@ -31,7 +31,7 @@ _via: http://aqicn.org/sensor/sds011/_
 
 ### A little bit of Medical Background
 
-Even though PM is simply a measure of particle size, which in itself is not that dramatic, it can be used to identify particles which can enter the body via the human lung. The line of thought is that the critical size of < PM10 are the particles which can enter our blood because the lung can not defend itself anymore. And in our world most particles in that range are man made and not healthy.
+Even though PM is simply a measure of particle size, which in itself is not that dramatic, it can be used to identify particles which can enter the body via the human lung. The line of thought is that the critical size of < PM10 are the particles which can enter our blood because the lung can not defend itself anymore. And in our industrialized world most particles in that range are man made and not healthy.
 
 ## Hardware
 
