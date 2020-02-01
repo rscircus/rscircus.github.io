@@ -92,4 +92,4 @@ to use the 'recorded' `csv` to generate the plot using LibreOffice Calc.
 
 ## Conclusion
 
-We read out the SDS011 and collected a set of timestamps. After a lighting a match we validated its functionality. In the next part we wrap a little more code around this tiny start and let it plot data automagically for us.
+We read out the SDS011 and collected a set of timestamps. After lighting a match we validated its functionality. In the next part we wrap a little more code around this tiny start and let it plot data automagically for us.
