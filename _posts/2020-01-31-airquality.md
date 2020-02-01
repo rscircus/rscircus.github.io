@@ -88,7 +88,7 @@ We can use this [gist](https://gist.github.com/marw/9bdd78b430c8ece8662ec403e04c
 watch python ./read_nova_pm_sensor.py --csv match_experiment.csv
 ```
 
-to use the 'recorded' `csv` to generate the plot using LibreOffice Calc.
+to use the 'recorded' `csv` to generate the plot above using LibreOffice Calc.
 
 ## Conclusion
 
