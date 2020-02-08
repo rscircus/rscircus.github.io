@@ -92,7 +92,7 @@ We can work with TypeScript's default settings. Finally, a `package.json` should
 }
 ```
 
-If we perform a 
+If we perform a
 
 ```bash
 yarn start
@@ -122,7 +122,7 @@ export interface iButton {
 
 There is only one mandatory parameter: `type`. Let's define it:
 
-```
+```typescript
 export type ButtonType =
   | typeof buttonTypeNormal
   | typeof buttonTypeGrey
@@ -131,7 +131,7 @@ export type ButtonType =
 
 which is a union type and uses these `const`s to later differentiate our UI:
 
-```
+```typescript
 export const buttonTypeNormal = "normal"
 export const buttonTypeGrey = "grey"
 export const buttonTypeWarning = "warning"
@@ -139,14 +139,14 @@ export const buttonTypeWarning = "warning"
 
 Further we need a function type to handle the `action`:
 
-```
+```typescript
 export type ButtonAction = () => void
 ```
 
 
 OK. This looks robust enough. Let's extend this interface and export the union of these as singular value and array:
 
-```
+```typescript
 export interface iButtonNormal extends iButton {
   type: typeof buttonTypeNormal
 }
