@@ -209,7 +209,13 @@ Let's look with awe at where we are heading to. We defined an array of Buttons, 
 Now let's convert this array of Buttons into something which could be an user interface using the `parse` function. We create a parser for this inside `src/parse.ts`:
 
 ```typescript
-import { Button, buttonTypeWarning, buttonTypeNormal, ButtonAction, buttonTypeGrey } from "./buttonTypes"
+import {
+  Button,
+  buttonTypeWarning,
+  buttonTypeNormal,
+  ButtonAction,
+  buttonTypeGrey }
+from "./buttonTypes"
 
 // Give button a label
 function title(type: string, label?: string): string {
@@ -271,7 +277,7 @@ export function parse(buttons: Button): HTMLButtonElement[] {
 }
 ```
 
-which should display us:
+after importing it in `index.ts`, the overall result should display us:
 
 ![](../assets/img/20200108_TsAngularButtons.png)
 
