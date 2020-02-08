@@ -12,7 +12,7 @@ tags:
   - Web
 ---
 
-Recently, my colleague T — a big fan of statically typed languages and working with [Angular](angular.io) and [TypeScript](www.typescriptlang.org) — came over and asked a simple question: *"Hey R, do you have an idea how to realize Reflection in TypeScript? Actually, I need to render a site a little bit differentlty based upon a set of passed types."*. Naturally, Reflection sounds like a good idea. But you knowhttps://rscircus.github.io. JavaScript. That's what TypeScript is transpiled into.
+Recently, my colleague T — a big fan of statically typed languages and working with [Angular](angular.io) and [TypeScript](www.typescriptlang.org) — came over and asked a simple question: *"Hey R, do you have an idea how to realize Reflection in TypeScript? Actually, I need to render a site a little bit differentlty based upon a set of passed types."*. Naturally, Reflection sounds like a good idea. But you know... JavaScript. 🤦‍♀ That's what TypeScript is transpiled into.
 
 Having worked with TypeScript and React for a while, I suggested a few ideas from the top of my had head but soon discovered a few limits. Therefore, let's see if we can come up with a solution to this problem using TypeScript's inherent features.
 
