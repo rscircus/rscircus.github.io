@@ -120,13 +120,13 @@ export interface iButton {
 }
 ```
 
-There is only one mandatory parameter: `type`. Let's define it:
+There is only one mandatory parameter: `type`. Let's define it in an unnecessarily complex way to illustrate the union better later on:
 
 ```typescript
+type ButtonTypeMain = typeof buttonTypeNormal | typeof buttonTypeGrey
 export type ButtonType =
-  | typeof buttonTypeNormal
-  | typeof buttonTypeGrey
   | typeof buttonTypeWarning
+  | ButtonTypeMain
 ```
 
 which is a union type and uses these `const`s to later differentiate our UI:
@@ -158,6 +158,7 @@ export interface iButtonGrey extends iButton {
 
 export interface iButtonWarning extends iButton {
   type: typeof buttonTypeWarning
+  handleSomeKey?: string
 }
 
 type ButtonUnion =
