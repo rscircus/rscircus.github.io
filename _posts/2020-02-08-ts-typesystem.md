@@ -12,7 +12,7 @@ tags:
   - Web
 ---
 
-Recently, my colleague T — a big fan of statically typed languages and working with [Angular](angular.io) and [TypeScript](www.typescriptlang.org) — came over and asked a simple question: *"Hey R, do you have an idea how to realize Reflection in TypeScript? Actually, I need to render a site a little bit differentlty based upon a set of passed types."*. Naturally, Reflection sounds like a good idea. But you know... JavaScript. That's what TypeScript is transpiled into.
+Recently, my colleague T — a big fan of statically typed languages and working with [Angular](angular.io) and [TypeScript](www.typescriptlang.org) — came over and asked a simple question: *"Hey R, do you have an idea how to realize Reflection in TypeScript? Actually, I need to render a site a little bit differentlty based upon a set of passed types."*. Naturally, Reflection sounds like a good idea. But you knowhttps://rscircus.github.io. JavaScript. That's what TypeScript is transpiled into.
 
 Having worked with TypeScript and React for a while, I suggested a few ideas from the top of my had head but soon discovered a few limits. Therefore, let's see if we can come up with a solution to this problem using TypeScript's inherent features.
 
@@ -20,7 +20,7 @@ Having worked with TypeScript and React for a while, I suggested a few ideas fro
 
 While I'm more into Python and ML right now, I was working in Frontend for quite a while. At the beginning of my journey somebody told me: *"Do you know TypeScript? It's JavaScript with documentation."*. I was hooked and went down the modern rabbit hole of Frontend Development. Lately, I discovered this:
 
-![](../assets/img/20200206_TsAngularSpec.png)
+![](https://rscircus.github.io/assets/img/20200206_TsAngularSpec.png)
 
 🤔 - I'm not sure if things have changed, but luckily there is StackOverflow and the nice community around TypeScript. So here comes a solution based on the two dev.to articles sourced at the bottom.
 
@@ -102,7 +102,7 @@ parcel will start serving at `localhost:1234`.
 
 Finally, things should look like this:
 
-![](../assets/img/20200208_TsAngularParcel.png)
+![](https://rscircus.github.io/assets/img/20200208_TsAngularParcel.png)
 
 We keep it running for the rest of this article, as it supports hot module replacement. Speaking of hot module replacement, let's make ourselves a fresh brew of ☕️ on this Saturday early morning. 😊.
 
@@ -200,7 +200,7 @@ layout.forEach(element => root.append(element))
 
 which hopefully shows you this error in your browser (as parcel is still running):
 
-![](../assets/img/20200208_TsAngularError.png)
+![](https://rscircus.github.io/assets/img/20200208_TsAngularError.png)
 
 We ignore it for now.
 
@@ -279,7 +279,7 @@ export function parse(buttons: Button): HTMLButtonElement[] {
 
 after importing it in `index.ts`, the overall result should display us:
 
-![](../assets/img/20200108_TsAngularButtons.png)
+![](https://rscircus.github.io/assets/img/20200108_TsAngularButtons.png)
 
 Great success! And one exercise left for you. 😉
 
