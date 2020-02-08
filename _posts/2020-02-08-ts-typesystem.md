@@ -122,7 +122,7 @@ export interface iButton {
 }
 ```
 
-There is only one mandatory value: `type`. Let's define it:
+There is only one mandatory parameter: `type`. Let's define it:
 
 ```
 export type ButtonType =
