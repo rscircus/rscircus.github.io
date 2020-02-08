@@ -175,7 +175,7 @@ Here you can see, that we extended `iButton` in `iButtonGrey` with optional para
 
 At this point in time our `src/buttonTypes.ts` should look OK and should not throw any error if you run a linter over it. Next, we will look at an application of such a convoluted button. Let's open our `src/index.ts` and replace its single line of content with this:
 
-```
+```typescript
 import { Button } from "./buttonTypes"
 
 const buttons: Button = [
