@@ -22,7 +22,7 @@ While I'm more into Python and ML right now, I was working in Frontend for quite
 
 ![](../assets/img/20200206_TsAngularSpec.png)
 
-🤔 - I'm not sure if things have changed, but luckily there is StackOverflow and the nice community around TypeScript. So here comes my solution.
+🤔 - I'm not sure if things have changed, but luckily there is StackOverflow and the nice community around TypeScript. So here comes a solution based on the two dev.to articles sourced at the bottom.
 
 
 ## Frontend
@@ -73,7 +73,7 @@ yarn add typescript
 yarn add parcel-bundler
 ```
 
-And a `package.json` should have been there since `yarn init -y`. Let's create some `scripts` inside it:
+We can work with TypeScript's default settings. Finally, a `package.json` should have been there since `yarn init -y`. Let's create some `scripts` inside it:
 
 ```json
 {
