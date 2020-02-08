@@ -139,7 +139,7 @@ export const buttonTypeGrey = "grey"
 export const buttonTypeWarning = "warning"
 ```
 
-Further we need a function to handle the `action`:
+Further we need a function type to handle the `action`:
 
 ```
 export type ButtonAction = () => void
