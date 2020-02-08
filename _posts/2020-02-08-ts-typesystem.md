@@ -217,8 +217,8 @@ from "./buttonTypes"
 
 // Give button a label
 function title(type: string, label?: string): string {
-  if (typeof label === "string" && label) return label
 
+  if (typeof label === "string" && label) return label
   if (type === buttonTypeNormal) return "OK"
   if (type === buttonTypeWarning) return "Warning!"
 }
