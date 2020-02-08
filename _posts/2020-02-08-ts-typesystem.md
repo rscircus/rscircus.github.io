@@ -108,7 +108,7 @@ We keep it running for the rest of this article, as it supports hot module repla
 
 ### Types and Interfaces
 
-Having layed out all tools, we can now dig into TypeScript to achieve our losely stated goal of rendering incoming objects depending upon the incoming type. These objects will somehow be similar, so we'll use a button, which will be rendered slightly differently for this.
+Having laid out all tools, we can now dig into TypeScript to achieve our loosely stated goal of rendering incoming objects depending upon the incoming type. These objects will somehow be similar, so we'll use a button, which will be rendered slightly differently for this.
 
 Let's create our types in `src/buttonTypes.ts`.
 
@@ -204,7 +204,7 @@ which hopefully shows you this error in your browser (as parcel is still running
 
 We ignore it for now.
 
-Let's look with awe at where we are heading to. We defined an array of Buttons, which are in fact various simple JavaScript objects. However, TypeScript accepts these to be Buttons as their structure matches the types burried inside the Button type and TypeScript has a structural type system.
+Let's look with awe at where we are heading to. We defined an array of Buttons, which are in fact various simple JavaScript objects. However, TypeScript accepts these to be Buttons as their structure matches the types buried inside the Button type and TypeScript has a structural type system.
 
 Now let's convert this array of Buttons into something which could be an user interface using the `parse` function. We create a parser for this inside `src/parse.ts`:
 
