@@ -22,7 +22,7 @@ While I'm more into Python and ML right now, I was working in Frontend for quite
 
 ![](https://rscircus.github.io/assets/img/20200206_TsAngularSpec.png)
 
-🤔 - I'm not sure if things have changed, but luckily there is StackOverflow and the nice community around TypeScript. So here comes a solution based on the two dev.to articles sourced at the bottom.
+🤔 - I'm not sure if things have changed, but luckily there is StackOverflow and the nice community around TypeScript. So here comes a solution based on the two dev.to articles referenced at the bottom.
 
 
 ## Frontend
