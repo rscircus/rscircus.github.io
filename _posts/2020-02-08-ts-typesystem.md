@@ -18,11 +18,11 @@ Having worked with TypeScript and React for a while, I suggested a few ideas fro
 
 <!-- more --->
 
-While I'm more into Python and ML right now, I was working in Frontend for quite a while. At the beginning of my journey somebody told me: *"Do you know TypeScript? It's JavaScript with documentation."*. I was hooked and went down the modern rabbit hole of Frontend Development. Lately, I discovered this:
+At the beginning of my journey somebody told me: *"Do you know TypeScript? It's JavaScript with documentation."*. I was hooked and went down the modern rabbit hole of Frontend Development. Lately, I discovered this:
 
 ![](https://rscircus.github.io/assets/img/20200206_TsAngularSpec.png)
 
-🤔 - I'm not sure if things have changed, but luckily there is StackOverflow and the nice community around TypeScript. So here comes a solution based on the two dev.to articles referenced at the bottom.
+🤔 - I'm not sure if things have changed, but luckily there is StackOverflow and the nice community around TypeScript. So here comes a solution based on the various sources referenced at the bottom.
 
 
 ## Frontend
