@@ -22,7 +22,7 @@ At the beginning of my journey somebody told me: *"Do you know TypeScript? It's 
 
 ![](https://rscircus.github.io/assets/img/20200206_TsAngularSpec.png)
 
-🤔 - I'm not sure if things have changed, but luckily there is StackOverflow and the nice community around TypeScript. So here comes a solution based on the various sources referenced at the bottom.
+🤔 - I'm not sure if things have changed... So here comes a solution based on the various sources referenced at the bottom.
 
 
 ## Frontend
