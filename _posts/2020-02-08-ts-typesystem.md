@@ -108,7 +108,7 @@ We keep it running for the rest of this article, as it supports hot module repla
 
 ### Types and Interfaces
 
-Having laid out all tools, we can now dig into TypeScript to achieve our loosely stated goal of rendering incoming objects depending upon the incoming type. These objects will somehow be similar, so we'll use a button, which will be rendered slightly differently for this.
+Having laid out all tools, we can now dig into TypeScript to achieve our loosely stated goal of rendering incoming objects depending upon the incoming type. These objects will somehow be similar, so we'll use a button, which will be rendered slightly different for this.
 
 Let's create our types in `src/buttonTypes.ts` and start with a very simple button:
 
