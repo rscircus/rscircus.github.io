@@ -203,7 +203,7 @@ which hopefully shows you this error in your browser (as parcel is still running
 
 We ignore it for now.
 
-Let's look with awe at where we are heading to. We defined an array of Buttons, which are in fact various simple JavaScript objects. However, TypeScript accepts these to be Buttons as their structure matches the types buried inside the Button type and TypeScript has a structural type system.
+Let's look with awe at where we are heading to. We defined an array of Buttons, which are in fact various simple JavaScript objects. However, TypeScript accepts these to be Buttons as their structure matches the types buried inside the Button type as TypeScript has a structural type system.
 
 Now let's convert this array of Buttons into something which could be an user interface using the `parse` function. We create a parser for this inside `src/parse.ts`:
 
