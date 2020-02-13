@@ -170,7 +170,7 @@ type ButtonUnion =
 export type Button = ButtonUnion | ButtonUnion[]
 ```
 
-Here you can see, that we extended `iButton` in `iButtonGrey` with optional parameters. We have to export quite a bit, as we'll build a parser in a moment. Note, however, that the Union type is hidden in `Button` and even gives us the opportunity to digest arrays *and* singular instances.
+Here you can see, that we extended `iButton` into `iButtonGrey` and `iButtonWarning` with additional optional properties. We have to export quite a bit, as we'll build a parser in a moment. Note, however, that the Union type is hidden in `Button` and even gives us the opportunity to digest arrays *and* singular instances.
 
 ## Application
 
