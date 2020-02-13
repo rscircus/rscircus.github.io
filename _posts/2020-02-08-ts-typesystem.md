@@ -120,7 +120,7 @@ export interface iButton {
 }
 ```
 
-There is only one mandatory parameter: `type`. Let's define it in an unnecessarily complex way to illustrate the union better later on:
+There is only one mandatory property: `type`. Let's define it in an unnecessarily complex way to illustrate the union better later on:
 
 ```typescript
 type ButtonTypeMain = typeof buttonTypeNormal | typeof buttonTypeGrey
