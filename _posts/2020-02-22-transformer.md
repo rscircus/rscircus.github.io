@@ -21,7 +21,7 @@ Even though it is eclipsed by the "[Reformer: The Efficient Transformer](https:/
 
 We will cover the setup and execute the Transformer implementation outlined in the given paper. We start with the excellent breakdowns created by Sasha Rush - [The Annotated Transformer](https://www.aclweb.org/anthology/W18-2509.pdf).
 
-In contrast to the paper using Tensorflow (which also [published its implementation](https://github.com/tensorflow/tensor2tensor) 😊), we follow Sasha's torch implementation as my impression is that more and more researchers are moving towards PyTorch. Everything will be contained in [this annotated ipynb](#overall-implementation]()) on Google Colab.
+In contrast to the paper using Tensorflow (which also [published its implementation](https://github.com/tensorflow/tensor2tensor) 😊), we follow Sasha's torch implementation as my impression is that more and more researchers are moving towards PyTorch. Everything will be contained in [this annotated ipynb](https://colab.research.google.com/drive/1tm0_Usqkavr0h1Jk0f-ukcykI78xmcfW) on Google Colab.
 
 ### Breakdown
 
