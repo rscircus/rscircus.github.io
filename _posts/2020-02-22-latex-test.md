@@ -62,13 +62,15 @@ we configure it as follows:
 </script>
 ```
 
-Here an example in Eq. \eqref{diffint}. 😍
+Here an example in Eq. \eqref{diffint}.
 
 $$
 \begin {equation} \label{diffint}
 \frac{\mathrm{d}}{\mathrm{d} x} \int_{a}^{x} f(s)ds = f(x)
 \end{equation}
-$$
+$$ 
+
+😍
 
 ## Sources
 
