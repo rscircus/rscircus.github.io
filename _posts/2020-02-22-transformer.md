@@ -27,6 +27,7 @@ In contrast to the paper using Tensorflow (and also [published its implementatio
 
 The simplified high-level overview of the transformer looks like this
 
+<center>
 <div class="mermaid">
 graph LR 
 input(input<br/>I am R)-->Encoder
@@ -41,9 +42,11 @@ style output fill:#fff, stroke:#333
 style Encoder fill:#9f9, stroke:#333
 style Decoder fill:#f99, stroke:#333
 </div>
+</center>
 
 with the layered setup of the Encoder and Decoder being as follows:
 
+<center>
 <div class="mermaid">
 graph BT
 subgraph Decoder
@@ -61,6 +64,7 @@ style SelfAttention fill:#ffe2bb, stroke:#000, stroke-width: 2px
 style SelfAttention2 fill:#ffe2bb, stroke:#000, stroke-width: 2px
 style EncoderDecoderAtt fill:#ffe2bb, stroke:#000, stroke-width: 2px
 </div>
+</center>
 
 where the `Fast Forward` is a regular fully-connected neural network and the `Self-Attention` layer is searching for connections in the input while encoding. The decoder is identical except there being an additional `Encoder-Decoder Attention` between the prior two. This `Encoder-Decoder Attention` is the surrogate for attention decoder RNNs of previous architectures.
 
@@ -182,7 +186,7 @@ class DecoderLayer(nn.Module):
 
 Today we had a look at the Encoder-Decoder architecture and setup and bugfixed the Annotated ipynb on Google Colab. You can find it [here](#overall-implementation). Unfortunately this implementation doesn't work, as we soon run out of memory on the free tier:
 
-![](../assets/img/20200222_Transformer_OutOfMemory.png)
+![](https://rscircus.github.io/assets/img/20200222_Transformer_OutOfMemory.png)
 
 Therefore, I'll continue tomorrow on some stronger machine.
 
