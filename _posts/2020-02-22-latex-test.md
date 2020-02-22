@@ -71,9 +71,7 @@ $$
 \end{equation}
 $$
 
-which actually works with any 'healthy' function $ f(x) $. However, \eqref{diffint} is particularly interesting, because it is the unique function which is its own derivative and antiderivative.
-
-😍
+which actually works with any 'healthy' function $ f(x) $. However, \eqref{diffint} is particularly interesting, because $ f(x) = e^x $ is the unique function which is its own derivative and antiderivative. 😍
 
 ## Sources
 
