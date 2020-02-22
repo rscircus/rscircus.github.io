@@ -10,7 +10,13 @@ tags:
     - accessibility
 ---
 
-I would like to reference equations like so `\eqref{mylabel}`.
+Reference equations like so `\eqref{mylabel}`. And define them like so:
+
+```latex
+\begin {equation} \label{diffint}
+\frac{\mathrm{d}}{\mathrm{d} x} \int e^{x}\,dx = e^{x}
+\end{equation}
+```
 
 <!-- more -->
 
