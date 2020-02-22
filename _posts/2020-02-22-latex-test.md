@@ -67,10 +67,11 @@ Here an example in Eq. \eqref{diffint}.
 
 $$
 \begin {equation} \label{diffint}
-
 \frac{\mathrm{d}}{\mathrm{d} x} \int e^{x}\,dx = e^{x}
 \end{equation}
 $$
+
+which actually works with any 'healthy' function $ f(x) $. However, \eqref{diffint} is particularly interesting, because it is the unique function which is its own derivative and antiderivative.
 
 😍
 
