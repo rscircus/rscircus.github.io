@@ -21,7 +21,7 @@ Even though it is eclipsed by the "[Reformer: The Efficient Transformer](https:/
 
 We will cover the setup and execute the Transformer implementation outlined in the given paper. We start with the excellent breakdowns created by Sasha Rush - [The Annotated Transformer](https://www.aclweb.org/anthology/W18-2509.pdf).
 
-In contrast to the paper using Tensorflow (which also [published its implementation](https://github.com/tensorflow/tensor2tensor) 😊), we follow Sasha's torch implementation as my impression is that more and more researchers are moving towards PyTorch.
+In contrast to the paper using Tensorflow (which also [published its implementation](https://github.com/tensorflow/tensor2tensor) 😊), we follow Sasha's torch implementation as my impression is that more and more researchers are moving towards PyTorch. Everything will be contained in [this annotated ipynb](#overall-implementation]()) on Google Colab.
 
 ### Breakdown
 
@@ -106,7 +106,7 @@ Above you can see two functions calls, which probably do not make sense immediat
 ![](https://rscircus.github.io/assets/img/20200222_Transformer_Fig1.png)
 *Fig 1: Architecture (src: Attention is all we need)*
 
-This [Layer Normalization](https://arxiv.org/abs/1607.06450) is similar to [Batch Normalization](https://en.wikipedia.org/wiki/Batch_normalization) and improves, speed, perf and stability by applying a transformation which maintains the mean activation close to 0 and the activation standard deviation close to 1 followed by applying a slight bias based on the input.
+This [Layer Normalization](https://arxiv.org/abs/1607.06450) is similar to [Batch Normalization](https://en.wikipedia.org/wiki/Batch_normalization) and improves speed, perf and stability by applying a transformation which maintains the mean activation close to 0 and the activation standard deviation close to 1 followed by applying a slight bias based on the input.
 
 The implementation of these two functions looks like this:
 
@@ -184,7 +184,7 @@ class DecoderLayer(nn.Module):
 
 ## Conclusion
 
-Today we had a look at the Encoder-Decoder architecture and setup and bugfixed the Annotated ipynb on Google Colab. You can find it [in the overall implementation at the bottom](#overall-implementation). Unfortunately this implementation doesn't work as of today, as we soon run out of memory on the free Colab tier:
+Today we had a look at the Encoder-Decoder architecture and setup and bugfixed the annotated ipynb on Google Colab. You can find it [in the overall implementation at the bottom](#overall-implementation). Unfortunately this implementation doesn't work as of today, as we soon run out of memory on the free Colab tier:
 
 ![](https://rscircus.github.io/assets/img/20200222_Transformer_OutOfMemory.png)
 
