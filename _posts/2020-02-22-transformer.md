@@ -184,7 +184,7 @@ class DecoderLayer(nn.Module):
 
 ## Conclusion
 
-Today we had a look at the Encoder-Decoder architecture and setup and bugfixed the Annotated ipynb on Google Colab. You can find it [here](#overall-implementation). Unfortunately this implementation doesn't work, as we soon run out of memory on the free tier:
+Today we had a look at the Encoder-Decoder architecture and setup and bugfixed the Annotated ipynb on Google Colab. You can find it [in the overall implementation at the bottom](#overall-implementation). Unfortunately this implementation doesn't work as of today, as we soon run out of memory on the free Colab tier:
 
 ![](https://rscircus.github.io/assets/img/20200222_Transformer_OutOfMemory.png)
 
