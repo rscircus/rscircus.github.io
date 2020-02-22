@@ -25,9 +25,12 @@ which enables MathJax in all posts (rendered with this template).
 
 And to get
 
+- accessibility features (aural rendering, tactile rendering, collapsing)
 - equation numbering
 - AMSMath
 - AMSSymbols
+- inlineMath with `$`
+- displayMath with `$$`
 
 we configure it as follows:
 
@@ -46,8 +49,6 @@ we configure it as follows:
           'tex2jax.js',
           'mml2jax.js',
           'asciimath2jax.js',
-          'MathMenu.js',
-          'MathZoom.js',
           'AssistiveMML.js',
           '[Contrib]/a11y/accessibility-menu.js',
       ],
