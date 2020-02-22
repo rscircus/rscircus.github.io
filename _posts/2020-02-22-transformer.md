@@ -205,4 +205,5 @@ You can download all of this including Sasha Rushes and my notes from here: [htt
 
 ## Sources
 
--  https://github.com/harvardnlp/annotated-transformer
+- https://github.com/harvardnlp/annotated-transformer
+- https://jalammar.github.io/illustrated-transformer
