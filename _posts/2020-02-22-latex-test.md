@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'LaTeX in Jekyll'
-sub_title: 'Setting up LaTeX'
+sub_title: 'Setting up LaTeX in Jekyll'
 excerpt_separator: <!-- more -->
 categories:
     - Code
