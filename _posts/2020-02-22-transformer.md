@@ -27,7 +27,7 @@ In contrast to the paper using Tensorflow (and also [published its implementatio
 
 The simplified high-level overview of the transformer looks like this
 
-```mermaid
+<div class="mermaid">
 graph LR 
 input(input<br/>I am R)-->Encoder
 subgraph Transformer
@@ -40,11 +40,11 @@ style input fill:#fff, stroke:#333
 style output fill:#fff, stroke:#333
 style Encoder fill:#9f9, stroke:#333
 style Decoder fill:#f99, stroke:#333
-```
+</div>
 
 with the layered setup of the Encoder and Decoder being as follows:
 
-```mermaid
+<div class="mermaid">
 graph BT
 subgraph Decoder
 SelfAttention2(Self-Attention)-->EncoderDecoderAtt(Encoder-Decoder Attention)
@@ -60,7 +60,7 @@ style FastForward2 fill:#c2e8f7, stroke:#000, stroke-width: 2px
 style SelfAttention fill:#ffe2bb, stroke:#000, stroke-width: 2px
 style SelfAttention2 fill:#ffe2bb, stroke:#000, stroke-width: 2px
 style EncoderDecoderAtt fill:#ffe2bb, stroke:#000, stroke-width: 2px
-```
+</div>
 
 where the `Fast Forward` is a regular fully-connected neural network and the `Self-Attention` layer is searching for connections in the input while encoding. The decoder is identical except there being an additional `Encoder-Decoder Attention` between the prior two. This `Encoder-Decoder Attention` is the surrogate for attention decoder RNNs of previous architectures.
 
