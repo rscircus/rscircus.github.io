@@ -16,7 +16,7 @@ Recently, my colleague T — a big fan of statically typed languages and working
 
 Having worked with TypeScript and React for a while, I suggested a few ideas from the top of my had head but soon discovered a few limits. Therefore, let's see if we can come up with a solution to this problem using TypeScript's inherent features.
 
-<!-- more --->
+<!-- more -->
 
 At the beginning of my journey somebody told me: *"Do you know TypeScript? It's JavaScript with documentation."*. I was hooked and went down the modern rabbit hole of Frontend Development. Lately, I discovered this:
 
