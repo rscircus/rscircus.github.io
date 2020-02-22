@@ -21,7 +21,7 @@ Even though it is eclipsed by the "[Reformer: The Efficient Transformer](https:/
 
 We will cover the setup and execute the Transformer implementation outlined in the given paper. We start with the excellent breakdowns created by Sasha Rush - [The Annotated Transformer](https://www.aclweb.org/anthology/W18-2509.pdf).
 
-In contrast to the paper using Tensorflow (and also [published its implementation](https://github.com/tensorflow/tensor2tensor)), we follow Sasha's torch implementation as my impression is that more and more researchers are moving towards PyTorch.
+In contrast to the paper using Tensorflow (which also [published its implementation](https://github.com/tensorflow/tensor2tensor) 😊), we follow Sasha's torch implementation as my impression is that more and more researchers are moving towards PyTorch.
 
 ### Breakdown
 
@@ -29,7 +29,7 @@ The simplified high-level overview of the transformer looks like this
 
 <center>
 <div class="mermaid">
-graph LR 
+graph LR
 input(input<br/>I am R)-->Encoder
 subgraph Transformer
 Encoder-->Decoder
@@ -79,7 +79,7 @@ class Encoder(nn.Module):
         super(Encoder, self).__init__()
         self.layers = clones(layer, N)
         self.norm = LayerNorm(layer.size)
-        
+
     def forward(self, x, mask):
         "Pass the input (and mask) through each layer in turn."
         for layer in self.layers:
@@ -94,7 +94,7 @@ class Decoder(nn.Module):
         super(Decoder, self).__init__()
         self.layers = clones(layer, N)
         self.norm = LayerNorm(layer.size)
-        
+
     def forward(self, x, memory, src_mask, tgt_mask):
         for layer in self.layers:
             x = layer(x, memory, src_mask, tgt_mask)
@@ -130,7 +130,7 @@ class LayerNorm(nn.Module):
 ```
 
 
-As we introduced the original paper's figure now, we can easily create the connection between our simplified model above and this structure. It's interesting to note, that the final Encoder output is fed into each of the `Encoder-Decoder Attention` layers, which is called `Multi-Head Attention` in the original paper. 
+As we introduced the original paper's figure now, we can easily create the connection between our simplified model above and this structure. It's interesting to note, that the final Encoder output is fed into each of the `Encoder-Decoder Attention` layers, which is called `Multi-Head Attention` in the original paper.
 
 We'll approach the original's figure a bit more now. Of interest is, how the output is re-fed in to the decoders. Jay Alammar's [animation in his breakdown](https://jalammar.github.io/illustrated-transformer/) 'The Illustrated Transformer' is of great help to understand this concept:
 
@@ -173,7 +173,7 @@ class DecoderLayer(nn.Module):
         self.src_attn = src_attn
         self.feed_forward = feed_forward
         self.sublayer = clones(SublayerConnection(size, dropout), 3)
- 
+
     def forward(self, x, memory, src_mask, tgt_mask):
         "Follow Figure 1 (right) for connections."
         m = memory
