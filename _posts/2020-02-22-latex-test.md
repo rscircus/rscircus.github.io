@@ -67,7 +67,8 @@ Here an example in Eq. \eqref{diffint}.
 
 $$
 \begin {equation} \label{diffint}
-\frac{\mathrm{d}}{\mathrm{d} x} \int_{a}^{x} f(s)ds = f(x)
+
+\frac{\mathrm{d}}{\mathrm{d} x} \int e^{x}\,dx = e^{x}
 \end{equation}
 $$
 
