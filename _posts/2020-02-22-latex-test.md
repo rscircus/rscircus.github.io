@@ -72,4 +72,4 @@ $$
 ## Sources
 
 - https://www.iangoodfellow.com/blog/jekyll/markdown/tex/2016/11/07/latex-in-markdown.html
-- http://flennerhag.com/2017-01-14-latex/#mjx-eqn-label
+- http://flennerhag.com/2017-01-14-latex
