@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'The annotated transformer revisited'
+title: 'The Annotated Transformer Revisited'
 sub_title: 'Understanding transformers'
 excerpt_separator: <!-- more -->
 categories:
