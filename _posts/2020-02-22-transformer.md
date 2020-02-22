@@ -103,7 +103,7 @@ class Decoder(nn.Module):
 
 Above you can see two functions calls, which probably do not make sense immediately. That is `clones()`, which produces copies of layers, so we can stack them, and `LayerNorm()`, which corresponds to the yellow box of the original's paper `Fig 1.`:
 
-![](../assets/img/20200222_Transformer_Fig1.png)
+![](https://rscircus.github.io/assets/img/20200222_Transformer_Fig1.png)
 *Fig 1: Architecture (src: Attention is all we need)*
 
 This [Layer Normalization](https://arxiv.org/abs/1607.06450) is similar to [Batch Normalization](https://en.wikipedia.org/wiki/Batch_normalization) and improves, speed, perf and stability by applying a transformation which maintains the mean activation close to 0 and the activation standard deviation close to 1 followed by applying a slight bias based on the input.
