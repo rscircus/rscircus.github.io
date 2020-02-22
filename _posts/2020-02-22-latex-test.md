@@ -7,6 +7,7 @@ categories:
     - Code
 tags:
     - LaTeX
+    - accessibility
 ---
 
 I would like to reference equations like so `\eqref{mylabel}`.
@@ -68,7 +69,7 @@ $$
 \begin {equation} \label{diffint}
 \frac{\mathrm{d}}{\mathrm{d} x} \int_{a}^{x} f(s)ds = f(x)
 \end{equation}
-$$ 
+$$
 
 😍
 
