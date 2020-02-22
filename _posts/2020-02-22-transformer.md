@@ -199,7 +199,8 @@ It's 'multi-headed', because it allows the model to attend to information from d
 
 ## Overall implementation
 
-You can download all of this including Sasha Rushes and my notes from here: https://colab.research.google.com/drive/1tm0_Usqkavr0h1Jk0f-ukcykI78xmcfW
+You can download all of this including Sasha Rushes and my notes from here: [https://colab.research.google.com/drive/1tm0_Usqkavr0h1Jk0f-ukcykI78xmcfW](https://colab.research.google.com/drive/1tm0_Usqkavr0h1Jk0f-ukcykI78xmcfW).
+
 
 
 ## Sources
