@@ -17,7 +17,7 @@ Recently I was thinking about a simple explanation for information entropy. So h
 
 Information entropy is best explained with *information transmission* in mind. Say one wants to transport as little bits as possible from a sender to a recipient to inform the recipient about a certain state the sender wants to communicate.
 
-Traditionally we communicate in bits in technical fields, that is, two-states in one *something*. One could also communicate using more than two states, but as the world developed in a way to favor two-state bits, we stick to this:
+Traditionally we communicate in bits in technical fields, that is, one of two states in *something*. One could also communicate using more than two states in one *something*, but as the world developed in a way to favor one-of-two-state bits, we stick to this:
 
 $$
 1 \; \mathrm{bit} =
