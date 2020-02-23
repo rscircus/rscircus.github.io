@@ -95,8 +95,8 @@ What if the probability of each state is now skewed because the mother usually g
 $$
 \mathrm{state} =
   \begin{cases}
-    \quad \text{20 \% probability of parents being in bed} \\
-    \quad \text{80 \% probability of parents being awake}
+    \quad \text{20 % probability of parents being in bed} \\
+    \quad \text{80 % probability of parents being awake}
   \end{cases}
 $$
 
