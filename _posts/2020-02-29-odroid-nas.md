@@ -14,6 +14,6 @@ The [Odroid-HC2: Home Cloud One](https://www.hardkernel.com/shop/odroid-hc1-home
 
 We will create an extensbile NAS with as little as effort as possible.
 
-![](../assets/img/20200229_Odroid_NAS_stack.jpg)
+![](https://rscircus.github.io/assets/img/20200229_Odroid_NAS_stack.jpg)
 
 <!-- more -->
