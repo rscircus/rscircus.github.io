@@ -11,7 +11,7 @@ tags:
     - config
 ---
 
-How to perform an easy transition from vim to neovim. The step had to come as vim's code base is a miss as many have written already. These days evil-mode in Emacs felt even better than the early love.
+How to perform an easy transition from vim to neovim? The step had to come as vim's code base is a mess as many have written already. These days evil-mode in Emacs felt even better than the early love. Let's get on it and enjoy asynchronous job control and lua scripting.
 
 <!-- more -->
 
@@ -33,12 +33,14 @@ sudo apt-get update
 sudo apt-get install neovim
 ```
 
-For instance [vim-go] requires at least `NVIM v0.3.1`.
+For instance [vim-go](https://github.com/fatih/vim-go) requires at least `NVIM v0.3.1`.
 
-Assuming you are using the fantastic plugin manager `vim-plug`, let's get vim almost to the ready mark:
+Assuming you are using the fantastic plugin manager [vim-plug](https://github.com/junegunn/vim-plug), let's get vim almost to the migration done mark:
 
 
 ## Configuration
+
+Copy your configuration over to the neovim standard directories. Most things will work.
 
 ```bash
 cp -r ~/.vim/plugged ~/.config/nvim/plugged/
