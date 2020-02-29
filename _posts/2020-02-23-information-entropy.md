@@ -130,7 +130,7 @@ $$
 information_{avg} = 0.2 \times 2.32 + 0.8 \times 0.32 = 0.72 \; \text{bit}
 $$
 
-What we just computed is information entropy. ;-)
+What we just computed is information entropy. 😉
 
 Let's formalize this a bit:
 
