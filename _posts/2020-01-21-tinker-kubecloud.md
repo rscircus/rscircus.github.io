@@ -14,6 +14,8 @@ tags:
 
 In this article we have a look at **k3s** and how to get it running on a bunch of **RPis** using **k3sup**. Further we setup **OpenFaaS** and deploy one function (figlet).
 
+Edit<sup>2020.03.01</sup>: `k3sup app install/info` has a successor, which I didn't try out yet, but it's called [arkade](https://github.com/alexellis/arkade). According to the [doc](https://github.com/alexellis/k3sup#k3sup-app-install---easy-installation-of-kubernetes-apps) simply replace all `k3sup app install`s here with `arkade install`.
+
 <!-- more -->
 
 > I hear and I forget. I see and I remember. I do and I understand.
