@@ -35,7 +35,7 @@ What I did.
 - Change Wallpaper to something with 🏔s
 - Mute microphones
 - Get familiar with Keyboard Shortcuts
-    - I really the 'activities' feature (meta+q)t
+    - I really enjoy the 'activities' feature (meta+q)
     - and KRunner (alt+space)
 - Set Digital Clock
     - To 24h
@@ -104,7 +104,7 @@ sudo dnf install i8kutils dell-bios-fan-control
 
 ### If you have Thinkpad think about tlp
 
-There are counter arguments, though... read that Fedora gains 30mins with default settings compared tlp. Forgot where I read that, though. So, YMMV.
+There are counter arguments, though... read that Fedora gains 30mins with default settings compared to tlp. Forgot where I read that, though. So, YMMV.
 
 ### Nice fonts
 
@@ -115,7 +115,7 @@ sudo dnf copr enable dawid/better_fonts
 sudo dnf install fontconfig-enhanced-defaults fontconfig-font-replacements
 ```
 
-There is a bug report open for F35: https://github.com/silenc3r/fedora-better-fonts/issues/37
+There is a bug report open for F35: [https://github.com/silenc3r/fedora-better-fonts/issues/37](https://github.com/silenc3r/fedora-better-fonts/issues/37)
 
 ### Speed up boot time
 
@@ -231,8 +231,8 @@ flatpak install -y flatseal                     # sometimes I don't understand a
 
 ## Firefox
 
-- Add Plasma Integration via extension: https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/
-- Set Search Engine to DDG
+- Add Plasma Integration via extension: [https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/](https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/)
+- Set default Search Engine to DDG
 - Disallow Mozilla to
     - install and run studies
     - send technical and interaction data
@@ -322,6 +322,6 @@ Reboot to see if Grub2 got updated.
 - https://sn99.github.io
 - https://mutschler.eu/linux/install-guides/fedora-post-install/
 
-# Troubleshooting:
+## Troubleshooting:
 
 - Linux Mint is so **massivly behind** Fedora F35, that I had immense problems getting `/boot` and `/boot/efi` straight to dual boot it.
