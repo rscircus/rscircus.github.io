@@ -1,6 +1,25 @@
-# Fedora F35
+---
+layout: post
+title:  "Steps to do after installing Fedora 35 (F35)"
+sub_title: "F35 KDE Spin to be specific"
+excerpt_separator:  <!-- more -->
+categories:
+  - Howto
+tags:
+  - Fedora
+  - Installation
+  - Documentation
+---
 
-Steps to do after installing Fedora F35 / KDE Spin
+Post installation steps for Fedora F35.
+
+<!-- more -->
+
+_Disclaimer: This is a work in progress.
+
+# Steps to do after installing Fedora 35 (F35) KDE Spin
+
+What I did.
 
 ## Basics
 
