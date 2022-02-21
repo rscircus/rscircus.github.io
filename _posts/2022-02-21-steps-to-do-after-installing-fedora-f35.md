@@ -15,9 +15,7 @@ Post installation steps for Fedora F35.
 
 <!-- more -->
 
-_Disclaimer: This is a work in progress.
-
-# Steps to do after installing Fedora 35 (F35) KDE Spin
+_Disclaimer: This is a work in progress._
 
 What I did.
 
