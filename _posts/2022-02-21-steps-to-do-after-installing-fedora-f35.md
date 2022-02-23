@@ -21,29 +21,40 @@ What I did.
 
 ## Basics
 
-- Enable internet access
-- Attach bluetooth mouse/keyboard
-- Let everything update using **Discover** (it pops up in the panel and I let it do it's thing - I guess dnf is working below. konsole->top tells me it's packagekitd, hm... I see kwin_wayland already working here, nice...)
-- A restart might make sense now, but I didn't do it
-- I'm enjoying vanilla KWrite to write this md-file documenting my process...
-- Mount all external filesystems (No rsync et al., I just mount it where I need it, backup is done via NAS)
-- Get the Displays in right order and set zoom to 175%
-- Set the Rendering backend for the Compositor to OpenGL 3.1 (was 2.0)
-- Set Theme to Breeze Twilight with Colors set to Breeze (Similar to my favorite Arc Darker)
-- Launcher -> Settings -> Configure enabled search plugins -> Disable: Bookmarks, Browser History and Browser Tabs
-- Activate Night Color
-- Change Wallpaper to something with 🏔s
-- Mute microphones
-- Get familiar with Keyboard Shortcuts
-    - I really enjoy the 'activities' feature (meta+q)
-    - and KRunner (alt+space)
-- Set Digital Clock
-    - To 24h
-    - ISO Date (YYYY-MM-DD)
-- Move panel to top and shrink to 32px
-- Can't remove system sounds (which seems to be a [bug](https://bugs.kde.org/show_bug.cgi?id=448705))
-- Enable Tap-to-click
-- Enable Invert scroll direction (Natural scrolling)
+- Focus
+    - Set Focus Stealing Prevention to High (Window Behavior)
+    - Focus follows mouse (delay 300ms)
+    - Raise on hover, delayed by 750ms
+- Connetivity
+    - Enable internet access
+    - Attach bluetooth mouse/keyboard
+- Update
+    - ~~Let everything update using **Discover**~~ (it pops up in the panel and I let it do it's thing - I guess dnf is working below. konsole->top tells me it's packagekitd, hm... I see kwin_wayland already working here, nice...)
+    - ~~A restart might make sense now, but I didn't do it~~
+- Data
+    - Mount all external filesystems (No rsync et al., I just mount it where I need it, backup is done via NAS)
+    - I'm enjoying vanilla KWrite to write this md-file documenting my process...
+- Display
+    - Get the Displays in right order and set zoom to 175%
+    - Set the Rendering backend for the Compositor to OpenGL 3.1 (was 2.0)
+    - Set Theme to Breeze Twilight with Colors set to Breeze (Similar to my favorite Arc Darker)
+- Usability
+    - Launcher -> Settings -> Configure enabled search plugins -> Disable: Bookmarks, Browser History and Browser Tabs
+    - Activate Night Color
+    - Change Wallpaper to something with 🏔s
+- Privacy
+    - Mute microphones
+- Misc
+    - Get familiar with Keyboard Shortcuts
+        - I really enjoy the 'activities' feature (meta+q)
+        - and KRunner (alt+space)
+    - Set Digital Clock
+        - To 24h
+        - ISO Date (YYYY-MM-DD)
+    - Move panel to top and shrink to 32px
+    - Can't remove system sounds (which seems to be a [bug](https://bugs.kde.org/show_bug.cgi?id=448705))
+    - Enable Tap-to-click
+    - Enable Invert scroll direction (Natural scrolling)
 
 ## Fedora OS
 
@@ -90,7 +101,6 @@ Now the most important thing:
 ```bash
 sudo dnf install -y vim
 ```
-
 
 ### Fix Dell fan issues
 
@@ -151,10 +161,25 @@ sudo systemctl enable fstrim.timer
 
 ```bash
 cd /usr/sbin
-sudo grubby --update-kernel=ALL --args="processor.ignore_ppc=1 nowatchdog"
+sudo grubby --update-kernel=ALL --args="processor.ignore_ppc=1 nowatchdog mitigations=off"
 ```
 
 Restart now.
+
+### Additional Software Sources
+
+```bash
+sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+sudo dnf upgrade --refresh
+sudo dnf groupupdate core
+sudo dnf install -y rpmfusion-free-release-tainted
+sudo dnf install -y dnf-plugins-core
+
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak update # I do not like snap
+```
 
 ### Nvidia
 
@@ -184,21 +209,6 @@ Which now should spit out a version number and you should hear your fans going c
 **TODO:** Next laptop will come with AMD.
 
 
-### Additional Software Sources
-
-```bash
-sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-
-sudo dnf upgrade --refresh
-sudo dnf groupupdate core
-sudo dnf install -y rpmfusion-free-release-tainted
-sudo dnf install -y dnf-plugins-core
-
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak update # I do not like snap
-```
-
 ### Take care of apps watching for file changes
 
 Fix some limits of inotify:
@@ -219,7 +229,15 @@ There are [crazy](https://code.visualstudio.com/docs/setup/linux#_visual-studio-
 
 ## Software
 
-### The usual culprits
+### The usual culprits using Flatpak
+
+Fix a few things flatpak:
+
+```bash
+sudo dnf install xdg-desktop-portal-wlr
+sudo dnf install gnome-settings-daemon
+flatpak install flathub org.gtk.Gtk3theme.Materia-dark-compact
+```
 
 ```bash
 flatpak install -y org.gnu.emacs                # yep, the best editor for lips and clojure-*
@@ -229,6 +247,13 @@ flatpak install -y shotcut                      # sometimes I edit videos
 flatpak install -y flatseal                     # sometimes I don't understand access rights of flatpaks
 ```
 
+In case your fonts look blurry, there are a [ton](https://github.com/flatpak/flatpak/issues/3619) of [problems](https://www.reddit.com/r/gnome/comments/qeodr3/font_in_flatpak_apps_looks_bad_how_to_fix_it/) and [issues](https://github.com/flatpak/flatpak/issues/2861) on that.
+
+My fix was to explicity change the socket for the affected packages:
+
+```bash
+sudo flatpak override --nosocket=wayland your.package.Here
+```
 ## Firefox
 
 - Add Plasma Integration via extension: [https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/](https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/)
@@ -272,7 +297,6 @@ sudo dnf install -y nextcloud-client nextcloud-client-dolphin
 ```bash
 sudo dnf install -y git git-lfs
 git-lfs install
-flatpak install -y gitkraken
 ```
 
 ### Multimedia
@@ -294,28 +318,21 @@ The best media player.
 sudo dnf install -y mpv
 ```
 
+### Fedy
+
+```bash
+sudo dnf copr enable kwizart/fedy
+sudo dnf install -y fedy
+```
+
 ## The other OSes you have
 
 **TODO: WIP**
 
-Find them using
-
-```bash
-os-prober
-```
-
-Update grub2:
-
-```bash
-cd /usr/sbin
-sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
-```
-
-Reboot to see if Grub2 got updated.
-
-
 ## Sources
 
+- https://thomas-leister.de/en/repair-fedora-efi-bootloader/
+- https://wiki.gentoo.org/wiki/Flatpak#Fixing_jagged_fonts_on_Wayland
 - https://fedoraproject.org/wiki/GRUB_2
 - https://ask.fedoraproject.org/t/os-prober-results-not-being-added-to-grub-menu/19145/11
 - https://copr.fedorainfracloud.org/coprs/uriesk/i8kutils/
