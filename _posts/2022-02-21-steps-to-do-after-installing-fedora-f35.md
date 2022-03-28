@@ -325,6 +325,16 @@ sudo dnf copr enable kwizart/fedy
 sudo dnf install -y fedy
 ```
 
+### MTP
+
+If you want to connect your phone, Dolphin might fail.
+
+```
+sudo dnf clean all && dnf -y update && dnf -y reinstall kio-extras
+```
+
+might help. It's an issue though. :/
+
 ## The other OSes you have
 
 **TODO: WIP**
