@@ -25,7 +25,7 @@ What I did.
     - Set Focus Stealing Prevention to High (Window Behavior)
     - Focus follows mouse (delay 300ms)
     - Raise on hover, delayed by 750ms
-- Connetivity
+- Connectivity
     - Enable internet access
     - Attach bluetooth mouse/keyboard
 - Update
@@ -55,6 +55,12 @@ What I did.
     - Can't remove system sounds (which seems to be a [bug](https://bugs.kde.org/show_bug.cgi?id=448705))
     - Enable Tap-to-click
     - Enable Invert scroll direction (Natural scrolling)
+- Window Management
+    - Flatpak Integration sucks so far... #todo
+    - Enable 4 Virtual Desktops (this competes with Activities a bit...#todo)
+    - Adapt keyboard shortcuts:
+        - Toggle Present Windows (Current Desktop): Ctrl+Alt+Up
+        - Show Desktop Grid: Ctrl+Alt+Down
 
 ## Fedora OS
 
@@ -309,6 +315,10 @@ sudo dnf install -y lame\* --exclude=lame-devel
 sudo dnf group upgrade --with-optional Multimedia
 sudo dnf install -y gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-ugly gstreamer1-plugins-bad-free gstreamer1-plugins-bad-free gstreamer1-plugins-bad-freeworld gstreamer1-plugins-bad-free-extras ffmpeg
 ```
+
+#### Remap Stereo to Mono
+
+Because I suffer under [single-sided deafness](https://en.wikipedia.org/wiki/Unilateral_hearing_loss), remap stereo to mono as described in [https://wiki.archlinux.org/title/PulseAudio/Examples#Remap_stereo_to_mono](https://wiki.archlinux.org/title/PulseAudio/Examples#Remap_stereo_to_mono)
 
 ### MPV
 
