@@ -260,6 +260,7 @@ My fix was to explicity change the socket for the affected packages:
 ```bash
 sudo flatpak override --nosocket=wayland your.package.Here
 ```
+
 ## Firefox
 
 - Add Plasma Integration via extension: [https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/](https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/)
@@ -268,7 +269,6 @@ sudo flatpak override --nosocket=wayland your.package.Here
     - install and run studies
     - send technical and interaction data
 - Disable Title Bar
-
 
 ### Shell
 
@@ -339,11 +339,17 @@ sudo dnf install -y fedy
 
 If you want to connect your phone, Dolphin might fail.
 
-```
+```bash
 sudo dnf clean all && dnf -y update && dnf -y reinstall kio-extras
 ```
 
 might help. It's an issue though. :/
+
+### Software Development
+
+```bash
+sudo dnf groupinstall "Development Tools" -y
+```
 
 ## The other OSes you have
 
