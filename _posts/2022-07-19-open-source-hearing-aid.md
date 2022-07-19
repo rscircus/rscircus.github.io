@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Steps to do after installing Fedora 35 (F35)"
-sub_title: "F35 KDE Spin to be specific"
+title:  "Open Source Hearing Aids"
+sub_title: "New hardware and smartphones are changing the game..."
 excerpt_separator:  <!-- more -->
 categories:
   - Tinker
