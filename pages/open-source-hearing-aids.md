@@ -123,3 +123,54 @@ STATIC mp_obj_t Maix_mic_array_get_dir(size_t n_args, const mp_obj_t *pos_args, 
 Further, it is interesting to note, that the `MIC_ARRAY` is generating the heatmap, called `thermal_map_data` representing a `16x16` bits image as 256 bit long array. What is also interesting is that the direction indication, i.e., the brightness of each LED on the ring is determined by using the heatmap in the `calc_voice_strength` function.
 
 Impressive, how far we get with these simple methods. Most interesting is how the microphone array generates this heatmap, which is not obvious from the code itself.
+
+## The Open Master Hearing Aid
+
+
+One of the most interesting projects is coming from the Kompetenzzentrum fuer Hoergeraete-Systemtechnik. It's especially remarkable, as [Electrical Engineers are fading form the job market](https://www.theregister.com/2022/07/18/electrical_engineers_extinction/) because [Software is Eating all the jobs](https://techcrunch.com/2011/08/21/software-is-eating-all-the-jobs-too/?guccounter=1&guce_referrer=aHR0cHM6Ly9kdWNrZHVja2dvLmNvbS8&guce_referrer_sig=AQAAAL-YyfJ5cae1TydJyH63UBHtJBo4xnJoLf71Rtw-GFvx4uBP6co_nINvHL85VIePQ92TG59vPjcz74C1JLMzCcXWHKGdJuzj_jofDHdKgiPKlXgpn0gVTkLJm8EvDdEmrDG8YhWXQ7Aw2veBFUBK8XOM1xG_nfPRbzlc8JpCkXHL).
+
+### Motivation
+
+From the primer:
+
+>The HörTech open Master Hearing Aid (openMHA), is a development and evaluation software platform that is able to execute hearing aid signal processing in real-time on standard computing hardware with a low delay between sound input and output.
+
+=> Real-time and low latency are key! Else this will mess with the brain.
+
+### Structure
+
+- Runs in Matlab/Octave
+- Uses JACK -- even though `*nix` is already far into [PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Community/) while [PipeWire](https://pipewire.org) / [PipeWire - Repo](https://gitlab.freedesktop.org/pipewire/pipewire) gets more and more traction... 🙈
+- Architecture:
+    ![](https://rscircus.github.io/assets/img/Pasted_image_20220719164329.png)
+- Above we see four components:
+	- **MHA** = CLI application which sets everything up
+		- loads (openMHA) plugins
+		- i/o modules
+		- manual configuration interface
+		- TCP/IP based configuration interface
+	- **openMHA plugins** or simply plugins = provide the DSP or ASP capabilities.
+		- Usually: `1 algorithm <-> 1 plugin`
+	- **I/O** modules
+	- **libopenmha** - dynamic library to connect to kernel
+- _Summary:_ Virtual hearing aid processing can be achieved by combination of many plugins
+
+
+### How it works
+
+- The audio signal is processed in chunks of defined length called _fragments_. These can be processed/transported either as:
+	- audio samples in time domain
+	- spectra of fragments in the STFT domain
+	- these are passed through the plugins
+- Recommendation:
+	- Sharing STFT data lowers latency!
+	- Sharing of non-audio information is also possible (via so-caled _AC variables_)
+
+
+### Getting started
+
+The starting guide linked below has a few example `*.cfg` files for some simple applications.
+
+### Sources
+
+- http://www.openmha.org/docs/openMHA_starting_guide.pdf
