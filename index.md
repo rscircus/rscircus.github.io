@@ -20,6 +20,6 @@ sidebar_link: true
 - [Edge TPUs and inference](https://rscircus.github.io/2020/01/25/coral-ai-edge.html) - inference at low watts
 - [Kubernetes on RaspberryPi 3B+](https://rscircus.github.io/2020/01/21/tinker-kubecloud.html) - k3s on a RaspberryPi cluster
 - [Climate Anomaly](https://rscircus.github.io/pages/climate_anomaly) - climate anomaly August 2019 visualization
-- [Open Source hearing aid](https://rscircus.github.io) - To be published
+- [Open Source hearing aid]([https://rscircus.github.io](https://rscircus.github.io/2022/07/19/open-source-hearing-aid) - To be published
 
 <p style="text-align: right">🖤</p>
