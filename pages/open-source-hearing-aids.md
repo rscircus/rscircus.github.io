@@ -1,26 +1,24 @@
 ---
-layout: post
+layout: page
 title:  "Open Source Hearing Aids"
 sub_title: "New hardware and smartphones are changing the game..."
 excerpt_separator:  <!-- more -->
-categories:
-  - Tinker
 tags:
   - Accessibility
   - Hardware and Software Love
 ---
 
-State of Open Source Hearing Aids and SOTA in Hearing Aids
+State of Open Source Hearing Aids and SOTA in Hearing Aids.
 
 <!-- more -->
 
 ## Overview
 
-This writing is concerned with the OSTA of hearing aids and focuses on Open Source Implementations of known algorithms in this area. 
+This writing is concerned with the SOTA of hearing aids and focuses on Open Source implementations of known algorithms in this area. 
 
 ## Disclaimer
 
-Basically this document is an excerpt from my personal notes as of 07.2022.
+Basically this document is a summary of my excerpts from personal notes created in 07.2022.
 
 ## MaixPy - A MicroPython implementation for the Kendryte K210 RISC-V ("Edge AI") architecture
 
