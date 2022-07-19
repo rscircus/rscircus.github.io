@@ -28,7 +28,8 @@ A project created by SiPeed: https://maixpy.sipeed.com
 
 From a developers perspective it is very easy to setup a noise map and configure an microphone array to achieve results like the following:
 
-https://user-images.githubusercontent.com/1167114/179713272-5d92e689-66e1-475b-937c-da9339508206.mp4
+<video src="https://user-images.githubusercontent.com/1167114/179713272-5d92e689-66e1-475b-937c-da9339508206.mp4" controls="controls" style="max-width: 730px;">
+</video>
 
 Depicted is the localization using a Maix Go with Kendryte's K210. The K210 is meanwhile succeeded by the K510 - while Kendryte is now known as https://canaan.io.
 
