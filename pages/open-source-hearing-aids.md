@@ -166,6 +166,22 @@ From the primer:
 	- Sharing STFT data lowers latency!
 	- Sharing of non-audio information is also possible (via so-caled _AC variables_)
 
+### Why this project is awesome
+
+- They provide SD card images for the Beaglebone Black w/ the Cape4all soundcard.
+-  They provide a basic hearing aid processing chain covering
+	-   bilateral adaptive differential microphones for noise suppression
+	-   binaural coherence filter for feedback reduction and dereverberation
+	-   multi-band dynamic range compressor for hearing loss compensation
+	-   spatial filtering algorithms:
+	    -   a delay-and-sum beamformer
+	    -   a MVDR beamformer
+	-   single-channel noise reduction
+	-   resampling and filter plugins
+	-   STFT cyclic aliasing prevention
+	-   adaptive feedback cancellation
+	-   probabilistic sound source localization
+
 
 ### Getting started
 
