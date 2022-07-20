@@ -12,13 +12,16 @@ State of Open Source Hearing Aids and SOTA in Hearing Aids.
 
 <!-- more -->
 
+
 ## Overview
 
 This writing is concerned with the SOTA of hearing aids and focuses on Open Source implementations of known algorithms in this area. 
 
+
 ## Disclaimer
 
 Basically this document is a summary of my excerpts from personal notes created in 07.2022.
+
 
 ## MaixPy - A MicroPython implementation for the Kendryte K210 RISC-V ("Edge AI") architecture
 
@@ -124,6 +127,7 @@ Further, it is interesting to note, that the `MIC_ARRAY` is generating the heatm
 
 Impressive, how far we get with these simple methods. Most interesting is how the microphone array generates this heatmap, which is not obvious from the code itself.
 
+
 ## The Open Master Hearing Aid
 
 
@@ -136,6 +140,7 @@ From the primer:
 >The HörTech open Master Hearing Aid (openMHA), is a development and evaluation software platform that is able to execute hearing aid signal processing in real-time on standard computing hardware with a low delay between sound input and output.
 
 => Real-time and low latency are key! Else this will mess with the brain.
+
 
 ### Structure
 
@@ -166,6 +171,7 @@ From the primer:
 	- Sharing STFT data lowers latency!
 	- Sharing of non-audio information is also possible (via so-caled _AC variables_)
 
+
 ### Why this project is awesome
 
 - They provide SD card images for the Beaglebone Black w/ the Cape4all soundcard.
@@ -189,4 +195,4 @@ The starting guide linked below has a few example `*.cfg` files for some simple 
 
 ### Sources
 
-- http://www.openmha.org/docs/openMHA_starting_guide.pdf
+- [http://www.openmha.org/docs/openMHA_starting_guide.pdf](http://www.openmha.org/docs/openMHA_starting_guide.pdf)
