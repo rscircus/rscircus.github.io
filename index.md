@@ -17,11 +17,11 @@ sidebar_link: true
 
 **My own projects**
 
-- [Visualization of the nuclear triad of all major forces](https://strangewars.github.io/) - with a loud not towards the movie Wargames
-- [#EUvsVirus Hackathon Contribution](https://eusim.github.io) - simulating COVID-19 in the EU using Markov-Chains
-- [Edge TPUs and inference](https://rscircus.github.io/2020/01/25/coral-ai-edge.html) - inference at low watts
-- [Kubernetes on RaspberryPi 3B+](https://rscircus.github.io/2020/01/21/tinker-kubecloud.html) - k3s on a RaspberryPi cluster
-- [Climate Anomaly](https://rscircus.github.io/pages/climate_anomaly) - climate anomaly August 2019 visualization
-- [Open Source hearing aids](https://rscircus.github.io/pages/open-source-hearing-aids.html) - Notes on Hearing Aids SOTA and Open Source endeavors
+- [☢ Visualization of the️ nuclear triad of all major forces](https://strangewars.github.io/) - with a loud not towards the movie Wargames
+- [🦠 #EUvsVirus  Hackathon Contribution](https://eusim.github.io) - simulating COVID-19 in the EU using Markov-Chains
+- [🤖 Edge TPUs and inference](https://rscircus.github.io/2020/01/25/coral-ai-edge.html) - inference at low watts
+- [🛳️ Kubernetes on RaspberryPi 3B+](https://rscircus.github.io/2020/01/21/tinker-kubecloud.html) - k3s on a RaspberryPi cluster
+- [🌍 Climate Anomaly](https://rscircus.github.io/pages/climate_anomaly) - climate anomaly August 2019 visualization
+- [🦻 Open Source hearing aids](https://rscircus.github.io/pages/open-source-hearing-aids.html) - Notes on Hearing Aids SOTA and Open Source endeavors
 
 <p style="text-align: right">🖤</p>
