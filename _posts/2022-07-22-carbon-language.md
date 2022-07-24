@@ -130,4 +130,11 @@ fn Main() -> 32 {
 }
 ```
 
-  It's also interesting to explore the [Compiler Explorer](https://carbon.compiler-explorer.com/). The similarities to C# are quite interesting...
+It's also interesting to explore the [Compiler Explorer](https://carbon.compiler-explorer.com/).
+
+### The mood?
+
+The similarities to C# are quite interesting... but then, I am certain Google will not patch every god damn paradigm and language feature there is on this planet into the language such that a so-called "[Pocket Reference](https://www.oreilly.com/library/view/c-10-pocket/9781098122034/)" comes at >250 pages... 
+
+![image](https://user-images.githubusercontent.com/1167114/180646925-530a24e1-4812-4e7e-bc3c-c0ccbfbe8fdc.png)
+
