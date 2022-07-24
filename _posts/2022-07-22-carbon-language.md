@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 'nim-lang in one file'
-sub_title: 'nim :)'
+title: 'Carbon Language'
+sub_title: 'A new experimental C++ successor by the big G'
 excerpt_separator: <!-- more -->
 categories:
     - Code
