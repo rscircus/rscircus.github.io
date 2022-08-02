@@ -8,6 +8,7 @@ sidebar_link: true
 
 **Projects I contribute(d) to**
 
+-   [carbon-lang](https://github.com/carbon-language/carbon-lang) - Aiding the design of a successor for C++
 -   [learn-go-with-tests](https://github.com/quii/learn-go-with-tests) - Learn Go with Tests
 -   [LayerParallelProgramming](https://github.com/steffi7574/LayerParallelLearning) - Layer-parallel training of deep residual neural networks
 -   [sdkman](https://sdkman.io) - The Software Development Kit Manager
