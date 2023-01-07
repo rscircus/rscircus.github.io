@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Steps to do after installing Fedora (~~F35~~ F37)
+title:  "Steps to do after installing Fedora (~~F35~~ F37)"
 sub_title: "F37 KDE Spin to be specific"
 excerpt_separator:  <!-- more -->
 categories:
