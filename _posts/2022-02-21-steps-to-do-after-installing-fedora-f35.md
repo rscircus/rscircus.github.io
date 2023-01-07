@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Steps to do after installing Fedora 35 (F35)"
-sub_title: "F35 KDE Spin to be specific"
+title:  "Steps to do after installing Fedora (~~F35~~ F37)
+sub_title: "F37 KDE Spin to be specific"
 excerpt_separator:  <!-- more -->
 categories:
   - Howto
@@ -260,6 +260,12 @@ My fix was to explicity change the socket for the affected packages:
 ```bash
 sudo flatpak override --nosocket=wayland your.package.Here
 ```
+
+### AppImage
+
+Sometimes it still makes more sense to use AppImages due to Wayland issues or simple there being, no flatpak.
+
+Then one can install: [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher) and point it to `~/.local/share/appimages`.
 
 ## Firefox
 
