@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'The most stupid thing'
+title: 'All your data are belong to us'
 sub_title: 'Microsoft wants all your data :/'
 excerpt_separator: <!-- more -->
 categories:
