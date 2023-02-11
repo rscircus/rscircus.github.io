@@ -37,3 +37,4 @@ _Sources:_
 - [0.3] https://www.reddit.com/r/ChatGPT/comments/10xfksf/comment/j7uk8x4/?utm_source=reddit&utm_medium=web2x&context=3
 - [1] https://rscircus.github.io/2020/02/22/transformer.html
 - [2] https://www.google.com/search?hl=en&q=copilot%20copyrighted%20code
+- [X] In case you wonder about the article's title: https://en.wikipedia.org/wiki/All_your_base_are_belong_to_us
