@@ -25,7 +25,7 @@ The sketchy thing with LLMs or NNs in general is that storage and compute somewh
 
 Why would Microsoft trial such a legally dangerous thing in a somewhat unrelated company called OpenAI for a while? It's entirely in the realm of possibility to assume that they wanted to see if the world would react in any legal way to this fact. The world did not after two months. And now chatGPT basically flows into any product of Microsoft.
 
-How can it be that there are companies who run their entire data on Microsoft premises? From communication, to document storage, and operating systems. With GitHub being owned by Microsoft and a fathomable track-record [1] of their AI coding assistant Copilot being trained with copyrighted code, even their code?
+How can it be that there are companies who run their entire data on Microsoft premises? From communication, to document storage, and operating systems. With GitHub being owned by Microsoft and a fathomable track-record [2] of their AI coding assistant Copilot being trained with copyrighted code, even their code?
 
 Who in their right mind would do this?
 
