@@ -13,13 +13,13 @@ tags:
     - legal
 ---
 
-Recently we've seen OpenAI, a company excessivly funded by Microsoft, trialing a Large Language Model (LLM) called chatGPT.
+Recently we have seen OpenAI, a company excessivly funded by Microsoft, trialing a Large Language Model (LLM) called chatGPT.
 
 <!-- more -->
 
-It is one of the first Neural Networks (NN) one can basically chat with and have somewhat of a dialogue. The remarkable thing about chatGPT is that it has an usually very convincing opinion about any topic. To train such a LLM one needs enormous amounts of data. It is somewhat kept in the dark with what data chatGPT was and is trained with. However, there are some leaks by internal sources which make sense considering the accuracy chatGPT is able to talk about any topic. One of the data sets is called 'books2', it is basically most of all pirated books there ever are. [0]
+It is one of the first Neural Networks (NN) one can basically chat with and have somewhat of a dialogue. The remarkable thing about chatGPT is that it has an usually very convincing opinion about any topic. To train such a LLM one needs enormous amounts of data. It is somewhat kept in the dark with what data chatGPT was and is trained with. However, there are some leaks by internal sources which make sense considering the accuracy chatGPT is able to talk about any topic. One of the data sets is called `books2`, it is basically most of all pirated books there ever are. [0]
 
-That's an interesting fact from a legal perspective.
+That is an interesting fact from a legal perspective.
 
 The sketchy thing with LLMs or NNs in general is that storage and compute somewhat smear into each other and it is basically impossible to tell where what is stored or where what is computed. One could say that the data _and_ the compute are compressed and encrypted in the NN. chatGPT being a Transformer type of architecture [1] its compression part becomes even more obvious.
 
