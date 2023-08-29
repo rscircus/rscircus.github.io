@@ -82,7 +82,7 @@ Well, the answer is: Yes. However, there are many use cases, where it is simply 
 
 My recommendation from today would be:
 
-- **Single-machine & Speedup needed**: Start with NumExpr if exists need to optimize specific mathematical expressions on arrays.
+- **Single-machine & Speedup needed**: Start with NumExpr if need to optimize specific mathematical expressions on arrays exists.
 - **Beyond-memory and Out-of-core**: Use `dask` if hitting limits of your machine due to dataset size beating memory size. It'll be easier if you want to parallelize computations later on to **distribute**.
 
 ## Further Reading
