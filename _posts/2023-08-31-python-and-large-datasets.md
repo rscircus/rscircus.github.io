@@ -1,15 +1,28 @@
-# Python and Large Datasets
+---
+layout: post
+title: 'Python and datasets than the memory you have'
+sub_title: 'A single-threaded dynamic language tackles Big Data.'
+excerpt_separator: <!-- more -->
+categories:
+    - Code
+tags:
+    - bigdata
+    - ai
+    - Python
+---
 
 > Beware of the man who won’t be bothered with details.
 > — William Feather, Sr.
 
 ## Goal
 
-In this essay I want to shed some light on the details when dealing with with large datasets (read: *arrays*), while working with Python and numerical code when datasets become increasingly large (or local memory being not enough or the overall computation being too slow using Python's standard libraries).
+In this essay I want to shed some light on the details when dealing with large datasets (read: *arrays*), while working with Python and numerical code when datasets become increasingly large (or local memory being not enough or the overall computation being too slow using Python's standard libraries).
+
+<!-- more -->
 
 ## Motivation
 
-Recently [Jonas Bhend](https://scholar.google.com/citations?hl=en&user=kTTI6VAAAAAJ) from the always impressing [MeteoSwiss](https://www.meteoswiss.admin.ch) and me had an interesting discussion where we tangentially covered large arrays and how to deal with them in Python. This is of particular interest these days as we have seen a lot of efforts to 'compress' and distribute large arrays to some degree in relation to Large Language Models (LLMs). Starting with the leak of Llama by Facebook and ChatGPT -- whose [theoretical and architectural details I have written about a few years ago](https://rscircus.github.io/2020/02/22/transformer.html) -- a furry of innovation unravelled in the FOSS scene.
+Recently [Jonas Bhend](https://scholar.google.com/citations?hl=en&user=kTTI6VAAAAAJ) from the always impressing [MeteoSwiss](https://www.meteoswiss.admin.ch) and me had an interesting discussion where we tangentially covered large arrays and how to deal with them in Python. This is of particular interest these days as we have seen a lot of efforts to 'compress' and distribute large arrays to some degree in relation to Large Language Models (LLMs). Starting with the leak of Llama by Facebook and ChatGPT -- whose [theoretical and architectural details I have written about a few years ago](https://rscircus.github.io/2020/02/22/transformer.html) -- a flurry of innovation unravelled in the FOSS scene.
 
 Considering very large arrays and distributed computing, the [last time](https://github.com/rscircus/fortress) I was looking into speeding up numerical code close to the metal was the optimization of a fix-point iterator for a large equation system using Fortran and OpenMPI.
 
