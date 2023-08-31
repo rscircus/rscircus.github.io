@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Python and datasets than the memory you have'
+title: 'Python and datasets larger than the memory you have'
 sub_title: 'A single-threaded dynamic language tackles Big Data.'
 excerpt_separator: <!-- more -->
 categories:
