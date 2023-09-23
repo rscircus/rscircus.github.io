@@ -9,6 +9,7 @@ gem "jekyll"
 
 # Theme
 gem "jekyll-theme-hydeout", "~> 3.4"
+gem "jekyll-whiteglass"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
