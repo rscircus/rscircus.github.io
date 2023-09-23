@@ -1,6 +1,6 @@
 # Basic configuration
 # theme: jekyll-theme-hydeout # Github will complain about this one
-remote-theme: fongandrew/hydeout
+remote-theme: yous/hydeout
 
 title: Circus
 tagline: 'wordsmithing'
