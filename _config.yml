@@ -1,5 +1,4 @@
 # Basic configuration
-# theme: jekyll-theme-hydeout # Github will complain about this one
 remote-theme: yous/whiteglass
 
 title: Circus
