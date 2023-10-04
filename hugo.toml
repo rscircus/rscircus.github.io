@@ -99,7 +99,9 @@ features = [
 ]
 min_version = "0.97.1"
 
-
 [author]
   name = "Roland Siegbert"
   homepage = "https://rscircus.github.io"
+
+[markup.goldmark.renderer]
+  unsafe = true
