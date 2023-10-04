@@ -1,8 +1,10 @@
 {{- define "main" }}
-
 <article class="post-single">
   <header class="post-header">
     {{ partial "breadcrumbs.html" . }}
+    {{ if or .Params.math .Site.Params.math }}
+      {{ partial "math.html" . }}
+    {{ end }}
     <h1 class="post-title">
       {{ .Title }}
       {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}

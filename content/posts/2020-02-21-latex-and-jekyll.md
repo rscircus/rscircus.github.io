@@ -2,6 +2,7 @@
 categories:
 - Code
 date: "2020-02-21T00:00:00Z"
+math: true
 excerpt_separator: <!-- more -->
 sub_title: Setting up LaTeX in Jekyll
 tags:
@@ -10,15 +11,14 @@ tags:
 title: LaTeX in Jekyll
 ---
 
-TODO: Recreate this for Hugo!
+Hint: Please follow [this](https://www.simonspavound.com/posts/2020/09/equations-with-katex-in-hugo/) for the Hugo integration as of 2023.
 
 Reference equations like so `\eqref{mylabel}`. And define them like so:
 
 ```latex
 $$
-  \begin {equation} \label{diffint}
+  \label{diffint}
     \frac{\mathrm{d}}{\mathrm{d} x} \int e^{x}\,dx = e^{x}
-  \end{equation}
 $$
 ```
 
@@ -76,12 +76,10 @@ we configure it as follows:
 Here an example in Eq. \eqref{diffint}.
 
 $$
-\begin {equation} \label{diffint}
-\frac{\mathrm{d}}{\mathrm{d} x} \int e^{x}\,dx = e^{x}
-\end{equation}
+ \frac{\mathrm{d}}{\mathrm{d} x} \int e^{x}\,dx = e^{x}
 $$
 
-which actually works with any 'healthy' function $ f(x) $. However, \eqref{diffint} is particularly interesting, because $ f(x) = e^x $ is the unique function which is its own derivative and antiderivative. 😍
+which actually works with any 'healthy' function $f(x)$ (KaTeX: \\(f(x)\\)). However, \eqref{diffint} is particularly interesting, as $ f(x) = e^x $ (KaTeX: \\(f(x) = e^x\\)) is a unique function because is its own derivative and antiderivative. ☺️
 
 ## Sources
 
