@@ -1,6 +1,6 @@
 ## Hey there! 🤗 
 
-Welcome to R's 🎩. Some thanks about the setup of this github pages page include:
+Welcome to R's 🎩. Some thanks about the setup of this page include:
 
 -   Built with [Hugo](gohugo.io) (after a long time with [Jekyll](https://jekyllrb.com/)).
 -   Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com)
