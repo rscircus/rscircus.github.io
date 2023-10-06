@@ -21,6 +21,8 @@ In this essay I want to approach Software Engineering with humans and time as gu
 
 ## A Coherent Philosophy of Software Design
 
+![](https://rscircus.github.io/assets/img/20231006_SWE_BestPractices_Books.jpg)
+
 My favorite book of these four mentioned and being pictured above is John Osterhout's "A Philosophy of Software Design". The reason is that "A Philosophy of Software Design" designs software with focus on simplicity and evolvability. At the heart of Osterhout's perspective is the notion that complexity is the primary impediment to effective software design. He posits that the *majority of costs in software development are rooted in complexities that are unintentionally introduced*. Deep modules, which have a lot of functionality but expose a simple interface, are advocated as the hallmark of great design. These encapsulated modules lead to more robust and maintainable systems, and the **focus should always be on reducing cognitive load for developers**. Let me repeat:
 
 > The focus should always be on reducing cognitive load for developers.
