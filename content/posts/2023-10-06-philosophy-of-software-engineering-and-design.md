@@ -52,7 +52,7 @@ More often than not, software interacts with hardware. And hardware is hard. "Si
 > _"Blameless Postmortems: When incidents happen, the focus is on learning from them rather than placing blame."_
 > ~The SRE Book
 
-Beyer et al. describe how to maintain high availability and performance while allowing for rapid changes and growth. Central to SRE is the Service Level Objective (SLO), ensuring that systems meet users' reliability expectations. Moreover, error budgets and risk management play crucial roles, promoting *a balance between innovation and stability*. Topics like Capacity Planning, Load Testing, and Monitoring. Understanding the capacity needs of a service, testing its limits, and consistently monitoring its performance are crucial components of the SRE methodology.
+Beyer et al. describe how to maintain high availability and performance while allowing for rapid changes and growth. Central to SRE is the Service Level Objective (SLO), ensuring that systems meet users' reliability expectations. Moreover, error budgets and risk management play crucial roles, promoting *a balance between innovation and stability*. Topics like Capacity Planning, Load Testing, and Monitoring have to be considered. Understanding the capacity needs of a service, testing its limits, and consistently monitoring its performance are crucial components of the SRE methodology.
 
 > _Balance between innovation and stability._
 
