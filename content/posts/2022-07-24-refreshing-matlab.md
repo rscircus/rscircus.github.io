@@ -14,4 +14,4 @@ Refreshed Matlab the last week. Here are my notes. :)
 
 <!--more-->
 
-{{< gist d53f47b3bc76b11c7527e5a972490427 >}}
+{{< gist rscircus d53f47b3bc76b11c7527e5a972490427 >}}
