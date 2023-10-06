@@ -9,6 +9,7 @@ pygmentscodefencesguesssyntax = true
 [params]
 	mode="toggle"
  	ShowReadingTime=true
+  	ShowToc=true
 	useCDN=false
 	subtitle = "Fascinated by Computer Science, DIY hardware, and Accessibility for the Deaf and Mathematics"
 
