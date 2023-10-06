@@ -10,6 +10,7 @@ pygmentscodefencesguesssyntax = true
 	mode="toggle"
  	defaultTheme="dark"
  	ShowWordCount=true
+  	ShowBreadCrumbs=true
   	ShowToc=true
 	useCDN=false
 	subtitle = "Fascinated by Computer Science, DIY hardware, and Accessibility for the Deaf and Mathematics"
