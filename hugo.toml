@@ -8,8 +8,8 @@ pygmentscodefencesguesssyntax = true
 
 [params]
 	mode="toggle"
+ 	defaultTheme="dark"
  	ShowWordCount=true
-  	ShowShareButtons=true
   	ShowToc=true
 	useCDN=false
 	subtitle = "Fascinated by Computer Science, DIY hardware, and Accessibility for the Deaf and Mathematics"
