@@ -11,7 +11,7 @@ tags:
 title: Philosophy of Software Engineering and Design
 ---
 
-We find ourselves in an era defined by rapid technological advancements. So much that the term "developer" or "programmer" was replaced with "Software Engineer". Reflecting the natural arts and craft approach of similar occupations like mechanical engineer or civil engineer. Software development has been transformed from the mere act of code creation to an intricate dance of design, maintenance, delivery, and reliability.
+We find ourselves in an era defined by rapid technological advancements. So much that the term "developer" or "programmer" was replaced with "Software Engineer". Reflecting the natural arts and crafts approach of similar occupations like mechanical engineer or civil engineer. Software development has been transformed from the mere act of code creation to an intricate dance of design, maintenance, delivery, and reliability.
 
 As organizations grapple with increasingly complex software ecosystems, there is a growing need to cultivate a broad perspective.  
 
