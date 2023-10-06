@@ -39,7 +39,7 @@ To work effectively with legacy code, one must first understand it, *safely make
 
 ## Automation and Feedback Loops
 
-Let's refocus on practicing Software Engineering in a manner that minimizes the cognitive burden for developers. In "Continuous Delivery - Seamless and Reliable Software Releases" Humble and Farley shift the conversation to the critical juncture where code moves from development to production. These days, with the omnipresent cloud, a significant chunk of time is spent upon infrastructure. 
+Let's refocus on practicing Software Engineering in a manner that minimizes the cognitive burden for developers. In "Continuous Delivery - Seamless and Reliable Software Releases" Humble and Farley shift the conversation to the critical juncture where code moves from development to production. These days with the omnipresent cloud™️ a significant chunk of time is spent upon infrastructure. 
 
 > _CD provides a continuous feedback loop, allowing developers to detect and rectify issues promptly._
 
