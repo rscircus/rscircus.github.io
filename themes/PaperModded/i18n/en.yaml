@@ -7,7 +7,7 @@
 - id: read_time
   translation:
     one : "~reading time: 1 min"
-    other: "~reading time: {{ .Count }} min"
+    other: "~reading time: {{ .Count }} mins"
 
 - id: words
   translation:
