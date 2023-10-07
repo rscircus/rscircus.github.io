@@ -31,18 +31,17 @@ Clear interfaces, minimal operational complexity, and intentional design can dra
 
 ## The Future is Built upon the Past
 
-At the core of Feathers' work elaborated in "Working Effectively with Legacy Code" is a pressing reality: Much of the software we engage with is not new, shiny, or designed with modern best practices. Instead, it carries the weight of decisions made years ago.
+At the core of Feathers' work elaborated in "Working Effectively with Legacy Code" is a pressing reality: Much of the software we engage with is not new, shiny, or designed with modern best practices. Instead, it carries the weight of decisions made years ago. To work effectively with legacy code, one must first understand it, *safely make changes without introducing defects, and incrementally refactor to improve its structure*. The focus is the very definition of legacy code: Code without tests.
 
 > _Much of the software we engage with is not new, shiny, or designed with modern best practices._
 
-To work effectively with legacy code, one must first understand it, *safely make changes without introducing defects, and incrementally refactor to improve its structure*. The focus is the very definition of legacy code: Code without tests. So it is worth it to regard legacy code as an asset rather than a liability, embracing and improving it while ensuring its continued functionality. 
+So it is worth it to regard legacy code as an asset rather than a liability, embracing and improving it while ensuring its continued functionality. 
 
 ## Automation and Feedback Loops
 
+> _Continuous Delivery provides a continuous feedback loop, allowing developers to detect and rectify issues promptly._
+
 Let's refocus on practicing Software Engineering in a manner that minimizes the cognitive burden for developers. In "Continuous Delivery - Seamless and Reliable Software Releases" Humble and Farley shift the conversation to the critical juncture where code moves from development to production. These days with the omnipresent cloud™️ a significant chunk of time is spent upon infrastructure enabling continuous delivery. Thus, deserves to be handled seperately. 
-
-> _CD provides a continuous feedback loop, allowing developers to detect and rectify issues promptly._
-
 Continuous Delivery (CD) emphasizes automating the build, deployment, and testing processes to produce software in short cycles, ensuring it can be reliably released at any time. CD provides a continuous feedback loop, allowing developers to detect and rectify issues promptly, leading to more stable releases and increased developer and user satisfaction. In essence, it not only reduces the cognitive load on developers but ensures that software is always in a releasable state, bridging the gap between development and operations.
 
 ## Maintainability and Performance
@@ -59,9 +58,8 @@ Beyer et al. describe how to maintain high availability and performance while al
 ## Tying it All Together
 
 While each book presents its unique insights, they collectively converge on a few key ideas. Firstly, there's an overriding emphasis on simplicity, be it in code design, deployment, or operations. Simplicity reduces errors, expedites processes, and facilitates understanding.
+Secondly, automation and feedback loops are crucial in modern software practices, allowing for swift response to issues and ensuring consistent quality. Lastly, there's an acknowledgment of the evolving nature of software: whether dealing with legacy systems or designing new architectures, we must anticipate change and design for adaptability.
 
 > _Simplicity reduces errors, expedites processes, and facilitates understanding._
-
-Secondly, automation and feedback loops are crucial in modern software practices, allowing for swift response to issues and ensuring consistent quality. Lastly, there's an acknowledgment of the evolving nature of software: whether dealing with legacy systems or designing new architectures, we must anticipate change and design for adaptability.
 
 In conclusion, while the tools, languages, and infrastructures may change, the principles of good software design and delivery remain rooted in simplicity, maintainability, and reliability. By assimilating the insights from these seminal works, you as a software practitioner can be better equipped to navigate the dynamic landscape of software development in the modern era. And I highly recommend them and hope I have created some appetite for more.
