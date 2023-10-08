@@ -9,6 +9,7 @@ tags:
 - Theoretical Informatics
 - Shannon Entropy
 title: What is Information Entropy?
+math: true
 ---
 
 Recently I was thinking about a simple explanation for information entropy. So here you have the fruits of my labor.
@@ -20,24 +21,24 @@ Information entropy is best explained with *information transmission* in mind. S
 Traditionally we communicate in bits in technical fields, that is, one of two states in *something*. One could also communicate using more than two states in one *something*, but as the world developed in a way to favor one-of-two-state bits, we stick to this:
 
 $$
-1 \; \mathrm{bit} =
+1 \\; bit =
   \begin{cases}
-    \quad 1 \\
+    \quad 1 \\\
     \quad 0
-  \end{cases} \quad \text{or} \quad 1 \; bit \in \{0, 1\}
+  \end{cases} \quad \text{or} \quad 1 \\; bit \in \{0, 1\}
 $$
 
 Now let's imagine the sender is a kid who wants to inform his friend using a tin can telephone about the state of his parents' presence (them being in bed or not, so the friend (recpient) can come over).
 
-What is the overall goal of transporting this information? Basically the sender wants to reduce the recpients uncertainty about when he come over without or with little risk of being detected. So, basically the uncertainty reduction is the inverse of an events/state's probability.
+What is the overall goal of transporting this information? Basically the sender wants to reduce the recpients uncertainty about when he will come over without or with little risk of being detected. So, basically the uncertainty reduction is the inverse of an events/state's probability.
 
 We can easily see, that we only need to transport one bit here:
 
 $$
-1 \; \mathrm{bit} =
+\mathrm{bit} =
   \begin{cases}
-    \quad \text{parents in bed} \\
-    \quad \text{parents awake}
+    & \text{parents in bed} \\\
+    & \text{parents awake}
   \end{cases}
 $$
 
@@ -48,16 +49,17 @@ $$
 $$
 
 The uncertainty of the friend of being detected or knowing about the kid's house state is reduced by a factor of two, as there are two states, if we communicate one lonely bit. Remember the uncertainty reduction being the inverse of the probability?
+
 With the communication of one bit, the kid can inform his friend about the state of the house and reduce his uncertainty by two, which - assuming the friend knows about the two possible states of the house - would bring him down to certainty.
 
 Now, let's add the state of the kid's sister, too:
 
 $$
-? \; \mathrm{bits} =
+? \\; bits =
   \begin{cases}
-    \quad \text{parents in bed} \\
-    \quad \text{parents awake} \\
-    \quad \text{sister in bed} \\
+    \quad \text{parents in bed} \\\
+    \quad \text{parents awake} \\\
+    \quad \text{sister in bed} \\\
     \quad \text{sister awake}
   \end{cases}
 $$
@@ -85,7 +87,7 @@ This is best understood with two equally-likely states being available only. As 
 $$
 \mathrm{state} =
   \begin{cases}
-    \quad \text{parents in bed} \\
+    \quad \text{parents in bed} \\\
     \quad \text{parents awake}
   \end{cases}
 $$
@@ -95,8 +97,8 @@ What if the probability of each state is now skewed because the mother usually g
 $$
 \mathrm{state} =
   \begin{cases}
-    \quad \text{20 % probability of parents being in bed} \\
-    \quad \text{80 % probability of parents being awake}
+    \quad \text{0.2 \\; probability of parents being in bed} \\\
+    \quad \text{0.8 \\; probability of parents being awake}
   \end{cases}
 $$
 
@@ -108,13 +110,13 @@ $$
 n = log_2(p^{-1})
 $$
 
-With $p$ being the probabilty of a state. Let's start with the parents being in bed $p_{bed} = 0.2$.
+With \\(p\\) being the probabilty of a state. Let's start with the parents being in bed \\(p_{bed} = 0.2\\).
 
 $$
 n_{bed} = log_2(\frac{5}{1}) \approxeq 2.32
 $$
 
-and the parents being awake $p_{awake} = 0.8$:
+and the parents being awake \\(p_{awake} = 0.8\\):
 
 $$
 n_{awake} = log_2(\frac{5}{4}) \approxeq 0.32
@@ -127,7 +129,7 @@ Therefore, the float-point bits here can be interpreted as information gain on t
 So, how much information (gain) can the kid transport on average to his/her friend if they want to meet every evening?
 
 $$
-information_{avg} = 0.2 \times 2.32 + 0.8 \times 0.32 = 0.72 \; \text{bit}
+\text{information}_{avg} = 0.2 \times 2.32 + 0.8 \times 0.32 = 0.72 \\; \text{bit}
 $$
 
 What we just computed is information entropy. 😉
@@ -138,9 +140,11 @@ $$
 Entropy(\mathbf{p}) = H(\mathbf{p}) = - \sum_i p_i log_2(p_i)
 $$
 
-Here we used that $log_2(p^{-1}) = - log_2(p)$. Entropy is the information gain the recipients gets when he learns about the kid's house state each day. Or more generally the average amount of information that one gets when drawing a random sample from a probability distrubtion $\mathbf{p}$.
+Here we used that \\(log_2(p^{-1}) = - log_2(p)\\). Entropy is the information gain the recipients gets when he learns about the kid's house state each day. Or more generally the average amount of information that one gets when drawing a random sample from a probability distrubtion \\(\mathbf{p}\\).
 
-*Hint:* The information entropy is sometimes written more generally with $log(x)$ and not $log_2(x)$. Why can we do this? Because:
+*Hint:* The information entropy is sometimes written more generally with \\(log(x)\\) and not \\(log_2(x)\\). Why can we do this? 
+
+Because:
 
 $$
 log_2(x) = \frac{log(x)}{log(2)}
