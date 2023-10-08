@@ -137,7 +137,7 @@ What we just computed is information entropy. 😉
 Let's formalize this a bit:
 
 $$
-Entropy(\mathbf{p}) = H(\mathbf{p}) = - \sum_i p_i log_2(p_i)
+\text{Entropy}(\mathbf{p}) = H(\mathbf{p}) = - \sum_i p_i \\, log_2(p_i)
 $$
 
 Here we used that \\(log_2(p^{-1}) = - log_2(p)\\). Entropy is the information gain the recipients gets when he learns about the kid's house state each day. Or more generally the average amount of information that one gets when drawing a random sample from a probability distrubtion \\(\mathbf{p}\\).
