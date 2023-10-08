@@ -32,6 +32,7 @@
 
 .first-entry .entry-footer {
     font-size: 14px;
+    font-style: italic;
 }
 
 .home-info .entry-content {
@@ -43,7 +44,7 @@
     margin-bottom: var(--gap);
     padding: var(--gap);
     /* background: var(--entry); */
-    /* border-radius: var(--radius); */
+     border-radius: var(--radius);
     transition: transform 0.1s;
     /* border: 1px solid var(--border); */
 }
@@ -75,6 +76,7 @@
 .entry-footer {
     color: var(--secondary);
     font-size: 13px;
+    font-style: italic;
 }
 
 .entry-link {
