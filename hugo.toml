@@ -2,35 +2,29 @@ theme = 'PaperModded'
 baseURL = "https://rscircus.github.io"
 languageCode = "en-us"
 title = "R's 🎩"
-pygmentsstyle = "monokai"
-pygmentscodefences = true
-pygmentscodefencesguesssyntax = true
+pygmentsUseClasses = true
 
 [params]
-	mode="toggle"
- 	defaultTheme="dark"
- 	ShowWordCount=true
-  	ShowToc=true
-	useCDN=false
-	subtitle = "Fascinated by Computer Science, DIY hardware, and Accessibility for the Deaf and Mathematics"
+mode="toggle"
+defaultTheme="dark"
+ShowWordCount=true
+ShowToc=true
+ShowCodeCopyButtons=true
+useCDN=false
+subtitle = "Fascinated by Computer Science, Life Sciences, DIY hardware, and Accessibility for the Deaf and Mathematics"
 
-  # Typography
-  google_fonts = [
-    ["Fira Code", "400, 700"],
-    ["Open Sans", "400, 400i, 700, 700i"]
-  ]
-  heading_font = "Fira Code"
-  body_font = "Open Sans"
+# Typography
+google_fonts = [
+  ["Fira Code", "400, 700"],
+  ["Open Sans", "400, 400i, 700, 700i"]
+]
+heading_font = "Fira Code"
+body_font = "Open Sans"
 
 [[params.social]]
 name = "GitHub"
 icon = "github"
 url = "https://gitlab.com/rscircus/"
-
-[[params.social]]
-name = "Twitter"
-icon = "twitter"
-url = "https://twitter.com/rscircus/"
 
 [[menu.main]]
 name = "Home"
