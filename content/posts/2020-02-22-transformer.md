@@ -1,13 +1,13 @@
 ---
 categories:
-- Code
+  - Code
 date: "2020-02-22T00:00:00Z"
 excerpt_separator: <!-- more -->
 sub_title: Understanding transformers
 tags:
-- AI
-- Machine Learning
-- NLP
+  - AI
+  - Machine Learning
+  - NLP
 title: The Annotated Transformer Revisited
 ---
 
@@ -27,8 +27,7 @@ In contrast to the paper using Tensorflow (which also [published its implementat
 
 The simplified high-level overview of the transformer looks like this
 
-<center>
-<div class="mermaid">
+```mermaid
 graph LR
 input(input<br/>I am R)-->Encoder
 subgraph Transformer
@@ -41,13 +40,11 @@ style input fill:#fff, stroke:#333
 style output fill:#fff, stroke:#333
 style Encoder fill:#9f9, stroke:#333
 style Decoder fill:#f99, stroke:#333
-</div>
-</center>
+```
 
 with the layered setup of the Encoder and Decoder being as follows:
 
-<center>
-<div class="mermaid">
+````mermaid
 graph BT
 subgraph Decoder
 SelfAttention2(Self-Attention)-->EncoderDecoderAtt(Encoder-Decoder Attention)
@@ -63,8 +60,7 @@ style FastForward2 fill:#c2e8f7, stroke:#000, stroke-width: 2px
 style SelfAttention fill:#ffe2bb, stroke:#000, stroke-width: 2px
 style SelfAttention2 fill:#ffe2bb, stroke:#000, stroke-width: 2px
 style EncoderDecoderAtt fill:#ffe2bb, stroke:#000, stroke-width: 2px
-</div>
-</center>
+```
 
 where the `Fast Forward` is a regular fully-connected neural network and the `Self-Attention` layer is searching for connections in the input while encoding. The decoder is identical except there being an additional `Encoder-Decoder Attention` between the prior two. This `Encoder-Decoder Attention` is the surrogate for attention decoder RNNs of previous architectures.
 
@@ -85,7 +81,7 @@ class Encoder(nn.Module):
         for layer in self.layers:
             x = layer(x, mask)
         return self.norm(x)
-```
+````
 
 ```python
 class Decoder(nn.Module):
@@ -104,7 +100,7 @@ class Decoder(nn.Module):
 Above you can see two functions calls, which probably do not make sense immediately. That is `clones()`, which produces copies of layers, so we can stack them, and `LayerNorm()`, which corresponds to the yellow box of the original's paper `Fig 1.`:
 
 ![](https://rscircus.github.io/assets/img/20200222_Transformer_Fig1.png)
-*Fig 1: Architecture (src: Attention is all we need)*
+_Fig 1: Architecture (src: Attention is all we need)_
 
 This [Layer Normalization](https://arxiv.org/abs/1607.06450) is similar to [Batch Normalization](https://en.wikipedia.org/wiki/Batch_normalization) and improves speed, perf and stability by applying a transformation which maintains the mean activation close to 0 and the activation standard deviation close to 1 followed by applying a slight bias based on the input.
 
@@ -129,13 +125,12 @@ class LayerNorm(nn.Module):
         return self.a_2 * (x - mean) / (std + self.eps) + self.b_2
 ```
 
-
 As we introduced the original paper's figure now, we can easily create the connection between our simplified model above and this structure. It's interesting to note, that the final Encoder output is fed into each of the `Encoder-Decoder Attention` layers, which is called `Multi-Head Attention` in the original paper.
 
 We'll approach the original's figure a bit more now. Of interest is, how the output is re-fed in to the decoders. Jay Alammar's [animation in his breakdown](https://jalammar.github.io/illustrated-transformer/) 'The Illustrated Transformer' is of great help to understand this concept:
 
 ![](https://jalammar.github.io/images/t/transformer_decoding_2.gif)
-*Fig 2: Output embedding (src: Jay Alammar)*
+_Fig 2: Output embedding (src: Jay Alammar)_
 
 This also visualizes the RNN root of the concept.
 
@@ -195,13 +190,9 @@ It's 'multi-headed', because it allows the model to attend to information from d
 
 ![](https://jalammar.github.io/images/t/transformer_self-attention_visualization_2.png) -->
 
-
-
 ## Overall implementation
 
 You can download all of this including Sasha Rushes and my notes from here: [https://colab.research.google.com/drive/1tm0_Usqkavr0h1Jk0f-ukcykI78xmcfW](https://colab.research.google.com/drive/1tm0_Usqkavr0h1Jk0f-ukcykI78xmcfW).
-
-
 
 ## Sources
 
