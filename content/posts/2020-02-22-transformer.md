@@ -44,14 +44,14 @@ style Decoder fill:#f99, stroke:#333
 
 with the layered setup of the Encoder and Decoder being as follows:
 
-````mermaid
+```mermaid
 graph BT
 subgraph Decoder
-SelfAttention2(Self-Attention)-->EncoderDecoderAtt(Encoder-Decoder Attention)
-EncoderDecoderAtt(Encoder-Decoder Attention)-->FastForward2(Fast Forward)
+    SelfAttention2(Self-Attention)-->EncoderDecoderAtt(Encoder-Decoder Attention)
+    EncoderDecoderAtt(Encoder-Decoder Attention)-->FastForward2(Fast Forward)
 end
 subgraph Encoder
-SelfAttention(Self-Attention)-->FastForward(Fast Forward)
+    SelfAttention(Self-Attention)-->FastForward(Fast Forward)
 end
 style Encoder fill:#fff, stroke:#090
 style Decoder fill:#fff, stroke:#900
@@ -81,7 +81,7 @@ class Encoder(nn.Module):
         for layer in self.layers:
             x = layer(x, mask)
         return self.norm(x)
-````
+```
 
 ```python
 class Decoder(nn.Module):
