@@ -13,7 +13,7 @@
 </footer>
 {{- end }}
 
-{{- if (not site.Params.disableScrollToTop) }}
+{{- if (and (not site.Params.disableScrollToTop) (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search")) }}
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
     <path d="M12 6H0l6-6z" />
@@ -53,7 +53,7 @@
 
 </script>
 
-{{- if (not site.Params.disableScrollToTop) }}
+{{- if (and (not site.Params.disableScrollToTop) (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search")) }}
 <script>
   var mybutton = document.getElementById("top-link");
   window.onscroll = function () {

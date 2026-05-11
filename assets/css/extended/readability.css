@@ -72,16 +72,19 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease,
+    transition: background 0.2s ease, color 0.2s ease,
                 visibility 0.5s, opacity 0.8s linear;
 }
 
 .top-link svg { width: 15px; height: auto; display: block; }
 
+/* No transform on hover. The home page tiles scale on hover, which
+   re-flows nearby content; with the button transform-shifting on
+   its own hover the cursor would oscillate in/out of the button's
+   hit zone. */
 .top-link:hover {
     background: var(--tertiary);
     color: var(--theme);
-    transform: translateY(-2px);
 }
 
 /* Hide the native scrollbar site-wide. The minimap takes over the
