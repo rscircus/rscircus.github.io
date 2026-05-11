@@ -150,6 +150,10 @@
     inner.className = 'minimap-inner';
     var clone = source.cloneNode(true);
     clone.querySelectorAll('[id]').forEach(function (el) { el.removeAttribute('id'); });
+    // Drop the tags footer from the clone for closer-to-content feel.
+    // Note: source still includes .post-footer for scroll-math purposes
+    // (offsetTop/offsetHeight reflect what the user actually scrolls past).
+    clone.querySelectorAll('.post-footer').forEach(function (el) { el.remove(); });
     clone.className = 'minimap-content';
     var indicator = document.createElement('div');
     indicator.className = 'minimap-viewport';
@@ -169,7 +173,13 @@
     }
 
     function updateViewport() {
-      indicator.style.top = (window.scrollY * scale) + 'px';
+      // The clone is of `source`, not the whole document, so the indicator
+      // must reflect scroll position *within* source-space. Subtract source's
+      // offset from the document top, clamp to [0, source.height].
+      var sourceTop = source.offsetTop;
+      var sourceHeight = source.offsetHeight;
+      var sourceScroll = Math.max(0, Math.min(sourceHeight, window.scrollY - sourceTop));
+      indicator.style.top = (sourceScroll * scale) + 'px';
       indicator.style.height = (window.innerHeight * scale) + 'px';
     }
 
@@ -204,7 +214,9 @@
 
     wrap.addEventListener('click', function (e) {
       var rect = wrap.getBoundingClientRect();
-      var target = ((e.clientY - rect.top) / scale) - (window.innerHeight / 2);
+      // Strip-Y maps to source-space Y; add source's offset to get document-Y.
+      var sourceY = (e.clientY - rect.top) / scale;
+      var target = source.offsetTop + sourceY - (window.innerHeight / 2);
       window.scrollTo({ top: Math.max(0, target), behavior: 'smooth' });
     });
   })();

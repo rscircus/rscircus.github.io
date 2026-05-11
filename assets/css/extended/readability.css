@@ -123,6 +123,16 @@ html { scrollbar-width: none; }
     padding-left: 4px;
 }
 
+/* Inside the minimap, kill the leading margins on cloned post chrome —
+   .post-header has 24px top margin, etc. Those create visible empty
+   space at the top of the clone that doesn't correspond to anything
+   the user can scroll past. */
+.minimap-content > :first-child,
+.minimap-content .post-header,
+.minimap-content .post-title {
+    margin-top: 0;
+}
+
 /* Viewport indicator: subtle at rest, brighter while scrolling.
    Alphas derived from --tertiary via color-mix so dark mode picks up
    the lighter accent automatically. */
