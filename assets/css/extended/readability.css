@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
                 visibility 0.5s, opacity 0.8s linear;
 }
 
-.top-link svg { width: 10px; height: auto; display: block; }
+.top-link svg { width: 15px; height: auto; display: block; }
 
 .top-link:hover {
     background: var(--tertiary);
