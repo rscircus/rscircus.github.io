@@ -56,3 +56,35 @@ h1, h2, h3, h4, h5, h6 {
 .post-content a code {
     box-shadow: 0 -1px 0 var(--tertiary) inset;
 }
+
+/* Scroll-to-top: small triangle alone at rest; on hover a red disc
+   appears behind it. Flex-centres the SVG so the triangle's bounding
+   box (and thus its visual centre) sits in the centre of the disc. */
+.top-link {
+    background: transparent;
+    border: none;
+    color: var(--tertiary);
+    box-sizing: border-box;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease,
+                visibility 0.5s, opacity 0.8s linear;
+}
+
+.top-link svg { width: 10px; height: auto; display: block; }
+
+.top-link:hover {
+    background: var(--tertiary);
+    color: var(--theme);
+    transform: translateY(-2px);
+}
+
+.top-link:hover {
+    background: var(--tertiary);
+    color: var(--theme);
+    transform: translateY(-2px);
+}
