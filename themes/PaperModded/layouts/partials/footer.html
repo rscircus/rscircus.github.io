@@ -133,3 +133,80 @@
   });
 </script>
 {{- end }}
+
+{{- if (and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search")) }}
+<script>
+  (function () {
+    if (window.matchMedia('(max-width: 768px)').matches) return;
+    var source = document.querySelector('.post-single');
+    if (!source) return;
+
+    var WIDTH_NARROW = 20;
+    var WIDTH_WIDE = 90;
+
+    var wrap = document.createElement('div');
+    wrap.className = 'minimap';
+    var inner = document.createElement('div');
+    inner.className = 'minimap-inner';
+    var clone = source.cloneNode(true);
+    clone.querySelectorAll('[id]').forEach(function (el) { el.removeAttribute('id'); });
+    clone.className = 'minimap-content';
+    var indicator = document.createElement('div');
+    indicator.className = 'minimap-viewport';
+    inner.appendChild(clone);
+    inner.appendChild(indicator);
+    wrap.appendChild(inner);
+    document.body.appendChild(wrap);
+
+    var current = WIDTH_NARROW;
+    var scale;
+
+    function applyScale(stripWidth) {
+      var rect = source.getBoundingClientRect();
+      scale = Math.min(stripWidth / (rect.width || 720), wrap.clientHeight / rect.height);
+      clone.style.transform = 'scale(' + scale + ')';
+      clone.style.width = (100 / scale) + '%';
+    }
+
+    function updateViewport() {
+      indicator.style.top = (window.scrollY * scale) + 'px';
+      indicator.style.height = (window.innerHeight * scale) + 'px';
+    }
+
+    applyScale(current);
+    updateViewport();
+
+    var flashTimer;
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      wrap.classList.add('scrolling');
+      clearTimeout(flashTimer);
+      flashTimer = setTimeout(function () { wrap.classList.remove('scrolling'); }, 600);
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () { updateViewport(); ticking = false; });
+    }, { passive: true });
+
+    wrap.addEventListener('mouseenter', function () {
+      current = WIDTH_WIDE;
+      applyScale(current);
+      updateViewport();
+    });
+    wrap.addEventListener('mouseleave', function () {
+      current = WIDTH_NARROW;
+      applyScale(current);
+      updateViewport();
+    });
+
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(function () { applyScale(current); updateViewport(); }).observe(source);
+    }
+
+    wrap.addEventListener('click', function (e) {
+      var rect = wrap.getBoundingClientRect();
+      var target = ((e.clientY - rect.top) / scale) - (window.innerHeight / 2);
+      window.scrollTo({ top: Math.max(0, target), behavior: 'smooth' });
+    });
+  })();
+</script>
+{{- end }}
