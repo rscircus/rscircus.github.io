@@ -1,0 +1,47 @@
+# Hugo
+/public/
+/resources/_gen/
+/.hugo_build.lock
+hugo_stats.json
+
+# Hugo modules
+/_vendor/
+
+# Node (theme tooling, if any)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+.fuse_hidden*
+.Trash-*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+.netrwhist
+
+# Logs
+*.log
