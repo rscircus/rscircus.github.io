@@ -3,7 +3,7 @@ categories:
 - Tinker
 date: "2020-01-21T00:00:00Z"
 excerpt_separator: <!-- more -->
-sub_title: Setting up a kubernetes cluster at home
+sub_title: Setting up a Kubernetes cluster at home
 tags:
 - kubernetes
 - k3sup
@@ -12,7 +12,7 @@ tags:
 title: k3s on a set of HypriotOS/RaspberryPi 3B+
 ---
 
-In this article we have a look at **k3s** and how to get it running on a bunch of **RPis** using **k3sup**. Further we setup **OpenFaaS** and deploy one function (figlet).
+In this article we have a look at **k3s** and how to get it running on a bunch of **RPis** using **k3sup**. Further, we set up **OpenFaaS** and deploy one function (figlet).
 
 Edit<sup>2020.03.01</sup>: `k3sup app install/info` has a successor, which I didn't try out yet, but it's called [arkade](https://github.com/alexellis/arkade). According to the [doc](https://github.com/alexellis/k3sup#k3sup-app-install---easy-installation-of-kubernetes-apps) simply replace all `k3sup app install`s here with `arkade install`.
 
@@ -27,7 +27,7 @@ _Disclaimer: This is a work in progress!_
 
 The hardware is 4 RaspberryPis 3B+ assembled into a sweet little rack.
 
-Power comes over PoE which the router can provide. Chose whatever you like. I've chosen the following setup:
+Power comes over PoE which the router can provide. Choose whatever you like. I've chosen the following setup:
 
 | Type                                                    | Price/Piece |
 | ------------------------------------------------------- | ----------- |
@@ -47,7 +47,7 @@ and it looks like this:
 As HypriotOS has docker already included, I was rooting for HypriotOS at the time of creation.
 
 There is one pretty nice tutorial by them [https://blog.hypriot.com/post/setup-kubernetes-raspberry-pi-cluster/](https://blog.hypriot.com/post/setup-kubernetes-raspberry-pi-cluster/) which assumes you are already connected to the tiny black-pearl.
-Following that tutorial one sets up kubernetes in all its glory and resource hunger. It sucks. Don't do this. The note in my research journal from the time I did this reads: "Kubernetes seems to be rather hungry. Maybe I'll add a new masternode in the near future."
+Following that tutorial, one sets up kubernetes in all its glory and resource hunger. It sucks. Don't do this. The note in my research journal from the time I did this reads: "Kubernetes seems to be rather hungry. Maybe I'll add a new masternode in the near future."
 
 We start from first principles today.
 
@@ -65,7 +65,7 @@ flash -u wifi-user-data.yml --bootconf no-uart-config.txt HypriotOS-rpi-v1.9.0.i
 
 which already takes care of plenty of things. However, you need to explore on Hypriot's page how to set up all the files going into the flash tool. See [here for more details](https://blog.hypriot.com/post/cloud-init-cloud-on-hypriot-x64/). The investment is worth it, as you can use these templates for the slave Pis later on. Further you can also use a more recent HypriotOS image.
 
-Assuming our wifi config is OK we should be able to ping `black-pearl.yourdomain` in our network. To get an overview of our topology we can use `nmap` , e.g.,
+Assuming our wifi config is OK, we should be able to ping `black-pearl.yourdomain` in our network. To get an overview of our topology we can use `nmap` , e.g.,
 
 ```
 sudo nmap -sn 192.168.1.0/24
@@ -96,7 +96,7 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 
-Due to many reasons I selected the master-node as the only node to have internet access and function as a router for the rest.
+Due to many reasons, I selected the master-node as the only node to have internet access and function as a router for the rest.
 
 ```
 sudo apt-get install isc-dhcp-server
@@ -104,7 +104,7 @@ sudo apt-get install isc-dhcp-server
 
 We can't go into all the details of setting up a DHCP. If you want a quick win, adapt [https://github.com/kubedge/kube-rpi/blob/master/config/cluster1/HypriotOS/kubemaster-pi/etc/dhcp/dhcpd.conf](https://github.com/kubedge/kube-rpi/blob/master/config/cluster1/hypriotos/kubemaster-pi/etc/dhcp/dhcpd.conf).
 
-Same goes for the ipforwarding setup. Adapt [https://github.com/kubedge/kube-rpi/blob/master/config/cluster1/HypriotOS/kubemaster-pi/etc/sysctl.conf](https://github.com/kubedge/kube-rpi/blob/master/config/cluster1/hypriotos/kubemaster-pi/etc/sysctl.conf) for a quick win.
+Same goes for the IP forwarding setup. Adapt [https://github.com/kubedge/kube-rpi/blob/master/config/cluster1/HypriotOS/kubemaster-pi/etc/sysctl.conf](https://github.com/kubedge/kube-rpi/blob/master/config/cluster1/hypriotos/kubemaster-pi/etc/sysctl.conf) for a quick win.
 
 Keep in mind that the master node has to work as router from eth0 to wlan0 for the other nodes. For the NAT to work we need to configure it:
 
@@ -116,11 +116,11 @@ sudo iptables -A FORWARD -i eth0 -o wlan0 -j ACCEPT
 sudo sh -c "iptables-save > /etc/iptables.ipv4.nat"
 ```
 
-After that, uncomment the iptable in `/etc/network/interfaces.d/eth0` .
+After that, uncomment the iptables entry in `/etc/network/interfaces.d/eth0`.
 
 To check if the routing is working we can plug our laptop into the (hardware) router and check if the master node assigns us an IP in the range `192.168.2.0/255` .
 
-To check the setup (on linux) we can use nmcli on our laptop, e.g.:
+To check the setup (on Linux) we can use nmcli on our laptop, e.g.:
 
 ```
 nmcli dev show eth0
@@ -135,7 +135,7 @@ Having our flash tool and config files prepared in the step above, things will g
 
 Next we flash our next sd-card without WLAN. After putting it back into the slave Pi we connect the slave Pi to the router with the cable and log into the master pi from our laptop. The master pi should have assigned an IP to the new slave Pi and we should be able to find it now (with nmap).
 
-Jumphosting from the masternode into the slave now we clean up the installation again:
+After jumphosting from the master node into the slave, we clean up the installation again:
 
 ```
 sudo apt-get remove --purge cloud-init
@@ -155,7 +155,7 @@ Following that we assign a new hostname:
 sudo hostnamectl set-hostname blackbeard
 ```
 
-I've chosen the characters from [Pirates of the Caribean](https://en.wikipedia.org/wiki/List_of_Pirates_of_the_Caribbean_characters). Here a selection: 'beckett', 'dalma', 'norrington'.
+I've chosen the characters from [Pirates of the Caribbean](https://en.wikipedia.org/wiki/List_of_Pirates_of_the_Caribbean_characters). Here is a selection: 'beckett', 'dalma', 'norrington'.
 
 And now we update the dhcp conf file on the master node to assign a static IP to the slave node such that every time the cluster reboots we have the same network topology.
 Considering that we might have to move around in the cluster this will ease the hassle. Actually I even noted the IP on the sd-card of each and every node with a permanent pen.
@@ -176,7 +176,7 @@ It will come in handy later with k3sup and while maintaining the thing.
 
 ## Intermission (former Conclusion)
 
-We set up a cluster using HypriotOS and configured DHCP and NAT. Further we have a static topology now with an up to date state of everything. In the next update of this blog post we use Alex Ellis' [k3sup](https://github.com/alexellis/k3sup) to get Rancher's minimal [k3s](https://k3s.io/) working by following with an [OpenFaas](https://www.openfaas.com/) setup. Potentially we also intro how to administer this cluster using [Ansible](https://www.ansible.com/).
+We set up a cluster using HypriotOS and configured DHCP and NAT. Further, we have a static topology now with an up-to-date state of everything. In the next update of this blog post we use Alex Ellis' [k3sup](https://github.com/alexellis/k3sup) to get Rancher's minimal [k3s](https://k3s.io/) working, followed by an [OpenFaaS](https://www.openfaas.com/) setup. Potentially, we also introduce how to administer this cluster using [Ansible](https://www.ansible.com/).
 
 ## k3sup
 
@@ -191,7 +191,7 @@ curl -sLS https://get.k3sup.dev | sh
 sudo install k3sup /usr/local/bin/
 ```
 
-Our master Pi from above will be the Kubernetes master and the nodes will be the agents to our Kubernetes.
+Our master Pi from above will be the Kubernetes master, and the nodes will act as agents in our Kubernetes cluster.
 
 First the master:
 
@@ -269,7 +269,7 @@ At this point we can deploy stuff on Kubernetes if we want to. 😊
 
 ### Kubernetes Dashboard
 
-To get an overview of the state of our kubernetes cluster, we install the dashboard.
+To get an overview of the state of our Kubernetes cluster, we install the dashboard.
 
 For this we need `kubectl` on our laptop. To install it, when you are on something Debian-ish:
 
@@ -281,7 +281,7 @@ sudo apt-get update
 sudo apt-get install -y kubectl
 ```
 
-Then let's see if we can have it with one go.
+Then let's see if we can do it in one go.
 
 ```
 k3sup app install kubernetes-dashboard
@@ -378,7 +378,7 @@ We used `k3sup` to set up a Kubernetes cluster which worked out nicely. Unfortun
 
 ## OpenFaaS
 
-After setting up k3sup again, which is rather easy, described above or using a shell script we attempt to install OpenFaaS now and deploy a figlet. If you are wondering what a figlet is, I do, too. [This probably has a few hints.](https://www.openfaas.com/blog/kubernetes-operator-crd/).
+After setting up k3sup again, which is rather easy as described above or with a shell script, we attempt to install OpenFaaS now and deploy a figlet. If you are wondering what a figlet is, I do, too. [This probably has a few hints.](https://www.openfaas.com/blog/kubernetes-operator-crd/).
 
 Nevertheless, we have k3s everywhere and kubectl get nodes shows a reasonable cluster again.
 
@@ -475,7 +475,7 @@ faas-cli store deploy figlet \
 Thanks for using k3sup!
 ```
 
-Also giving us some hints for the next steps. Using Alex' manual: [Will it cluster?](https://blog.alexellis.io/test-drive-k3s-on-raspberry-pi/) and the console output as rough guidance we move on. We install `faas-cli` as described above. Following that we forward the gateway to the laptop we're sitting at. Also we pass on the password to `faas-cli` using the two following commands and also login with the `admin:$PASSWORD` pair into the frontend, which looks like this (after figlet was deployed without taking care of the platform 🤦‍♀):
+Also giving us some hints for the next steps. Using Alex' manual: [Will it cluster?](https://blog.alexellis.io/test-drive-k3s-on-raspberry-pi/) and the console output as rough guidance we move on. We install `faas-cli` as described above. Following that, we forward the gateway to the laptop we're sitting at. Also we pass on the password to `faas-cli` using the following two commands and also log in with the `admin:$PASSWORD` pair into the frontend, which looks like this (after figlet was deployed without taking care of the platform 🤦‍♀):
 
 ![](https://rscircus.github.io/assets/img/20200121_openfaas.png)
 
@@ -573,7 +573,7 @@ Great success!
 
 ## Conclusion
 
-We deployed openfaas and installed the `faas-cli` CLI program on our laptop. Then we rolled out the gateway and proxied it to our laptop such that we could access it locally.
+We deployed OpenFaaS and installed the `faas-cli` CLI program on our laptop. Then we rolled out the gateway and proxied it to our laptop such that we could access it locally.
 
 Armed with this we deployed one function from the store and tested it by various means. Finally for the next time, let's see if we can expand our setup and diagnose the system in depth.
 

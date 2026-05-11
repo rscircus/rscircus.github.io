@@ -1,13 +1,13 @@
 ---
 categories:
-- Math
+  - Math
 date: "2020-02-23T00:00:00Z"
 excerpt_separator: <!-- more -->
 sub_title: A simple explanation for information entropy
 tags:
-- Information Entropy
-- Theoretical Informatics
-- Shannon Entropy
+  - Information Entropy
+  - Theoretical Informatics
+  - Shannon Entropy
 title: What is Information Entropy?
 math: true
 ---
@@ -16,9 +16,9 @@ Recently I was thinking about a simple explanation for information entropy. So h
 
 <!--more-->
 
-Information entropy is best explained with *information transmission* in mind. Say one wants to transport as little bits as possible from a sender to a recipient to inform the recipient about a certain state the sender wants to communicate.
+Information entropy is best explained with _information transmission_ in mind. Say one wants to transport as few bits as possible from a sender to a recipient to inform the recipient about a certain state the sender wants to communicate.
 
-Traditionally we communicate in bits in technical fields, that is, one of two states in *something*. One could also communicate using more than two states in one *something*, but as the world developed in a way to favor one-of-two-state bits, we stick to this:
+Traditionally we communicate in bits in technical fields, that is, one of two states in _something_. One could also communicate using more than two states in one _something_, but as the world developed in a way to favor one-of-two-state bits, we stick to this:
 
 $$
 1 \\; bit =
@@ -28,9 +28,9 @@ $$
   \end{cases} \quad \text{or} \quad 1 \\; bit \in \{0, 1\}
 $$
 
-Now let's imagine the sender is a kid who wants to inform his friend using a tin can telephone about the state of his parents' presence (them being in bed or not, so the friend (recpient) can come over).
+Now let's imagine the sender is a kid who wants to inform his friend using a tin can telephone about the state of his parents' presence (them being in bed or not, so the friend (recipient) can come over).
 
-What is the overall goal of transporting this information? Basically the sender wants to reduce the recpients uncertainty about when he will come over without or with little risk of being detected. So, basically the uncertainty reduction is the inverse of an events/state's probability.
+What is the overall goal of transporting this information? Basically the sender wants to reduce the recipient's uncertainty about when he will come over with little or no risk of being detected. So, basically the uncertainty reduction is the inverse of the probability of an event or state.
 
 We can easily see, that we only need to transport one bit here:
 
@@ -80,7 +80,7 @@ $$
 
 We would need two bits to transport the state completely.
 
-By transporting these bits we can reduce the senders uncertainty. [Shannon](https://en.wikipedia.org/wiki/Claude_Shannon) defined this uncertainty reduction as the uncertainty being halved per bit transported, completely independent of what the uncertainty was in the first place. And we just had the same line of thought while thinking this through.
+By transporting these bits we can reduce the recipient's uncertainty. [Shannon](https://en.wikipedia.org/wiki/Claude_Shannon) defined this uncertainty reduction as the uncertainty being halved per bit transported, completely independent of what the uncertainty was in the first place. And we just had the same line of thought while thinking this through.
 
 This is best understood with two equally-likely states being available only. As in the example above:
 
@@ -102,21 +102,21 @@ $$
   \end{cases}
 $$
 
-And the recpient knows about this bias.
+And the recipient knows about this bias.
 
-How much bits do we transport now to inform the recpient about the state of the house?
+How many bits do we transport now to inform the recipient about the state of the house?
 
 $$
 n = log_2(p^{-1})
 $$
 
-With \\(p\\) being the probabilty of a state. Let's start with the parents being in bed \\(p_{bed} = 0.2\\).
+With \\(p\\) being the probability of a state. Let's start with the parents being in bed \\(p\_{bed} = 0.2\\).
 
 $$
 n_{bed} = log_2(\frac{5}{1}) \approxeq 2.32
 $$
 
-and the parents being awake \\(p_{awake} = 0.8\\):
+and the parents being awake \\(p\_{awake} = 0.8\\):
 
 $$
 n_{awake} = log_2(\frac{5}{4}) \approxeq 0.32
@@ -124,7 +124,7 @@ $$
 
 Naturally one sees, that the uncertainty reduction is way higher with the information of the parents being in bed communicated compared to the information being awake being communicated as the parents being awake was quite likely in the first place.
 
-Therefore, the float-point bits here can be interpreted as information gain on the recipients' side instead of a real bit, which would be impossible to communicate.
+Therefore, the floating-point bits here can be interpreted as information gain on the recipients' side instead of a real bit, which would be impossible to communicate.
 
 So, how much information (gain) can the kid transport on average to his/her friend if they want to meet every evening?
 
@@ -140,9 +140,9 @@ $$
 \text{Entropy}(\mathbf{p}) = H(\mathbf{p}) = - \sum_i p_i \\, log_2(p_i)
 $$
 
-Here we used that \\(log_2(p^{-1}) = - log_2(p)\\). Entropy is the information gain the recipients gets when he learns about the kid's house state each day. Or more generally the average amount of information that one gets when drawing a random sample from a probability distrubtion \\(\mathbf{p}\\).
+Here we used that \\(log_2(p^{-1}) = - log_2(p)\\). Entropy is the information gain the recipient gets when he learns about the kid's house state each day. Or more generally the average amount of information that one gets when drawing a random sample from a probability distribution \\(\mathbf{p}\\).
 
-*Hint:* The information entropy is sometimes written more generally with \\(log(x)\\) and not \\(log_2(x)\\). Why can we do this? 
+_Hint:_ The information entropy is sometimes written more generally with \\(log(x)\\) and not \\(log_2(x)\\). Why can we do this?
 
 Because:
 

@@ -1,17 +1,17 @@
 ---
 categories:
-- Code
+  - Code
 date: "2022-07-24T00:00:00Z"
 excerpt_separator: <!-- more -->
 sub_title: Matlab :/ - Octave :)
 tags:
-- Matlab
-- Octave
-- languages
+  - Matlab
+  - Octave
+  - languages
 title: Octave/Matlab-lang in one file
 ---
 
-Refreshed Matlab the last week. Here are my notes. :)
+Refreshed Matlab last week. Here are my notes. :)
 
 <!--more-->
 

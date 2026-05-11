@@ -1,17 +1,17 @@
 ---
 categories:
-- Code
+  - Code
 date: "2022-07-22T00:00:00Z"
 excerpt_separator: <!-- more -->
 sub_title: A new experimental C++ successor by the big G
 tags:
-- carbon
-- Google
-- languages
+  - carbon
+  - Google
+  - languages
 title: Carbon Language
 ---
 
-After revisiting three languages in the last three weeks from "Hello, World!" to advanced concepts. And also a little stint into lesser known languages, like [👑 nim](https://nim-lang.org/) now, something new: [https://github.com/carbon-language/carbon-lang](https://github.com/carbon-language/carbon-lang). 😊
+After revisiting three languages in the last three weeks from "Hello, World!" to advanced concepts, and after a little stint into lesser-known languages like [👑 nim](https://nim-lang.org/), it is now time for something new: [https://github.com/carbon-language/carbon-lang](https://github.com/carbon-language/carbon-lang). 😊
 
 <!--more-->
 
@@ -34,11 +34,11 @@ $ cd carbon-lang
 $ bazel run //explorer -- ./explorer/testdata/print/format_only.carbon
 ```
 
-From the project's README it seems like most of Google is coding on Mac OSX and using brew. Even though it should be possible to use Fedora's built-in tools we follow the recommended path (even risking to mess up the system).
+From the project's README it seems like most of Google is coding on Mac OSX and using brew. Even though it should be possible to use Fedora's built-in tools, we follow the recommended path (even risking to mess up the system).
 
 ### Requirements
 
-Homebrew using this [canonical install command](https://brew.sh/).
+Install Homebrew using this [canonical install command](https://brew.sh/).
 
 ```bash
 brew upgrade
@@ -99,7 +99,7 @@ brew install prettier
 brew install codesmell
 ```
 
-There exist also some recommended [Visual Studio Code extensions](https://github.com/carbon-language/carbon-lang/blob/trunk/.vscode/extensions.json).
+There are also some recommended [Visual Studio Code extensions](https://github.com/carbon-language/carbon-lang/blob/trunk/.vscode/extensions.json).
 
 ## First steps
 
@@ -134,7 +134,6 @@ It's also interesting to explore the [Compiler Explorer](https://carbon.compiler
 
 ### The mood?
 
-The similarities to C# are quite interesting... but then, I am certain Google will not patch every god damn paradigm and language feature there is on this planet into the language such that a so-called "[Pocket Reference](https://www.oreilly.com/library/view/c-10-pocket/9781098122034/)" comes with >250 pages in a A5 format which doesn't fit any pocket... 
+The similarities to C# are quite interesting... but then, I am certain Google will not patch every god damn paradigm and language feature there is on this planet into the language such that a so-called "[Pocket Reference](https://www.oreilly.com/library/view/c-10-pocket/9781098122034/)" comes with >250 pages in an A5 format which doesn't fit any pocket...
 
 ![image](https://user-images.githubusercontent.com/1167114/180646925-530a24e1-4812-4e7e-bc3c-c0ccbfbe8fdc.png)
-

@@ -1,17 +1,17 @@
 ---
 categories:
-- Howto
+  - Howto
 date: "2022-02-21T00:00:00Z"
 excerpt_separator: <!-- more -->
 sub_title: F37 KDE Spin to be specific
 tags:
-- Fedora
-- Installation
-- Documentation
+  - Fedora
+  - Installation
+  - Documentation
 title: Steps to do after installing Fedora (F37)
 ---
 
-Post installation steps for Fedora ~~F35~~ F37.
+Post-installation steps for Fedora ~~F35~~ F37.
 
 <!--more-->
 
@@ -22,45 +22,45 @@ What I did.
 ## Basics
 
 - Focus
-    - Set Focus Stealing Prevention to High (Window Behavior)
-    - Focus follows mouse (delay 300ms)
-    - Raise on hover, delayed by 750ms
+  - Set Focus Stealing Prevention to High (Window Behavior)
+  - Focus follows mouse (delay 300ms)
+  - Raise on hover, delayed by 750ms
 - Connectivity
-    - Enable internet access
-    - Attach bluetooth mouse/keyboard
+  - Enable internet access
+  - Attach Bluetooth mouse/keyboard
 - Update
-    - ~~Let everything update using **Discover**~~ (it pops up in the panel and I let it do it's thing - I guess dnf is working below. konsole->top tells me it's packagekitd, hm... I see kwin_wayland already working here, nice...)
-    - ~~A restart might make sense now, but I didn't do it~~
+  - ~~Let everything update using **Discover**~~ (it pops up in the panel and I let it do its thing - I guess dnf is working below. konsole->top tells me it's packagekitd, hm... I see kwin_wayland already working here, nice...)
+  - ~~A restart might make sense now, but I didn't do it~~
 - Data
-    - Mount all external filesystems (No rsync et al., I just mount it where I need it, backup is done via NAS)
-    - I'm enjoying vanilla KWrite to write this md-file documenting my process...
+  - Mount all external filesystems (No rsync et al., I just mount it where I need it, backup is done via NAS)
+  - I'm enjoying vanilla KWrite to write this md-file documenting my process...
 - Display
-    - Get the Displays in right order and set zoom to 175%
-    - Set the Rendering backend for the Compositor to OpenGL 3.1 (was 2.0)
-    - Set Theme to Breeze Twilight with Colors set to Breeze (Similar to my favorite Arc Darker)
+  - Get the Displays in right order and set zoom to 175%
+  - Set the Rendering backend for the Compositor to OpenGL 3.1 (was 2.0)
+  - Set Theme to Breeze Twilight with Colors set to Breeze (Similar to my favorite Arc Darker)
 - Usability
-    - Launcher -> Settings -> Configure enabled search plugins -> Disable: Bookmarks, Browser History and Browser Tabs
-    - Activate Night Color
-    - Change Wallpaper to something with 🏔s
+  - Launcher -> Settings -> Configure enabled search plugins -> Disable: Bookmarks, Browser History and Browser Tabs
+  - Activate Night Color
+  - Change Wallpaper to something with 🏔s
 - Privacy
-    - Mute microphones
+  - Mute microphones
 - Misc
-    - Get familiar with Keyboard Shortcuts
-        - I really enjoy the 'activities' feature (meta+q)
-        - and KRunner (alt+space)
-    - Set Digital Clock
-        - To 24h
-        - ISO Date (YYYY-MM-DD)
-    - Move panel to top and shrink to 32px
-    - Can't remove system sounds (which seems to be a [bug](https://bugs.kde.org/show_bug.cgi?id=448705))
-    - Enable Tap-to-click
-    - Enable Invert scroll direction (Natural scrolling)
+  - Get familiar with Keyboard Shortcuts
+    - I really enjoy the 'activities' feature (meta+q)
+    - and KRunner (alt+space)
+  - Set Digital Clock
+    - To 24h
+    - ISO Date (YYYY-MM-DD)
+  - Move panel to top and shrink to 32px
+  - Can't remove system sounds (which seems to be a [bug](https://bugs.kde.org/show_bug.cgi?id=448705))
+  - Enable Tap-to-click
+  - Enable Invert scroll direction (Natural scrolling)
 - Window Management
-    - Flatpak Integration sucks so far... #todo
-    - Enable 4 Virtual Desktops (this competes with Activities a bit...#todo)
-    - Adapt keyboard shortcuts:
-        - Toggle Present Windows (Current Desktop): Ctrl+Alt+Up
-        - Show Desktop Grid: Ctrl+Alt+Down
+  - Flatpak Integration sucks so far... #todo
+  - Enable 4 Virtual Desktops (this competes with Activities a bit...#todo)
+  - Adapt keyboard shortcuts:
+    - Toggle Present Windows (Current Desktop): Ctrl+Alt+Up
+    - Show Desktop Grid: Ctrl+Alt+Down
 
 ## Fedora OS
 
@@ -120,7 +120,7 @@ sudo dnf install i8kutils dell-bios-fan-control
 
 ### If you have Thinkpad think about tlp
 
-There are counter arguments, though... read that Fedora gains 30mins with default settings compared to tlp. Forgot where I read that, though. So, YMMV.
+There are counter arguments, though... I read that Fedora gains 30mins with default settings compared to tlp. Forgot where I read that, though. So, YMMV.
 
 ### Nice fonts
 
@@ -143,7 +143,7 @@ systemd-analyze blame
 systemd-analyze critical-chain
 ```
 
-Search online about the services you find what they do and rip out all the shit which is not necessary.
+Search online for the services you find, what they do, and rip out all the shit which is not necessary.
 
 These were mine:
 
@@ -156,7 +156,7 @@ systemctl disable dnf-makecache.timer
 
 ### Optimize btrfs:
 
-Add `ssd,noatime,space_cache,commit=120` to your fstab. This tells btrfs that we have a SSD, prevent frequent disk writes, make caching of a block quicker and increase the time interval in which data is written to the filesystem.
+Add `ssd,noatime,space_cache,commit=120` to your fstab. This tells btrfs that we have an SSD, prevents frequent disk writes, makes caching of a block quicker, and increases the time interval in which data is written to the filesystem.
 
 ```bash
 sudo systemctl daemon-reload
@@ -193,13 +193,13 @@ Fuck you, Nvidia.
 
 Having said that, let's go forward:
 
-Do have something already inside?
+Do you have something already inside?
 
 ```bash
 modinfo -F version nvidia
 ```
 
-Which probably tells you: *Computer says no*.
+Which probably tells you: _Computer says no_.
 
 ```bash
 sudo dnf install -y akmod-nvidia
@@ -213,7 +213,6 @@ modinfo -F version nvidia
 Which now should spit out a version number and you should hear your fans going crazy.
 
 **TODO:** Next laptop will come with AMD.
-
 
 ### Take care of apps watching for file changes
 
@@ -237,7 +236,7 @@ There are [crazy](https://code.visualstudio.com/docs/setup/linux#_visual-studio-
 
 ### The usual culprits using Flatpak
 
-Fix a few things flatpak:
+Fix a few things for Flatpak:
 
 ```bash
 sudo dnf install xdg-desktop-portal-wlr
@@ -246,7 +245,7 @@ flatpak install flathub org.gtk.Gtk3theme.Materia-dark-compact
 ```
 
 ```bash
-flatpak install -y org.gnu.emacs                # yep, the best editor for lips and clojure-*
+flatpak install -y org.gnu.emacs                # yep, the best editor for Lisp and clojure-*
 flatpak install -y com.vscodium.codium          # another best editor w/o telemetry
 flatpak install -y md.obsidian.Obsidian         # organize everything
 flatpak install -y shotcut                      # sometimes I edit videos
@@ -255,7 +254,7 @@ flatpak install -y flatseal                     # sometimes I don't understand a
 
 In case your fonts look blurry, there are a [ton](https://github.com/flatpak/flatpak/issues/3619) of [problems](https://www.reddit.com/r/gnome/comments/qeodr3/font_in_flatpak_apps_looks_bad_how_to_fix_it/) and [issues](https://github.com/flatpak/flatpak/issues/2861) on that.
 
-My fix was to explicity change the socket for the affected packages:
+My fix was to explicitly change the socket for the affected packages:
 
 ```bash
 sudo flatpak override --nosocket=wayland your.package.Here
@@ -263,7 +262,7 @@ sudo flatpak override --nosocket=wayland your.package.Here
 
 ### AppImage
 
-Sometimes it still makes more sense to use AppImages due to Wayland issues or simple there being, no flatpak.
+Sometimes it still makes more sense to use AppImages due to Wayland issues or simply there being no Flatpak.
 
 Then one can install: [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher) and point it to `~/.local/share/appimages`.
 
@@ -272,8 +271,8 @@ Then one can install: [AppImageLauncher](https://github.com/TheAssassin/AppImage
 - Add Plasma Integration via extension: [https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/](https://addons.mozilla.org/en-US/firefox/addon/plasma-integration/)
 - Set default Search Engine to DDG
 - Disallow Mozilla to
-    - install and run studies
-    - send technical and interaction data
+  - install and run studies
+  - send technical and interaction data
 - Disable Title Bar
 
 ### Shell
@@ -324,7 +323,7 @@ sudo dnf install -y gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-p
 
 #### Remap Stereo to Mono
 
-Because I suffer under [single-sided deafness](https://en.wikipedia.org/wiki/Unilateral_hearing_loss), remap stereo to mono as described in [https://wiki.archlinux.org/title/PulseAudio/Examples#Remap_stereo_to_mono](https://wiki.archlinux.org/title/PulseAudio/Examples#Remap_stereo_to_mono)
+Because I suffer from [single-sided deafness](https://en.wikipedia.org/wiki/Unilateral_hearing_loss), remap stereo to mono as described in [https://wiki.archlinux.org/title/PulseAudio/Examples#Remap_stereo_to_mono](https://wiki.archlinux.org/title/PulseAudio/Examples#Remap_stereo_to_mono)
 
 ### MPV
 
@@ -373,4 +372,4 @@ sudo dnf groupinstall "Development Tools" -y
 
 ## Troubleshooting:
 
-- Linux Mint is so **massivly behind** Fedora F35, that I had immense problems getting `/boot` and `/boot/efi` straight to dual boot it.
+- Linux Mint is so **massively behind** Fedora F35 that I had immense problems getting `/boot` and `/boot/efi` straight to dual boot it.

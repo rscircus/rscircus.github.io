@@ -1,13 +1,13 @@
 ---
 categories:
-- Code
+  - Code
 date: "2020-02-21T00:00:00Z"
 math: true
 excerpt_separator: <!-- more -->
 sub_title: Setting up LaTeX in Jekyll
 tags:
-- LaTeX
-- accessibility
+  - LaTeX
+  - accessibility
 title: LaTeX in Jekyll
 ---
 
@@ -29,7 +29,10 @@ To get this to work, we need to add two pieces to `_layouts/post.html`, which is
 First:
 
 ```html
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"
+></script>
 ```
 
 which enables MathJax in all posts (rendered with this template).
@@ -73,13 +76,13 @@ we configure it as follows:
 </script>
 ```
 
-Here an example in Eq. \eqref{diffint}.
+Here is an example in Eq. \eqref{diffint}.
 
 $$
  \frac{\mathrm{d}}{\mathrm{d} x} \int e^{x}\,dx = e^{x}
 $$
 
-which actually works with any 'healthy' function $f(x)$ (KaTeX: \\(f(x)\\)). However, \eqref{diffint} is particularly interesting, as $ f(x) = e^x $ (KaTeX: \\(f(x) = e^x\\)) is a unique function because is its own derivative and antiderivative. ☺️
+which actually works with any 'healthy' function $f(x)$ (KaTeX: \\(f(x)\\)). However, \eqref{diffint} is particularly interesting, as $ f(x) = e^x $ (KaTeX: \\(f(x) = e^x\\)) is a unique function because it is its own derivative and antiderivative. ☺️
 
 ## Sources
 

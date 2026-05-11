@@ -11,17 +11,17 @@ tags:
 title: The Annotated Transformer Revisited
 ---
 
-In this article we have an illustrated annotated look at the Transformer published in "[Attention is all you need](https://arxiv.org/abs/1706.03762)" in 2017 by Vaswani, Shazeer, Parmer, et al. The Transformer architecture was groundbraking as it achieves 28.4 BLEU on the WMT 2014 English-to-German translation task with comparatively very little training.
+In this article we have an illustrated annotated look at the Transformer published in "[Attention is all you need](https://arxiv.org/abs/1706.03762)" in 2017 by Vaswani, Shazeer, Parmar, et al. The Transformer architecture was groundbreaking as it achieved 28.4 BLEU on the WMT 2014 English-to-German translation task with comparatively very little training.
 
-Even though it is eclipsed by the "[Reformer: The Efficient Transformer](https://arxiv.org/abs/2001.04451)" published by Nikita Kitaev, Łukasz Kaiser and Anselm Levskayain in this year/2020, it is still interesting to have a look at the fundamental idea of the comparatively "simple network architecture [...] based solely on attention mechanisms".
+Even though it is eclipsed by the "[Reformer: The Efficient Transformer](https://arxiv.org/abs/2001.04451)" published by Nikita Kitaev, Łukasz Kaiser and Anselm Levskaya in 2020, it is still interesting to have a look at the fundamental idea of the comparatively "simple network architecture [...] based solely on attention mechanisms".
 
 <!--more-->
 
 ## Overview
 
-We will cover the setup and execute the Transformer implementation outlined in the given paper. We start with the excellent breakdowns created by Sasha Rush - [The Annotated Transformer](https://www.aclweb.org/anthology/W18-2509.pdf).
+We will cover the setup and execution of the Transformer implementation outlined in the given paper. We start with the excellent breakdowns created by Sasha Rush - [The Annotated Transformer](https://www.aclweb.org/anthology/W18-2509.pdf).
 
-In contrast to the paper using Tensorflow (which also [published its implementation](https://github.com/tensorflow/tensor2tensor) 😊), we follow Sasha's torch implementation as my impression is that more and more researchers are moving towards PyTorch. Everything will be contained in [this annotated ipynb](https://colab.research.google.com/drive/1tm0_Usqkavr0h1Jk0f-ukcykI78xmcfW) on Google Colab.
+In contrast to the paper using TensorFlow (which also [published its implementation](https://github.com/tensorflow/tensor2tensor) 😊), we follow Sasha's torch implementation as my impression is that more and more researchers are moving towards PyTorch. Everything will be contained in [this annotated ipynb](https://colab.research.google.com/drive/1tm0_Usqkavr0h1Jk0f-ukcykI78xmcfW) on Google Colab.
 
 ### Breakdown
 
@@ -97,7 +97,7 @@ class Decoder(nn.Module):
         return self.norm(x)
 ```
 
-Above you can see two functions calls, which probably do not make sense immediately. That is `clones()`, which produces copies of layers, so we can stack them, and `LayerNorm()`, which corresponds to the yellow box of the original's paper `Fig 1.`:
+Above you can see two function calls, which probably do not make sense immediately. That is `clones()`, which produces copies of layers, so we can stack them, and `LayerNorm()`, which corresponds to the yellow box of the original paper's `Fig. 1`:
 
 ![](https://rscircus.github.io/assets/img/20200222_Transformer_Fig1.png)
 _Fig 1: Architecture (src: Attention is all we need)_
@@ -127,7 +127,7 @@ class LayerNorm(nn.Module):
 
 As we introduced the original paper's figure now, we can easily create the connection between our simplified model above and this structure. It's interesting to note, that the final Encoder output is fed into each of the `Encoder-Decoder Attention` layers, which is called `Multi-Head Attention` in the original paper.
 
-We'll approach the original's figure a bit more now. Of interest is, how the output is re-fed in to the decoders. Jay Alammar's [animation in his breakdown](https://jalammar.github.io/illustrated-transformer/) 'The Illustrated Transformer' is of great help to understand this concept:
+We'll approach the original's figure a bit more now. Of interest is how the output is fed back into the decoders. Jay Alammar's [animation in his breakdown](https://jalammar.github.io/illustrated-transformer/) 'The Illustrated Transformer' is of great help to understand this concept:
 
 ![](https://jalammar.github.io/images/t/transformer_decoding_2.gif)
 _Fig 2: Output embedding (src: Jay Alammar)_
@@ -179,7 +179,7 @@ class DecoderLayer(nn.Module):
 
 ## Conclusion
 
-Today we had a look at the Encoder-Decoder architecture and setup and bugfixed the annotated ipynb on Google Colab. You can find it [in the overall implementation at the bottom](#overall-implementation). Unfortunately this implementation doesn't work as of today, as we soon run out of memory on the free Colab tier:
+Today we had a look at the Encoder-Decoder architecture and setup and fixed bugs in the annotated ipynb on Google Colab. You can find it [in the overall implementation at the bottom](#overall-implementation). Unfortunately this implementation doesn't work as of today, as we soon run out of memory on the free Colab tier:
 
 ![](https://rscircus.github.io/assets/img/20200222_Transformer_OutOfMemory.png)
 
@@ -192,7 +192,7 @@ It's 'multi-headed', because it allows the model to attend to information from d
 
 ## Overall implementation
 
-You can download all of this including Sasha Rushes and my notes from here: [https://colab.research.google.com/drive/1tm0_Usqkavr0h1Jk0f-ukcykI78xmcfW](https://colab.research.google.com/drive/1tm0_Usqkavr0h1Jk0f-ukcykI78xmcfW).
+You can download all of this including Sasha Rush's notes and mine from here: [https://colab.research.google.com/drive/1tm0_Usqkavr0h1Jk0f-ukcykI78xmcfW](https://colab.research.google.com/drive/1tm0_Usqkavr0h1Jk0f-ukcykI78xmcfW).
 
 ## Sources
 

@@ -1,14 +1,14 @@
 ---
 categories:
-- Tinker
+  - Tinker
 date: "2020-01-25T00:00:00Z"
 excerpt_separator: <!-- more -->
 sub_title: First steps with the Coral USB Accelerator
 tags:
-- AI
-- Machine Learning
-- Google
-- Edge
+  - AI
+  - Machine Learning
+  - Google
+  - Edge
 title: Getting started with Coral Edge TPUs
 ---
 
@@ -22,16 +22,15 @@ Here you can see his data on how Coral leaves NVIDIA's GTX1080 in the dust:
 
 while graphing the FPS these setups can do using the [MobileNetV2](https://arxiv.org/abs/1801.04381) classifier pre-trained on the ImageNet dataset. Yup, this is all about inference. And at this the Coral Edge TPU (let's call it CET) is really really good.
 
-In this article we look at how to do inference with the CET, look at some perf characteristics and further explore, how the feel from a hobbyist perspective is.
+In this article we look at how to do inference with the CET, look at some perf characteristics and further explore how it feels from a hobbyist perspective.
 
 > I hear and I forget. I see and I remember. I do and I understand.
 
 _Disclaimer: This is a work in progress!_
 
-
 ## Hardware
 
-My CET in shape of the USB Accelerator looks like this:
+My CET in the shape of the USB Accelerator looks like this:
 
 ![](https://rscircus.github.io/assets/img/20200125_CoralPicture.jpg)
 
@@ -49,7 +48,6 @@ Bus 003 Device 003: ID 1a6e:089a Global Unichip Corp.
 ```
 
 Global Unichip Corp? That's [interesting](https://en.wikipedia.org/wiki/Global_Unichip_Corporation). The Global Unichip Corporation seems to be a known ASIC/SoC design foundry based in Taiwan.
-
 
 ## Software
 
@@ -78,8 +76,7 @@ It is recommended to use an _USB 3.0 port_ for best perf and further there is an
 sudo apt-get install libedgetpu1-max
 ```
 
-During the installation of the `max`-version we are asked if we understand physics. We confirm with yes and move on. If you plugged the USB Accelerator into your machine ahead of installing the `libedge`. Plug it out and in again, else you might get a `ValueError: Failed to load delegate from libedgetpu.so.1` error during runtime later on.
-
+During the installation of the `max`-version we are asked if we understand physics. We confirm with yes and move on. If you plugged the USB Accelerator into your machine ahead of installing the `libedge`, unplug it and plug it in again, else you might get a `ValueError: Failed to load delegate from libedgetpu.so.1` error during runtime later on.
 
 ### TensorFlow Lite
 
@@ -110,7 +107,6 @@ pip install https://dl.google.com/coral/python/tflite_runtime-1.14.0-cp37-cp37m-
 ```
 
 OK, we have `tflite_runtime (1.14.0)` and everything contained in a nice virtualenv with `py3.7`.
-
 
 ### Example
 
@@ -209,7 +205,7 @@ Ha! Great success! And the true fun begins. 😊
 
 ## Conclusion
 
-We set up the CET and created a Python based virtualenv which hosts the `tflite_runtime`. Using this setup we classified the *ara macao* in a picture at `0.76172` confidence.
+We set up the CET and created a Python based virtualenv which hosts the `tflite_runtime`. Using this setup we classified the _ara macao_ in a picture at `0.76172` confidence.
 
 In the next step we want to create and train a model which will be deployed to the Coral hardware like so:
 
@@ -217,10 +213,8 @@ In the next step we want to create and train a model which will be deployed to t
 
 and look at some perf characteristics.
 
-
 ## Sources
 
 - https://www.coral.ai/docs
 - https://blog.raccoons.be/coral-tpu-jetson-nano-performance
 - https://www.tensorflow.org/lite
-

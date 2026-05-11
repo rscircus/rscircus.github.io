@@ -1,16 +1,16 @@
 ---
 categories:
-- Code
+  - Code
 date: "2022-07-22T00:00:00Z"
 excerpt_separator: <!-- more -->
 sub_title: nim :)
 tags:
-- nim
-- languages
+  - nim
+  - languages
 title: nim-lang in one file
 ---
 
-I'm falling in love with nim. :)
+I'm falling in love with Nim. :)
 
 <!--more-->
 

@@ -1,29 +1,29 @@
 ---
 categories:
-- Code
+  - Code
 date: "2023-10-06T00:00:00Z"
 excerpt_separator: <!-- more -->
 sub_title: Practicing Software Engineering in a manner that minimizes the cognitive burden for developers.
 tags:
-- Software Engineering
-- Cognitive Load
-- SWE
+  - Software Engineering
+  - Cognitive Load
+  - SWE
 title: Philosophy of Software Engineering and Design
 ---
 
-We find ourselves in an era defined by rapid technological advancements. Especially in the field of software development. So much that the term "developer" or "programmer" was replaced with "Software Engineer". Reflecting the natural arts and crafts approach of similar occupations like mechanical engineer or civil engineer. Software development has been transformed from the mere act of code creation to an intricate dance of design, maintenance, delivery, and reliability.
+We find ourselves in an era defined by rapid technological advancements, especially in the field of software development. So much so that the term "developer" or "programmer" was replaced with "Software Engineer", reflecting the natural arts and crafts approach of similar occupations like mechanical engineer or civil engineer. Software development has been transformed from the mere act of code creation to an intricate dance of design, maintenance, delivery, and reliability.
 
 > _As organizations grapple with increasingly complex software ecosystems, there is a growing need to cultivate a broad perspective._
 
 <!--more-->
 
-In this essay I want to approach Software Engineering with humans and time as guides instead of machines as guides. By delving into Michael Feathers' "*Working Effectively with Legacy Code*", John Osterhout's "*A Philosophy of Software Design*", the insights from "*Continuous Delivery*" by Humble and Farley, and "*Site Reliability Engineering*" authored by the Google engineers Beyer, Jones, Petoff, and Murphy, we can extract a coherent philosophy that can guide modern software practitioners.
+In this essay I want to approach Software Engineering with humans and time as guides instead of machines as guides. By delving into Michael Feathers' "_Working Effectively with Legacy Code_", John Ousterhout's "_A Philosophy of Software Design_", the insights from "_Continuous Delivery_" by Humble and Farley, and "_Site Reliability Engineering_" authored by the Google engineers Beyer, Jones, Petoff, and Murphy, we can extract a coherent philosophy that can guide modern software practitioners.
 
 ## A Coherent Philosophy of Software Design
 
 ![](https://rscircus.github.io/assets/img/20231006_SWE_BestPractices_Books.jpg)
 
-My favorite book of these four mentioned and being pictured above is John Osterhout's "A Philosophy of Software Design". The reason is that "A Philosophy of Software Design" designs software with focus on simplicity and evolvability. At the heart of Osterhout's perspective is the notion that complexity is the primary impediment to effective software design. He posits that the *majority of costs in software development are rooted in complexities that are unintentionally introduced*. Deep modules, which have a lot of functionality but expose a simple interface, are advocated as the hallmark of great design. These encapsulated modules lead to more robust and maintainable systems, and the **focus should always be on reducing cognitive load for developers**. Let me repeat:
+My favorite book of these four mentioned and being pictured above is John Ousterhout's "A Philosophy of Software Design". The reason is that "A Philosophy of Software Design" designs software with a focus on simplicity and evolvability. At the heart of Ousterhout's perspective is the notion that complexity is the primary impediment to effective software design. He posits that the _majority of costs in software development are rooted in complexities that are unintentionally introduced_. Deep modules, which have a lot of functionality but expose a simple interface, are advocated as the hallmark of great design. These encapsulated modules lead to more robust and maintainable systems, and the **focus should always be on reducing cognitive load for developers**. Let me repeat:
 
 > _The focus should always be on reducing cognitive load for developers._
 
@@ -31,27 +31,27 @@ Clear interfaces, minimal operational complexity, and intentional design can dra
 
 ## The Future is Built upon the Past
 
-At the core of Feathers' work elaborated in "Working Effectively with Legacy Code" is a pressing reality: Much of the software we engage with is not new, shiny, or designed with modern best practices. Instead, it carries the weight of decisions made years ago. To work effectively with legacy code, one must first understand it, *safely make changes without introducing defects, and incrementally refactor to improve its structure*. The focus is the very definition of legacy code: Code without tests.
+At the core of Feathers' work in "Working Effectively with Legacy Code" is a pressing reality: Much of the software we engage with is not new, shiny, or designed with modern best practices. Instead, it carries the weight of decisions made years ago. To work effectively with legacy code, one must first understand it, _safely make changes without introducing defects, and incrementally refactor to improve its structure_. The focus is the very definition of legacy code: Code without tests.
 
 > _Much of the software we engage with is not new, shiny, or designed with modern best practices._
 
-So it is worth it to regard legacy code as an asset rather than a liability, embracing and improving it while ensuring its continued functionality. 
+So it is worth it to regard legacy code as an asset rather than a liability, embracing and improving it while ensuring its continued functionality.
 
 ## Automation and Feedback Loops
 
 > _Continuous Delivery provides a continuous feedback loop, allowing developers to detect and rectify issues promptly._
 
-Let's refocus on practicing Software Engineering in a manner that minimizes the cognitive burden for developers. In "Continuous Delivery - Seamless and Reliable Software Releases" Humble and Farley shift the conversation to the critical juncture where code moves from development to production. These days with the omnipresent cloud™️ a significant chunk of time is spent upon infrastructure enabling continuous delivery. Thus, deserves to be handled seperately. 
+Let's refocus on practicing Software Engineering in a manner that minimizes the cognitive burden for developers. In "Continuous Delivery - Seamless and Reliable Software Releases" Humble and Farley shift the conversation to the critical juncture where code moves from development to production. These days with the omnipresent cloud™️ a significant chunk of time is spent on infrastructure enabling continuous delivery. Thus, it deserves to be handled separately.
 Continuous Delivery (CD) emphasizes automating the build, deployment, and testing processes to produce software in short cycles, ensuring it can be reliably released at any time. CD provides a continuous feedback loop, allowing developers to detect and rectify issues promptly, leading to more stable releases and increased developer and user satisfaction. In essence, it not only reduces the cognitive load on developers but ensures that software is always in a releasable state, bridging the gap between development and operations.
 
 ## Maintainability and Performance
 
-More often than not, software interacts with hardware. And hardware is hard. "Site Reliability Engineering - Merging Development with Operations" originating from Google's approach to large-scale service management, Site Reliability Engineering (SRE) is about applying software engineering practices to operations.
+More often than not, software interacts with hardware. And hardware is hard. Originating from Google's approach to large-scale service management, "Site Reliability Engineering - Merging Development with Operations" describes how Site Reliability Engineering (SRE) applies software engineering practices to operations.
 
 > _"Blameless Postmortems: When incidents happen, the focus is on learning from them rather than placing blame."_
 > ~The SRE Book
 
-Beyer et al. describe how to maintain high availability and performance while allowing for rapid changes and growth. Central to SRE is the Service Level Objective (SLO), ensuring that systems meet users' reliability expectations. Moreover, error budgets and risk management play crucial roles, promoting *a balance between innovation and stability*. Topics like Capacity Planning, Load Testing, and Monitoring have to be considered. Understanding the capacity needs of a service, testing its limits, and consistently monitoring its performance are crucial components of the SRE methodology.
+Beyer et al. describe how to maintain high availability and performance while allowing for rapid changes and growth. Central to SRE is the Service Level Objective (SLO), ensuring that systems meet users' reliability expectations. Moreover, error budgets and risk management play crucial roles, promoting _a balance between innovation and stability_. Topics like Capacity Planning, Load Testing, and Monitoring have to be considered. Understanding the capacity needs of a service, testing its limits, and consistently monitoring its performance are crucial components of the SRE methodology.
 
 > _Balance between innovation and stability._
 
