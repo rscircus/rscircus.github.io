@@ -1,0 +1,58 @@
+/* ----------------------------------------------------------------------------
+ * Readability restyle — experiment branch.
+ * See PLAN.md. Layer 3 until calibrated.
+ *
+ * Strategy: override PaperMod CSS variable *values* only.
+ * No new variables, no !important, no hardcoded colours in selectors.
+ * Body type, line-height, line-length already meet contrastrebellion targets.
+ * This file is purely the aesthetic layer.
+ * --------------------------------------------------------------------------*/
+
+/* Apply the configured google_fonts.
+   The theme loads the <link> but never sets font-family — heading_font
+   and body_font in hugo.toml are dead config. Fix it here. */
+body,
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', Charter, Georgia, serif;
+}
+
+/* Light mode — warm Lynagh-ish palette */
+:root {
+    --theme: #fffdf0;
+    --entry: #fffdf0;
+    --primary: #1a1a19;
+    --content: #1a1a19;
+    --tertiary: #df5049;      /* repurposed: accent (links, rules) */
+    --border: #e8e4d4;        /* tuned to harmonise with cream bg */
+}
+
+/* List pages (homepage, /posts, /tags, archive) default to --code-bg
+   in the theme, which is light grey. Force cream here too. */
+.list:not(.dark) {
+    background: var(--theme);
+}
+
+/* Dark mode — keep PaperMod dark, only swap the accent
+   so links remain visible without the cream-on-dark clash */
+.dark {
+    --tertiary: #e57068;
+}
+
+/* Links: explicit colour so they read as links without relying on hover.
+   Theme default leaves .post-content a inheriting --primary, which makes
+   links indistinguishable from body text at rest. */
+.post-content a,
+.post-content a:visited {
+    color: var(--tertiary);
+}
+
+/* Link underline inherits the accent (theme uses box-shadow underlines).
+   Keep the existing 1px underline, just match its colour to the link. */
+.post-content a {
+    box-shadow: 0 1px 0 var(--tertiary);
+}
+
+/* Inline-code links: same accent on the underline */
+.post-content a code {
+    box-shadow: 0 -1px 0 var(--tertiary) inset;
+}
