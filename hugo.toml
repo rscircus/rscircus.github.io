@@ -1,6 +1,6 @@
 theme = 'PaperModded'
 baseURL = "https://rscircus.github.io"
-languageCode = "en-us"
+locale = "en-US"
 title = "R's 🎪"
 pygmentsUseClasses = true
 enableInlineShortcodes = true
@@ -17,16 +17,15 @@ subtitle = "Fascinated by Computer Science, Life Sciences, DIY hardware, and Acc
 
 # Typography
 google_fonts = [
-  ["Fira Code", "400, 700"],
-  ["Open Sans", "400, 400i, 700, 700i"]
+  ["Roboto Slab", "400, 700"]
 ]
-heading_font = "Fira Code"
-body_font = "Open Sans"
+heading_font = "Roboto Slab"
+body_font = "Roboto Slab"
 
 [[params.social]]
 name = "GitHub"
 icon = "github"
-url = "https://gitlab.com/rscircus/"
+url = "https://github.com/rscircus/"
 
 [[menu.main]]
 name = "Home"
